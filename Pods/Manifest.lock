@@ -62,9 +62,13 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - XCoordinator (2.0.7):
+    - XCoordinator/Core (= 2.0.7)
+  - XCoordinator/Core (2.0.7)
 
 DEPENDENCIES:
   - Firebase/Analytics
+  - XCoordinator (~> 2.0.7)
 
 SPEC REPOS:
   trunk:
@@ -78,6 +82,7 @@ SPEC REPOS:
     - GoogleUtilities
     - nanopb
     - PromisesObjC
+    - XCoordinator
 
 SPEC CHECKSUMS:
   Firebase: cd2ab85eec8170dc260186159f21072ecb679ad5
@@ -90,7 +95,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: 852662cad7f7b1d5d1349cf348e0b0a7c1db2691
+PODFILE CHECKSUM: 594406f2b624035786716bdb6ac5f627d33f4187
 
 COCOAPODS: 1.10.1
