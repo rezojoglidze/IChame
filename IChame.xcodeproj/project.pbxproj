@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28D644400C9359E38FC24D3B /* Pods_IChame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9870064A581430DE698BD6CF /* Pods_IChame.framework */; };
 		A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D720B25F7FBE100BA697A /* AppDelegate.swift */; };
 		A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D720D25F7FBE100BA697A /* SceneDelegate.swift */; };
 		A90D721025F7FBE100BA697A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D720F25F7FBE100BA697A /* ViewController.swift */; };
 		A90D721325F7FBE100BA697A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90D721125F7FBE100BA697A /* Main.storyboard */; };
 		A90D721525F7FBE200BA697A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90D721425F7FBE200BA697A /* Assets.xcassets */; };
 		A90D721825F7FBE200BA697A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90D721625F7FBE200BA697A /* LaunchScreen.storyboard */; };
+		A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */; };
 		A9E729AC25F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */; };
 		A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */; };
 		A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D26FA843F1B72614A8DBF10 /* Pods-IChame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IChame.release.xcconfig"; path = "Target Support Files/Pods-IChame/Pods-IChame.release.xcconfig"; sourceTree = "<group>"; };
+		9870064A581430DE698BD6CF /* Pods_IChame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IChame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90D720825F7FBE100BA697A /* IChame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IChame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90D720B25F7FBE100BA697A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A90D720D25F7FBE100BA697A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,9 +31,11 @@
 		A90D721425F7FBE200BA697A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A90D721725F7FBE200BA697A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A90D721925F7FBE200BA697A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-65Medium.otf"; sourceTree = "<group>"; };
 		A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-75Bold.otf"; sourceTree = "<group>"; };
 		A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-55Roman.otf"; sourceTree = "<group>"; };
+		F78D1F27BC7182F8B6AF2B86 /* Pods-IChame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IChame.debug.xcconfig"; path = "Target Support Files/Pods-IChame/Pods-IChame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D644400C9359E38FC24D3B /* Pods_IChame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				A90D720A25F7FBE100BA697A /* IChame */,
 				A90D720925F7FBE100BA697A /* Products */,
+				D55E25BFCE3514C04D4A13C3 /* Pods */,
+				E264600F95AF8FF1EF5DDC9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,7 +71,6 @@
 		A90D720A25F7FBE100BA697A /* IChame */ = {
 			isa = PBXGroup;
 			children = (
-				A9E729B025F7FDFE0056B225 /* Supporting Files */,
 				A9E729B125F7FE130056B225 /* Core */,
 				A92AE69125F7FEAD00D1D00A /* App Modules */,
 				A9E729A725F7FDEA0056B225 /* Resources */,
@@ -73,15 +81,24 @@
 		A92AE69125F7FEAD00D1D00A /* App Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A92AE69825F8013F00D1D00A /* Authorization */,
 				A90D720F25F7FBE100BA697A /* ViewController.swift */,
 				A90D721125F7FBE100BA697A /* Main.storyboard */,
 			);
 			path = "App Modules";
 			sourceTree = "<group>";
 		};
+		A92AE69825F8013F00D1D00A /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		A9E729A725F7FDEA0056B225 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A9E729B025F7FDFE0056B225 /* Supporting Files */,
 				A90D721425F7FBE200BA697A /* Assets.xcassets */,
 				A9E729A825F7FDF30056B225 /* Fonts */,
 			);
@@ -102,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A90D721925F7FBE200BA697A /* Info.plist */,
+				A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -124,6 +142,24 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		D55E25BFCE3514C04D4A13C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F78D1F27BC7182F8B6AF2B86 /* Pods-IChame.debug.xcconfig */,
+				6D26FA843F1B72614A8DBF10 /* Pods-IChame.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E264600F95AF8FF1EF5DDC9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9870064A581430DE698BD6CF /* Pods_IChame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A90D721C25F7FBE200BA697A /* Build configuration list for PBXNativeTarget "IChame" */;
 			buildPhases = (
+				8FC3DD473F1AE81C53877EFF /* [CP] Check Pods Manifest.lock */,
 				A90D720425F7FBE100BA697A /* Sources */,
 				A90D720525F7FBE100BA697A /* Frameworks */,
 				A90D720625F7FBE100BA697A /* Resources */,
+				68D2BCC7A0739AA157219324 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,10 +226,53 @@
 				A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */,
 				A90D721525F7FBE200BA697A /* Assets.xcassets in Resources */,
 				A90D721325F7FBE100BA697A /* Main.storyboard in Resources */,
+				A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68D2BCC7A0739AA157219324 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IChame/Pods-IChame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IChame/Pods-IChame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IChame/Pods-IChame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FC3DD473F1AE81C53877EFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IChame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A90D720425F7FBE100BA697A /* Sources */ = {
@@ -344,12 +425,13 @@
 		};
 		A90D721D25F7FBE200BA697A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F78D1F27BC7182F8B6AF2B86 /* Pods-IChame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YC9A76K73N;
-				INFOPLIST_FILE = "$(SRCROOT)/IChame/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/IChame/Resources/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,12 +445,13 @@
 		};
 		A90D721E25F7FBE200BA697A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D26FA843F1B72614A8DBF10 /* Pods-IChame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YC9A76K73N;
-				INFOPLIST_FILE = "$(SRCROOT)/IChame/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/IChame/Resources/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
