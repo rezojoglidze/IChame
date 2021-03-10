@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		A90D721525F7FBE200BA697A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90D721425F7FBE200BA697A /* Assets.xcassets */; };
 		A90D721825F7FBE200BA697A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90D721625F7FBE200BA697A /* LaunchScreen.storyboard */; };
 		A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */; };
+		A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */; };
+		A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */; };
+		A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */; };
+		A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C62A0125F8C9FB00B32D2A /* MainCoordinator.swift */; };
 		A9E729AC25F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */; };
 		A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */; };
 		A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */; };
@@ -32,6 +36,10 @@
 		A90D721725F7FBE200BA697A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A90D721925F7FBE200BA697A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
+		A9C62A0125F8C9FB00B32D2A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-65Medium.otf"; sourceTree = "<group>"; };
 		A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-75Bold.otf"; sourceTree = "<group>"; };
 		A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-55Roman.otf"; sourceTree = "<group>"; };
@@ -72,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				A9E729B125F7FE130056B225 /* Core */,
+				A9C62A0025F8C9E400B32D2A /* Coordinators */,
 				A92AE69125F7FEAD00D1D00A /* App Modules */,
 				A9E729A725F7FDEA0056B225 /* Resources */,
 			);
@@ -81,6 +90,7 @@
 		A92AE69125F7FEAD00D1D00A /* App Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A9C629F525F8C7F200B32D2A /* SplashScreen */,
 				A92AE69825F8013F00D1D00A /* Authorization */,
 				A90D720F25F7FBE100BA697A /* ViewController.swift */,
 				A90D721125F7FBE100BA697A /* Main.storyboard */,
@@ -93,6 +103,24 @@
 			children = (
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		A9C629F525F8C7F200B32D2A /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */,
+				A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */,
+				A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		A9C62A0025F8C9E400B32D2A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				A9C62A0125F8C9FB00B32D2A /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		A9E729A725F7FDEA0056B225 /* Resources */ = {
@@ -148,7 +176,6 @@
 				F78D1F27BC7182F8B6AF2B86 /* Pods-IChame.debug.xcconfig */,
 				6D26FA843F1B72614A8DBF10 /* Pods-IChame.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -221,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9E729AC25F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf in Resources */,
+				A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */,
 				A90D721825F7FBE200BA697A /* LaunchScreen.storyboard in Resources */,
 				A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */,
 				A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */,
@@ -280,8 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A90D721025F7FBE100BA697A /* ViewController.swift in Sources */,
+				A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
+				A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */,
+				A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
