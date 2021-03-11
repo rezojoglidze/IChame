@@ -10,11 +10,16 @@
 		28D644400C9359E38FC24D3B /* Pods_IChame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9870064A581430DE698BD6CF /* Pods_IChame.framework */; };
 		A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D720B25F7FBE100BA697A /* AppDelegate.swift */; };
 		A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D720D25F7FBE100BA697A /* SceneDelegate.swift */; };
-		A90D721025F7FBE100BA697A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D720F25F7FBE100BA697A /* ViewController.swift */; };
-		A90D721325F7FBE100BA697A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90D721125F7FBE100BA697A /* Main.storyboard */; };
 		A90D721525F7FBE200BA697A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90D721425F7FBE200BA697A /* Assets.xcassets */; };
 		A90D721825F7FBE200BA697A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90D721625F7FBE200BA697A /* LaunchScreen.storyboard */; };
 		A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */; };
+		A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184425FA869400A980E2 /* ScreensAssembly.swift */; };
+		A987184925FA875E00A980E2 /* ScreenAssembly+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */; };
+		A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */; };
+		A987186D25FA961F00A980E2 /* AuthorizationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987186B25FA961F00A980E2 /* AuthorizationScreenViewController.swift */; };
+		A987187225FA968600A980E2 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987187125FA968600A980E2 /* AuthCoordinator.swift */; };
+		A987187525FA98F300A980E2 /* AuthorizationScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987187425FA98F300A980E2 /* AuthorizationScreenViewModel.swift */; };
+		A987188B25FA9F4200A980E2 /* AuthorizationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A987188A25FA9F4200A980E2 /* AuthorizationScreen.storyboard */; };
 		A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */; };
 		A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */; };
 		A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */; };
@@ -30,12 +35,17 @@
 		A90D720825F7FBE100BA697A /* IChame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IChame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90D720B25F7FBE100BA697A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A90D720D25F7FBE100BA697A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A90D720F25F7FBE100BA697A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A90D721225F7FBE100BA697A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A90D721425F7FBE200BA697A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A90D721725F7FBE200BA697A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A90D721925F7FBE200BA697A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A987184425FA869400A980E2 /* ScreensAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensAssembly.swift; sourceTree = "<group>"; };
+		A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Authorization.swift"; sourceTree = "<group>"; };
+		A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		A987186B25FA961F00A980E2 /* AuthorizationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreenViewController.swift; sourceTree = "<group>"; };
+		A987187125FA968600A980E2 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		A987187425FA98F300A980E2 /* AuthorizationScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreenViewModel.swift; sourceTree = "<group>"; };
+		A987188A25FA9F4200A980E2 /* AuthorizationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthorizationScreen.storyboard; sourceTree = "<group>"; };
 		A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
@@ -79,7 +89,9 @@
 		A90D720A25F7FBE100BA697A /* IChame */ = {
 			isa = PBXGroup;
 			children = (
+				A987184B25FA899F00A980E2 /* Extensions */,
 				A9E729B125F7FE130056B225 /* Core */,
+				A987184325FA867B00A980E2 /* ScreensAssembly */,
 				A9C62A0025F8C9E400B32D2A /* Coordinators */,
 				A92AE69125F7FEAD00D1D00A /* App Modules */,
 				A9E729A725F7FDEA0056B225 /* Resources */,
@@ -92,8 +104,6 @@
 			children = (
 				A9C629F525F8C7F200B32D2A /* SplashScreen */,
 				A92AE69825F8013F00D1D00A /* Authorization */,
-				A90D720F25F7FBE100BA697A /* ViewController.swift */,
-				A90D721125F7FBE100BA697A /* Main.storyboard */,
 			);
 			path = "App Modules";
 			sourceTree = "<group>";
@@ -101,8 +111,28 @@
 		A92AE69825F8013F00D1D00A /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				A987188A25FA9F4200A980E2 /* AuthorizationScreen.storyboard */,
+				A987186B25FA961F00A980E2 /* AuthorizationScreenViewController.swift */,
+				A987187425FA98F300A980E2 /* AuthorizationScreenViewModel.swift */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		A987184325FA867B00A980E2 /* ScreensAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				A987184425FA869400A980E2 /* ScreensAssembly.swift */,
+				A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */,
+			);
+			path = ScreensAssembly;
+			sourceTree = "<group>";
+		};
+		A987184B25FA899F00A980E2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A9C629F525F8C7F200B32D2A /* SplashScreen */ = {
@@ -119,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				A9C62A0125F8C9FB00B32D2A /* MainCoordinator.swift */,
+				A987187125FA968600A980E2 /* AuthCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -253,7 +284,7 @@
 				A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */,
 				A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */,
 				A90D721525F7FBE200BA697A /* Assets.xcassets in Resources */,
-				A90D721325F7FBE100BA697A /* Main.storyboard in Resources */,
+				A987188B25FA9F4200A980E2 /* AuthorizationScreen.storyboard in Resources */,
 				A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,11 +338,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A90D721025F7FBE100BA697A /* ViewController.swift in Sources */,
+				A987187225FA968600A980E2 /* AuthCoordinator.swift in Sources */,
 				A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
+				A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */,
 				A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */,
+				A987184925FA875E00A980E2 /* ScreenAssembly+Authorization.swift in Sources */,
+				A987187525FA98F300A980E2 /* AuthorizationScreenViewModel.swift in Sources */,
+				A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */,
+				A987186D25FA961F00A980E2 /* AuthorizationScreenViewController.swift in Sources */,
 				A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,14 +355,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A90D721125F7FBE100BA697A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A90D721225F7FBE100BA697A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A90D721625F7FBE200BA697A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
