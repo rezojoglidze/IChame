@@ -20,7 +20,9 @@ class SplashScreenViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    viewModel.triggerSplashScreenCompletion()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+      self?.viewModel.triggerSplashScreenCompletion()
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
