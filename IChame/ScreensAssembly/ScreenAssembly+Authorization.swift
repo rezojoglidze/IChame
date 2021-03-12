@@ -15,6 +15,7 @@ extension ScreensAssembly {
   func setupAuthorization() {
     setupSplashScreen()
     setupAuthorizationScreen()
+    setupRegistrationScreen()
   }
   
   private func setupSplashScreen() {
@@ -33,13 +34,25 @@ extension ScreensAssembly {
   
   private func setupAuthorizationScreen() {
     self.container.register(AuthorizationScreenViewModel.self) { (resolver, router: UnownedRouter<AuthRoute>) -> AuthorizationScreenViewModel in
-      //        let userService = resolver.resolve(UserService.self)
       let viewModel = AuthorizationScreenViewModel(router: router)
       return viewModel
     }
     self.container.register(AuthorizationScreenViewController.self) { (resolver, router: UnownedRouter<AuthRoute>) -> AuthorizationScreenViewController in
       let viewModel = resolver.resolve(AuthorizationScreenViewModel.self, argument: router)
       let viewController = AuthorizationScreenViewController.loadFromStoryboard()
+      viewController.viewModel = viewModel
+      return viewController
+    }
+  }
+  
+  private func setupRegistrationScreen() {
+    self.container.register(RegistrationScreenViewModel.self) { (resolver, router: UnownedRouter<AuthRoute>) -> RegistrationScreenViewModel in
+      let viewModel = RegistrationScreenViewModel(router: router)
+      return viewModel
+    }
+    self.container.register(RegistrationScreenViewController.self) { (resolver, router: UnownedRouter<AuthRoute>) -> RegistrationScreenViewController in
+      let viewModel = resolver.resolve(RegistrationScreenViewModel.self, argument: router)
+      let viewController = RegistrationScreenViewController.loadFromStoryboard()
       viewController.viewModel = viewModel
       return viewController
     }

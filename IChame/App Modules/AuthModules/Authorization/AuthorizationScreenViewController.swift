@@ -22,4 +22,7 @@ class AuthorizationScreenViewController: UIViewController {
     super.viewDidLoad()
     
   }
+  @IBAction func acountHaveNotBtnTapped(_ sender: Any) {
+    viewModel.acountHaveNotBtnTapped()
+  }
 }

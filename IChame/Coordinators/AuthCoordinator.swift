@@ -11,6 +11,7 @@ import XCoordinator
 
 enum AuthRoute: Route {
   case authScreen
+  case registrationScreen
 }
 
 class AuthCoordinator: NavigationCoordinator<AuthRoute> {
@@ -25,6 +26,9 @@ class AuthCoordinator: NavigationCoordinator<AuthRoute> {
     switch route {
     case .authScreen:
       let viewController = AuthorizationScreenViewController.instantiate(unownedRouter: self.unownedRouter)
+      return .push(viewController)
+    case .registrationScreen:
+      let viewController = RegistrationScreenViewController.instantiate(unownedRouter: self.unownedRouter)
       return .push(viewController)
     }
   }

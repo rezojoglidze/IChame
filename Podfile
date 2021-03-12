@@ -7,6 +7,8 @@ target 'IChame' do
 
   # Pods for IChame
     pod 'Firebase/Analytics'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Firestore'
     pod 'XCoordinator', '~> 2.0.7'
     pod 'Swinject', '~> 2.7.1'
     pod 'SwiftLint'

@@ -11,7 +11,7 @@ import XCoordinator
 
 protocol AuthorizationScreenViewModelProtocol {
   var router: UnownedRouter<AuthRoute> { get }
-
+  func acountHaveNotBtnTapped()
 }
 
 class AuthorizationScreenViewModel {
@@ -23,5 +23,7 @@ class AuthorizationScreenViewModel {
 }
 
 extension AuthorizationScreenViewModel: AuthorizationScreenViewModelProtocol {
-  
+  func acountHaveNotBtnTapped() {
+    router.trigger(.registrationScreen)
+  }
 }

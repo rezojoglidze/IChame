@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLTGEO-75Bold.otf">
+            <string>HelveticaNeueLTGEO-75Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Authorization Screen View Controller-->
         <scene sceneID="OJM-sz-cpo">
@@ -23,11 +28,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epk-SX-DKZ">
+                                <rect key="frame" x="25" y="808" width="364" height="29"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="14"/>
+                                <state key="normal" title="არ გაქვს ექაუნთი? შევლა"/>
+                                <connections>
+                                    <action selector="acountHaveNotBtnTapped:" destination="xxW-lO-8ZD" eventType="touchUpInside" id="eEH-O8-L30"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OSN-RZ-mqg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aXq-Ch-EWp" firstAttribute="centerX" secondItem="2qs-pQ-auG" secondAttribute="centerX" id="FwQ-Yt-A3d"/>
+                            <constraint firstItem="Epk-SX-DKZ" firstAttribute="leading" secondItem="OSN-RZ-mqg" secondAttribute="leading" constant="25" id="Z6V-E6-oGC"/>
+                            <constraint firstItem="OSN-RZ-mqg" firstAttribute="bottom" secondItem="Epk-SX-DKZ" secondAttribute="bottom" constant="25" id="duF-wn-tX7"/>
+                            <constraint firstItem="OSN-RZ-mqg" firstAttribute="trailing" secondItem="Epk-SX-DKZ" secondAttribute="trailing" constant="25" id="hPF-ah-0Pi"/>
                             <constraint firstItem="aXq-Ch-EWp" firstAttribute="centerY" secondItem="2qs-pQ-auG" secondAttribute="centerY" id="yjN-W1-wgY"/>
                         </constraints>
                     </view>
