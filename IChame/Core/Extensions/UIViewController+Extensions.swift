@@ -36,3 +36,16 @@ extension UIViewController {
     return self.load(from: name) ?? Self.init()
   }
 }
+
+//MARK: Keyboard extensions
+extension UIViewController {
+  func hideKeyboardWhenTappedOutside() {
+    let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+    tap.cancelsTouchesInView = false
+    view.addGestureRecognizer(tap)
+  }
+  
+  @objc func dismissKeyboard() {
+    view.endEditing(true)
+  }
+}

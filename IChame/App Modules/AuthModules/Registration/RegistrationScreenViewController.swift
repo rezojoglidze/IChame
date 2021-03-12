@@ -26,12 +26,12 @@ class RegistrationScreenViewController: UIViewController {
     return viewController
   }
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      registrationBtn.setTitle("რეგისტრაცია".uppercased(), for: .normal)
-    }
-  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    navigationController?.isNavigationBarHidden = false
+    registrationBtn.setTitle("რეგისტრაცია".uppercased(), for: .normal)
+    self.hideKeyboardWhenTappedOutside()
+  }
   
   @IBAction func registrationBtnTapped(_ sender: Any) {
     Auth.auth().createUser(withEmail: emailTextField.text ?? "default", password: passwordTextField.text ?? "default") { [weak self] (authResult, error) in
@@ -41,5 +41,9 @@ class RegistrationScreenViewController: UIViewController {
       }
       print("user -> ", user.email!," created")
     }
+  }
+  
+  @IBAction func alreadyHaveAnAccount(_ sender: Any) {
+    navigationController?.popViewController(animated: true)
   }
 }

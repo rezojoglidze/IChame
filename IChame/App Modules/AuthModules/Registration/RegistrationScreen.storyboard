@@ -31,14 +31,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82X-Nh-cgV">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-Aj-skj">
-                                                <rect key="frame" x="15" y="50" width="144.5" height="43.5"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="რეგისტრაცია" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-Aj-skj">
+                                                <rect key="frame" x="15" y="50" width="198.5" height="35.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="29"/>
                                                 <color key="textColor" red="0.34901960784313724" green="0.66666666666666663" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M4A-j8-XWy">
-                                                <rect key="frame" x="15" y="149.5" width="384" height="254"/>
+                                                <rect key="frame" x="15" y="141.5" width="384" height="254"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="სახელი" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KMr-QO-1qx">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="56"/>
@@ -87,17 +87,20 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="გთხოვთ, შეიყვანეთ დეტალები" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EM-1z-IJI">
-                                                <rect key="frame" x="15" y="98.5" width="384" height="21"/>
+                                                <rect key="frame" x="15" y="90.5" width="384" height="21"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="17"/>
                                                 <color key="textColor" red="0.72156862745098038" green="0.73725490196078436" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3k-0D-oZg">
-                                                <rect key="frame" x="123.5" y="783" width="167" height="29"/>
+                                                <rect key="frame" x="106.5" y="783" width="201" height="29"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-65Medium" family="Helvetica Neue LT GEO" pointSize="14"/>
-                                                <state key="normal" title="გაქვს ექაუნთი? შესვლა">
+                                                <state key="normal" title="უკვე გაქვს ექაუნთი? შესვლა">
                                                     <color key="titleColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="alreadyHaveAnAccount:" destination="CbZ-8K-Zis" eventType="touchUpInside" id="4Iz-Ke-ZS9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

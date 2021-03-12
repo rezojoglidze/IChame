@@ -22,35 +22,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXq-Ch-EWp">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epk-SX-DKZ">
-                                <rect key="frame" x="25" y="808" width="364" height="29"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="14"/>
-                                <state key="normal" title="არ გაქვს ექაუნთი? შევლა"/>
-                                <connections>
-                                    <action selector="acountHaveNotBtnTapped:" destination="xxW-lO-8ZD" eventType="touchUpInside" id="eEH-O8-L30"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0KY-ys-ZkB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTX-8b-YvZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="შესვლა" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzg-Hq-33M">
+                                                <rect key="frame" x="15" y="275.5" width="113.5" height="35.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="29"/>
+                                                <color key="textColor" red="0.34901960780000002" green="0.66666666669999997" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="გთხოვთ, შეიყვანეთ დეტალები" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubn-IV-hmH">
+                                                <rect key="frame" x="15" y="316" width="272" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="17"/>
+                                                <color key="textColor" red="0.72156862749999995" green="0.73725490199999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vBI-ud-GNX">
+                                                <rect key="frame" x="15" y="367" width="384" height="118"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ელ ფოსტა" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jjc-wM-cVc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="54" id="uZY-wL-dR8"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="პაროლი" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZZN-Vo-2lM">
+                                                        <rect key="frame" x="0.0" y="64" width="384" height="54"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <viewLayoutGuide key="safeArea" id="gep-dC-9jI"/>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5X-W3-EO8">
+                                                <rect key="frame" x="15" y="752" width="384" height="56"/>
+                                                <color key="backgroundColor" red="0.2666666667" green="0.66666666669999997" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="IxL-qh-tPc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="17"/>
+                                                <state key="normal" title="შესვლა">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoLocalize" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epk-SX-DKZ">
+                                                <rect key="frame" x="89.5" y="813" width="235" height="29"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="14"/>
+                                                <state key="normal" title="არ გაქვს ექაუნთი? რეგისტრაცია">
+                                                    <color key="titleColor" red="0.67450980392156867" green="0.67843137254901964" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="acountHaveNotBtnTapped:" destination="xxW-lO-8ZD" eventType="touchUpInside" id="eEH-O8-L30"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="vBI-ud-GNX" firstAttribute="centerX" secondItem="FTX-8b-YvZ" secondAttribute="centerX" id="5YW-1i-oZw"/>
+                                            <constraint firstItem="Epk-SX-DKZ" firstAttribute="centerX" secondItem="FTX-8b-YvZ" secondAttribute="centerX" id="AsC-Nw-Hew"/>
+                                            <constraint firstItem="Epk-SX-DKZ" firstAttribute="top" secondItem="s5X-W3-EO8" secondAttribute="bottom" constant="5" id="Jpu-rr-rnN"/>
+                                            <constraint firstItem="Ubn-IV-hmH" firstAttribute="top" secondItem="bzg-Hq-33M" secondAttribute="bottom" constant="5" id="K7I-8j-BJD"/>
+                                            <constraint firstItem="bzg-Hq-33M" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FTX-8b-YvZ" secondAttribute="top" constant="100" id="M9b-4v-EAg"/>
+                                            <constraint firstItem="s5X-W3-EO8" firstAttribute="leading" secondItem="FTX-8b-YvZ" secondAttribute="leading" constant="15" id="QEJ-6I-QOd"/>
+                                            <constraint firstAttribute="trailing" secondItem="vBI-ud-GNX" secondAttribute="trailing" constant="15" id="Wt8-yS-ZGs"/>
+                                            <constraint firstAttribute="bottom" secondItem="Epk-SX-DKZ" secondAttribute="bottom" constant="10" id="YaA-KC-UaX"/>
+                                            <constraint firstItem="vBI-ud-GNX" firstAttribute="top" secondItem="Ubn-IV-hmH" secondAttribute="bottom" constant="30" id="c3X-Q0-8B8"/>
+                                            <constraint firstAttribute="trailing" secondItem="s5X-W3-EO8" secondAttribute="trailing" constant="15" id="fRq-Od-WIz"/>
+                                            <constraint firstItem="vBI-ud-GNX" firstAttribute="centerY" secondItem="FTX-8b-YvZ" secondAttribute="centerY" id="iqd-hl-Irf"/>
+                                            <constraint firstItem="bzg-Hq-33M" firstAttribute="leading" secondItem="FTX-8b-YvZ" secondAttribute="leading" constant="15" id="kWr-IT-rzE"/>
+                                            <constraint firstItem="s5X-W3-EO8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vBI-ud-GNX" secondAttribute="bottom" constant="40" id="mUe-7x-MXS"/>
+                                            <constraint firstItem="Ubn-IV-hmH" firstAttribute="leading" secondItem="FTX-8b-YvZ" secondAttribute="leading" constant="15" id="wNr-gl-h2F"/>
+                                            <constraint firstItem="vBI-ud-GNX" firstAttribute="leading" secondItem="FTX-8b-YvZ" secondAttribute="leading" constant="15" id="z3a-Wo-sa4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FTX-8b-YvZ" secondAttribute="bottom" id="0nL-76-oHp"/>
+                                    <constraint firstAttribute="trailing" secondItem="FTX-8b-YvZ" secondAttribute="trailing" id="Btw-wn-Pmb"/>
+                                    <constraint firstItem="FTX-8b-YvZ" firstAttribute="leading" secondItem="0KY-ys-ZkB" secondAttribute="leading" id="PoJ-B2-Ic5"/>
+                                    <constraint firstItem="FTX-8b-YvZ" firstAttribute="top" secondItem="0KY-ys-ZkB" secondAttribute="top" id="iWj-yo-SvY"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OSN-RZ-mqg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aXq-Ch-EWp" firstAttribute="centerX" secondItem="2qs-pQ-auG" secondAttribute="centerX" id="FwQ-Yt-A3d"/>
-                            <constraint firstItem="Epk-SX-DKZ" firstAttribute="leading" secondItem="OSN-RZ-mqg" secondAttribute="leading" constant="25" id="Z6V-E6-oGC"/>
-                            <constraint firstItem="OSN-RZ-mqg" firstAttribute="bottom" secondItem="Epk-SX-DKZ" secondAttribute="bottom" constant="25" id="duF-wn-tX7"/>
-                            <constraint firstItem="OSN-RZ-mqg" firstAttribute="trailing" secondItem="Epk-SX-DKZ" secondAttribute="trailing" constant="25" id="hPF-ah-0Pi"/>
-                            <constraint firstItem="aXq-Ch-EWp" firstAttribute="centerY" secondItem="2qs-pQ-auG" secondAttribute="centerY" id="yjN-W1-wgY"/>
+                            <constraint firstItem="FTX-8b-YvZ" firstAttribute="width" secondItem="2qs-pQ-auG" secondAttribute="width" id="7Me-Sv-xSa"/>
+                            <constraint firstItem="0KY-ys-ZkB" firstAttribute="trailing" secondItem="OSN-RZ-mqg" secondAttribute="trailing" id="C1v-bD-KXJ"/>
+                            <constraint firstItem="0KY-ys-ZkB" firstAttribute="leading" secondItem="OSN-RZ-mqg" secondAttribute="leading" id="Ogy-U0-I41"/>
+                            <constraint firstItem="FTX-8b-YvZ" firstAttribute="height" secondItem="2qs-pQ-auG" secondAttribute="height" multiplier="0.950893" priority="250" id="PZ3-7B-H5I"/>
+                            <constraint firstAttribute="bottom" secondItem="0KY-ys-ZkB" secondAttribute="bottom" id="W45-En-i3m"/>
+                            <constraint firstItem="0KY-ys-ZkB" firstAttribute="top" secondItem="OSN-RZ-mqg" secondAttribute="top" id="YKb-Wr-LCA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Jjc-wM-cVc" id="2h5-Mz-g76"/>
+                        <outlet property="loginBtn" destination="s5X-W3-EO8" id="Rxm-lg-WfA"/>
+                        <outlet property="passwordTextField" destination="ZZN-Vo-2lM" id="Rw6-aA-BlB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TcN-Mj-CHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="275" y="151"/>
+            <point key="canvasLocation" x="273.91304347826087" y="150.66964285714286"/>
         </scene>
     </scenes>
     <resources>
