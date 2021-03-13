@@ -13,8 +13,11 @@ import RxCocoa
 
 protocol AuthorizationScreenViewModelProtocol {
   var router: UnownedRouter<AuthRoute> { get }
+  
   var userDidLogin: Observable<Void> { get }
+  
   func acountHaveNotBtnTapped()
+  
   func authorization(email: String, password: String, fail: @escaping Network.StatusBlock)
 }
 
@@ -35,6 +38,7 @@ class AuthorizationScreenViewModel {
 extension AuthorizationScreenViewModel: AuthorizationScreenViewModelProtocol {
   func authorization(email: String, password: String, fail: @escaping Network.StatusBlock) {
     userService?.authorization(email: email, password: password, success: { [weak self] (user) in
+      User.current = user
       self?.innerUserDidLogin.accept(())
     }, fail: fail)
   }

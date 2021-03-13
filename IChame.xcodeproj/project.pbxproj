@@ -32,6 +32,7 @@
 		A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */; };
 		A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */; };
 		A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C62A0125F8C9FB00B32D2A /* MainCoordinator.swift */; };
+		A9CB8AF925FD675900AA293C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB8AF825FD675900AA293C /* User.swift */; };
 		A9E729AC25F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */; };
 		A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */; };
 		A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */; };
@@ -66,6 +67,7 @@
 		A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		A9C62A0125F8C9FB00B32D2A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A9CB8AF825FD675900AA293C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-65Medium.otf"; sourceTree = "<group>"; };
 		A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-75Bold.otf"; sourceTree = "<group>"; };
 		A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-55Roman.otf"; sourceTree = "<group>"; };
@@ -183,7 +185,7 @@
 		A940540625FCB0E200AB2F24 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				A940540825FCB10D00AB2F24 /* UserService.swift */,
+				A9CB8AF725FD674B00AA293C /* User */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -221,6 +223,15 @@
 				A987187125FA968600A980E2 /* AuthCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		A9CB8AF725FD674B00AA293C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A9CB8AF825FD675900AA293C /* User.swift */,
+				A940540825FCB10D00AB2F24 /* UserService.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		A9E729A725F7FDEA0056B225 /* Resources */ = {
@@ -427,6 +438,7 @@
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
 				A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */,
+				A9CB8AF925FD675900AA293C /* User.swift in Sources */,
 				A943CBB325FD346B00714021 /* Loader.swift in Sources */,
 				A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */,
 				A91FB32425FAC59100F541FB /* RegistrationScreenViewController.swift in Sources */,

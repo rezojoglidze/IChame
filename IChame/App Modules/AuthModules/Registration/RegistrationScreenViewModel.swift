@@ -14,7 +14,9 @@ import RxCocoa
 
 protocol RegistrationScreenViewModelDelegate {
   var router: UnownedRouter<AuthRoute> { get }
+  
   var userDidRegister: Observable<Void> { get }
+  
   func registration(email: String, password: String, fail: @escaping Network.StatusBlock)
 }
 
@@ -35,7 +37,7 @@ class RegistrationScreenViewModel {
 
 extension RegistrationScreenViewModel: RegistrationScreenViewModelDelegate {
   func registration(email: String, password: String, fail: @escaping Network.StatusBlock) {
-    userService?.registration(email: email, password: password, success: {[weak self] (user) in
+    userService?.registration(email: email, password: password, success: { [weak self] (user) in
       self?.innerUserDidRegister.accept(())
     }, fail: fail)
   }
