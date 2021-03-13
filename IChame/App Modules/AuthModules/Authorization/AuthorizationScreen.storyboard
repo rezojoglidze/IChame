@@ -60,7 +60,7 @@
                                                 <viewLayoutGuide key="safeArea" id="gep-dC-9jI"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5X-W3-EO8">
-                                                <rect key="frame" x="15" y="742" width="384" height="56"/>
+                                                <rect key="frame" x="15" y="752" width="384" height="56"/>
                                                 <color key="backgroundColor" red="0.2666666667" green="0.66666666669999997" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="IxL-qh-tPc"/>
@@ -76,29 +76,40 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autoLocalize" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epk-SX-DKZ">
-                                                <rect key="frame" x="89.5" y="803" width="235" height="29"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="14"/>
-                                                <state key="normal" title="არ გაქვს ექაუნთი? რეგისტრაცია">
-                                                    <color key="titleColor" red="0.67450980392156867" green="0.67843137254901964" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="acountHaveNotBtnTapped:" destination="xxW-lO-8ZD" eventType="touchUpInside" id="eEH-O8-L30"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="J4F-o8-P8k">
+                                                <rect key="frame" x="89" y="813" width="236.5" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="არ გაქვთ ექაუნთი?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dt-rh-dO4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138.5" height="29"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="14"/>
+                                                        <color key="textColor" red="0.67450980392156867" green="0.67843137254901964" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epk-SX-DKZ">
+                                                        <rect key="frame" x="140.5" y="0.0" width="96" height="29"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="14"/>
+                                                        <state key="normal" title="რეგისტრაცია">
+                                                            <color key="titleColor" red="0.36470588235294116" green="0.66274509803921566" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="acountHaveNotBtnTapped:" destination="xxW-lO-8ZD" eventType="touchUpInside" id="eEH-O8-L30"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="vBI-ud-GNX" firstAttribute="centerX" secondItem="FTX-8b-YvZ" secondAttribute="centerX" id="5YW-1i-oZw"/>
-                                            <constraint firstItem="Epk-SX-DKZ" firstAttribute="centerX" secondItem="FTX-8b-YvZ" secondAttribute="centerX" id="AsC-Nw-Hew"/>
-                                            <constraint firstItem="Epk-SX-DKZ" firstAttribute="top" secondItem="s5X-W3-EO8" secondAttribute="bottom" constant="5" id="Jpu-rr-rnN"/>
+                                            <constraint firstItem="J4F-o8-P8k" firstAttribute="top" secondItem="s5X-W3-EO8" secondAttribute="bottom" constant="5" id="7Kt-v1-sg9"/>
                                             <constraint firstItem="Ubn-IV-hmH" firstAttribute="top" secondItem="bzg-Hq-33M" secondAttribute="bottom" constant="5" id="K7I-8j-BJD"/>
                                             <constraint firstItem="bzg-Hq-33M" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FTX-8b-YvZ" secondAttribute="top" constant="100" id="M9b-4v-EAg"/>
                                             <constraint firstItem="s5X-W3-EO8" firstAttribute="leading" secondItem="FTX-8b-YvZ" secondAttribute="leading" constant="15" id="QEJ-6I-QOd"/>
+                                            <constraint firstItem="J4F-o8-P8k" firstAttribute="centerX" secondItem="FTX-8b-YvZ" secondAttribute="centerX" id="Vty-iW-lIo"/>
                                             <constraint firstAttribute="trailing" secondItem="vBI-ud-GNX" secondAttribute="trailing" constant="15" id="Wt8-yS-ZGs"/>
-                                            <constraint firstAttribute="bottom" secondItem="Epk-SX-DKZ" secondAttribute="bottom" constant="20" id="YaA-KC-UaX"/>
                                             <constraint firstItem="vBI-ud-GNX" firstAttribute="top" secondItem="Ubn-IV-hmH" secondAttribute="bottom" constant="30" id="c3X-Q0-8B8"/>
                                             <constraint firstAttribute="trailing" secondItem="s5X-W3-EO8" secondAttribute="trailing" constant="15" id="fRq-Od-WIz"/>
+                                            <constraint firstAttribute="bottom" secondItem="J4F-o8-P8k" secondAttribute="bottom" constant="10" id="gGj-a7-9Do"/>
                                             <constraint firstItem="vBI-ud-GNX" firstAttribute="centerY" secondItem="FTX-8b-YvZ" secondAttribute="centerY" id="iqd-hl-Irf"/>
                                             <constraint firstItem="bzg-Hq-33M" firstAttribute="leading" secondItem="FTX-8b-YvZ" secondAttribute="leading" constant="15" id="kWr-IT-rzE"/>
                                             <constraint firstItem="s5X-W3-EO8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vBI-ud-GNX" secondAttribute="bottom" constant="40" id="mUe-7x-MXS"/>
