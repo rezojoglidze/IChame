@@ -22,7 +22,6 @@ class RegistrationScreenViewModel {
   
   var router: UnownedRouter<AuthRoute>
   var userService: UserService?
-  var user: FirebaseAuth.User?
   
   let userDidRegister: Observable<Void>
   let innerUserDidRegister: PublishRelay<Void> = PublishRelay<Void>()
@@ -37,7 +36,6 @@ class RegistrationScreenViewModel {
 extension RegistrationScreenViewModel: RegistrationScreenViewModelDelegate {
   func registration(email: String, password: String, fail: @escaping Network.StatusBlock) {
     userService?.registration(email: email, password: password, success: {[weak self] (user) in
-      self?.user = user
       self?.innerUserDidRegister.accept(())
     }, fail: fail)
   }

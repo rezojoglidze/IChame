@@ -29,4 +29,18 @@ class UserService {
       print("user -> ", user.email!," created")
     }
   }
+  
+  func authorization(email: String,
+                     password: String,
+                     success: @escaping(FirebaseAuth.User) -> Void,
+                     fail: @escaping Network.StatusBlock) {
+    Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+      guard let user = authResult?.user, error == nil else {
+        fail(error)
+        return
+      }
+      success(user)
+      print("user -> ", user.email!," loged")
+    }
+  }
 }

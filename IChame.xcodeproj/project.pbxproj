@@ -183,17 +183,9 @@
 		A940540625FCB0E200AB2F24 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				A940540725FCB0FD00AB2F24 /* User */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
-		A940540725FCB0FD00AB2F24 /* User */ = {
-			isa = PBXGroup;
-			children = (
 				A940540825FCB10D00AB2F24 /* UserService.swift */,
 			);
-			path = User;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		A940547325FCC9C900AB2F24 /* Localization */ = {

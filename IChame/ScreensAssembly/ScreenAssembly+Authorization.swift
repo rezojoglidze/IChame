@@ -33,8 +33,13 @@ extension ScreensAssembly {
   }
   
   private func setupAuthorizationScreen() {
+    self.container.register(UserService.self) { (_) -> UserService in
+      let userService = UserService()
+      return userService
+    }
     self.container.register(AuthorizationScreenViewModel.self) { (resolver, router: UnownedRouter<AuthRoute>) -> AuthorizationScreenViewModel in
-      let viewModel = AuthorizationScreenViewModel(router: router)
+      let userService = resolver.resolve(UserService.self)
+      let viewModel = AuthorizationScreenViewModel(router: router, userService: userService)
       return viewModel
     }
     self.container.register(AuthorizationScreenViewController.self) { (resolver, router: UnownedRouter<AuthRoute>) -> AuthorizationScreenViewController in

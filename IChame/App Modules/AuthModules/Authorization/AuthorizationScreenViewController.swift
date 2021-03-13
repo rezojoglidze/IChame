@@ -8,6 +8,7 @@
 
 import UIKit
 import XCoordinator
+import RxSwift
 
 class AuthorizationScreenViewController: UIViewController {
   
@@ -16,6 +17,8 @@ class AuthorizationScreenViewController: UIViewController {
   @IBOutlet private weak var emailTextField: UITextField!
   @IBOutlet private weak var passwordTextField: UITextField!
   
+  private var disposeBag = DisposeBag()
+
   static func instantiate(unownedRouter: UnownedRouter<AuthRoute>) -> Self {
     let viewController = ScreensAssembly.shared.container.resolve(Self.self, argument: unownedRouter) ?? .init()
     return viewController
@@ -25,11 +28,31 @@ class AuthorizationScreenViewController: UIViewController {
     super.viewDidLoad()
     loginBtn.setTitle("შესვლა".uppercased(), for: .normal)
     self.hideKeyboardWhenTappedOutside()
+    setupObservables()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.isNavigationBarHidden = true
+  }
+  
+  func setupObservables() {
+    viewModel.userDidLogin.subscribe(onNext: { [weak self] in
+      self?.stopLoader()
+    }).disposed(by: disposeBag)
+  }
+  
+  func checkValidation() {
+    if emailTextField.string.isEmpty || passwordTextField.string.isEmpty {
+      showAlert(text: "გთხოვთ, შეავსოთ სავალდებულო ველები.")
+      return
+    }
+    self.startLoader()
+    viewModel.authorization(email: emailTextField.string, password: passwordTextField.string, fail: self.standardFailBlock)
+  }
+  
+  @IBAction func loginBtnTapped(_ sender: Any) {
+    checkValidation()
   }
   
   @IBAction func acountHaveNotBtnTapped(_ sender: Any) {
