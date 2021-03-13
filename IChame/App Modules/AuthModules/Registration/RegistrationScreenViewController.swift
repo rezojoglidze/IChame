@@ -31,6 +31,7 @@ class RegistrationScreenViewController: UIViewController {
     super.viewDidLoad()
     registrationBtn.setTitle("რეგისტრაცია".uppercased(), for: .normal)
     self.hideKeyboardWhenTappedOutside()
+    setupObservables()
   }
   
   override func viewWillAppear(_ animated: Bool) {
