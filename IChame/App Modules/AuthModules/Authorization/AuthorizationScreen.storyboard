@@ -60,7 +60,7 @@
                                                 <viewLayoutGuide key="safeArea" id="gep-dC-9jI"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5X-W3-EO8">
-                                                <rect key="frame" x="15" y="752" width="384" height="56"/>
+                                                <rect key="frame" x="15" y="722" width="384" height="56"/>
                                                 <color key="backgroundColor" red="0.2666666667" green="0.66666666669999997" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="IxL-qh-tPc"/>
@@ -70,14 +70,13 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoLocalize" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epk-SX-DKZ">
-                                                <rect key="frame" x="89.5" y="813" width="235" height="29"/>
+                                                <rect key="frame" x="89.5" y="783" width="235" height="29"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="14"/>
                                                 <state key="normal" title="არ გაქვს ექაუნთი? რეგისტრაცია">
                                                     <color key="titleColor" red="0.67450980392156867" green="0.67843137254901964" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,7 +95,7 @@
                                             <constraint firstItem="bzg-Hq-33M" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FTX-8b-YvZ" secondAttribute="top" constant="100" id="M9b-4v-EAg"/>
                                             <constraint firstItem="s5X-W3-EO8" firstAttribute="leading" secondItem="FTX-8b-YvZ" secondAttribute="leading" constant="15" id="QEJ-6I-QOd"/>
                                             <constraint firstAttribute="trailing" secondItem="vBI-ud-GNX" secondAttribute="trailing" constant="15" id="Wt8-yS-ZGs"/>
-                                            <constraint firstAttribute="bottom" secondItem="Epk-SX-DKZ" secondAttribute="bottom" constant="10" id="YaA-KC-UaX"/>
+                                            <constraint firstAttribute="bottom" secondItem="Epk-SX-DKZ" secondAttribute="bottom" constant="40" id="YaA-KC-UaX"/>
                                             <constraint firstItem="vBI-ud-GNX" firstAttribute="top" secondItem="Ubn-IV-hmH" secondAttribute="bottom" constant="30" id="c3X-Q0-8B8"/>
                                             <constraint firstAttribute="trailing" secondItem="s5X-W3-EO8" secondAttribute="trailing" constant="15" id="fRq-Od-WIz"/>
                                             <constraint firstItem="vBI-ud-GNX" firstAttribute="centerY" secondItem="FTX-8b-YvZ" secondAttribute="centerY" id="iqd-hl-Irf"/>

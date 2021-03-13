@@ -7,19 +7,20 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
 import XCoordinator
+import RxSwift
 
 class RegistrationScreenViewController: UIViewController {
 
   var viewModel: RegistrationScreenViewModelDelegate!
   
-  @IBOutlet weak var nameTextField: UITextField!
-  @IBOutlet weak var emailTextField: UITextField!
-  @IBOutlet weak var passwordTextField: UITextField!
-  @IBOutlet weak var repeatPasswordTextField: UITextField!
-  @IBOutlet weak var registrationBtn: UIButton!
+  @IBOutlet private weak var nameTextField: UITextField!
+  @IBOutlet private weak var emailTextField: UITextField!
+  @IBOutlet private weak var passwordTextField: UITextField!
+  @IBOutlet private weak var repeatPasswordTextField: UITextField!
+  @IBOutlet private weak var registrationBtn: UIButton!
+  
+  private var disposeBag = DisposeBag()
   
   static func instantiate(unownedRouter: UnownedRouter<AuthRoute>) -> Self {
     let viewController = ScreensAssembly.shared.container.resolve(Self.self, argument: unownedRouter) ?? .init()
@@ -28,19 +29,44 @@ class RegistrationScreenViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    navigationController?.isNavigationBarHidden = false
     registrationBtn.setTitle("რეგისტრაცია".uppercased(), for: .normal)
     self.hideKeyboardWhenTappedOutside()
   }
   
-  @IBAction func registrationBtnTapped(_ sender: Any) {
-    Auth.auth().createUser(withEmail: emailTextField.text ?? "default", password: passwordTextField.text ?? "default") { [weak self] (authResult, error) in
-      guard let user = authResult?.user, error == nil else {
-        print("error", error ?? "dd")
-        return
-      }
-      print("user -> ", user.email!," created")
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.isNavigationBarHidden = false
+  }
+  
+  private func setupObservables() {
+    viewModel.userDidRegister.subscribe(onNext: { [weak self] in
+      self?.resetTextFields()
+    }).disposed(by: disposeBag)
+  }
+  
+  private func resetTextFields() {
+    [nameTextField,emailTextField,passwordTextField,repeatPasswordTextField].forEach { (textField) in
+      textField?.text = ""
     }
+    
+    showAlert(text: "თქვენ წარმატებით დარეგისტრირდით!")
+  }
+  
+  private func checkValidation() {
+    if nameTextField.string.isEmpty || emailTextField.string.isEmpty ||
+        passwordTextField.string.isEmpty || repeatPasswordTextField.string.isEmpty {
+      showAlert(text: "გთხოვთ, შეავსოთ ყველა სავალდებულო ველი.")
+      return
+    }
+    if passwordTextField.string != repeatPasswordTextField.string {
+      showAlert(text: "პაროლები ერთმანეთს არ ემთხვევა")
+      return
+    }
+    viewModel.registration(email: emailTextField.string, password: passwordTextField.string, fail: self.standardFailBlock)
+  }
+  
+  @IBAction func registrationBtnTapped(_ sender: Any) {
+    checkValidation()
   }
   
   @IBAction func alreadyHaveAnAccount(_ sender: Any) {

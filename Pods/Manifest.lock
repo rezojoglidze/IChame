@@ -324,12 +324,19 @@ PODS:
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.5.0)
   - leveldb-library (1.22.1)
+  - Localize (2.3.0)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
     - nanopb/encode (= 2.30907.0)
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxSwift (6.1.0)
   - SwiftLint (0.43.0)
   - Swinject (2.7.1)
   - XCoordinator (2.0.7):
@@ -340,6 +347,9 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
+  - Localize
+  - RxCocoa (= 6.1.0)
+  - RxSwift (= 6.1.0)
   - SwiftLint
   - Swinject (~> 2.7.1)
   - XCoordinator (~> 2.0.7)
@@ -362,8 +372,12 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - leveldb-library
+    - Localize
     - nanopb
     - PromisesObjC
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SwiftLint
     - Swinject
     - XCoordinator
@@ -385,12 +399,16 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  Localize: cb1ae53ed73decaad0dce217806ed983091913f5
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SwiftLint: 0c645fdc6feed3e390c1701ab3cc669f88b42752
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: 14b9f84b25407a1816652f0f9089ba204a39c670
+PODFILE CHECKSUM: 865b266d77865e85beabe345d1693dd6e811443b
 
 COCOAPODS: 1.10.1

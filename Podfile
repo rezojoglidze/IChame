@@ -12,5 +12,8 @@ target 'IChame' do
     pod 'XCoordinator', '~> 2.0.7'
     pod 'Swinject', '~> 2.7.1'
     pod 'SwiftLint'
+    pod 'RxSwift', '6.1.0'
+    pod 'RxCocoa', '6.1.0'
+    pod 'Localize'
 
 end

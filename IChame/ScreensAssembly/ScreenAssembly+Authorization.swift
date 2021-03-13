@@ -46,8 +46,13 @@ extension ScreensAssembly {
   }
   
   private func setupRegistrationScreen() {
+    self.container.register(UserService.self) { (_) -> UserService in
+      let userService = UserService()
+      return userService
+    }
     self.container.register(RegistrationScreenViewModel.self) { (resolver, router: UnownedRouter<AuthRoute>) -> RegistrationScreenViewModel in
-      let viewModel = RegistrationScreenViewModel(router: router)
+      let userService = resolver.resolve(UserService.self)
+      let viewModel = RegistrationScreenViewModel(router: router, userService: userService)
       return viewModel
     }
     self.container.register(RegistrationScreenViewController.self) { (resolver, router: UnownedRouter<AuthRoute>) -> RegistrationScreenViewController in

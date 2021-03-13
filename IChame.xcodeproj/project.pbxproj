@@ -17,6 +17,10 @@
 		A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */; };
 		A937603A25FAB30300F5E645 /* Animation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A937603925FAB30300F5E645 /* Animation+Extensions.swift */; };
 		A937603F25FAB33E00F5E645 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A937603E25FAB33E00F5E645 /* Constants.swift */; };
+		A940540925FCB10D00AB2F24 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940540825FCB10D00AB2F24 /* UserService.swift */; };
+		A940543D25FCC0AC00AB2F24 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940543C25FCC0AC00AB2F24 /* UITextField+Extensions.swift */; };
+		A94054A925FCCBFA00AB2F24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A94054A825FCCBFA00AB2F24 /* Localizable.strings */; };
+		A94054AD25FCCE7600AB2F24 /* LocalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94054AC25FCCE7600AB2F24 /* LocalString.swift */; };
 		A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184425FA869400A980E2 /* ScreensAssembly.swift */; };
 		A987184925FA875E00A980E2 /* ScreenAssembly+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */; };
 		A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */; };
@@ -47,6 +51,10 @@
 		A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A937603925FAB30300F5E645 /* Animation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Extensions.swift"; sourceTree = "<group>"; };
 		A937603E25FAB33E00F5E645 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A940540825FCB10D00AB2F24 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A940543C25FCC0AC00AB2F24 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		A94054A825FCCBFA00AB2F24 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A94054AC25FCCE7600AB2F24 /* LocalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalString.swift; sourceTree = "<group>"; };
 		A987184425FA869400A980E2 /* ScreensAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensAssembly.swift; sourceTree = "<group>"; };
 		A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Authorization.swift"; sourceTree = "<group>"; };
 		A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 				A9E729B125F7FE130056B225 /* Core */,
 				A987184325FA867B00A980E2 /* ScreensAssembly */,
 				A9C62A0025F8C9E400B32D2A /* Coordinators */,
+				A940540525FCB0C600AB2F24 /* Services */,
 				A92AE69125F7FEAD00D1D00A /* App Modules */,
 				A9E729A725F7FDEA0056B225 /* Resources */,
 			);
@@ -149,6 +158,7 @@
 			children = (
 				A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */,
 				A937603925FAB30300F5E645 /* Animation+Extensions.swift */,
+				A940543C25FCC0AC00AB2F24 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,6 +169,46 @@
 				A937603E25FAB33E00F5E645 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		A940540525FCB0C600AB2F24 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A940540625FCB0E200AB2F24 /* Authentication */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A940540625FCB0E200AB2F24 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A940540725FCB0FD00AB2F24 /* User */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A940540725FCB0FD00AB2F24 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A940540825FCB10D00AB2F24 /* UserService.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		A940547325FCC9C900AB2F24 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A94054A825FCCBFA00AB2F24 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		A94054AB25FCCE6700AB2F24 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A94054AC25FCCE7600AB2F24 /* LocalString.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		A987184325FA867B00A980E2 /* ScreensAssembly */ = {
@@ -192,6 +242,7 @@
 		A9E729A725F7FDEA0056B225 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A940547325FCC9C900AB2F24 /* Localization */,
 				A9E729B025F7FDFE0056B225 /* Supporting Files */,
 				A90D721425F7FBE200BA697A /* Assets.xcassets */,
 				A9E729A825F7FDF30056B225 /* Fonts */,
@@ -221,6 +272,7 @@
 		A9E729B125F7FE130056B225 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A94054AB25FCCE6700AB2F24 /* Utilities */,
 				A937603D25FAB32B00F5E645 /* Constants */,
 				A937603825FAB2EF00F5E645 /* Extensions */,
 				A9E729B225F7FE1D0056B225 /* App */,
@@ -298,6 +350,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ka,
 			);
 			mainGroup = A90D71FF25F7FBE100BA697A;
 			productRefGroup = A90D720925F7FBE100BA697A /* Products */;
@@ -318,6 +371,7 @@
 				A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */,
 				A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */,
 				A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */,
+				A94054A925FCCBFA00AB2F24 /* Localizable.strings in Resources */,
 				A90D721525F7FBE200BA697A /* Assets.xcassets in Resources */,
 				A987188B25FA9F4200A980E2 /* AuthorizationScreen.storyboard in Resources */,
 				A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */,
@@ -377,6 +431,7 @@
 				A937603A25FAB30300F5E645 /* Animation+Extensions.swift in Sources */,
 				A987187225FA968600A980E2 /* AuthCoordinator.swift in Sources */,
 				A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */,
+				A940543D25FCC0AC00AB2F24 /* UITextField+Extensions.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
 				A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */,
@@ -386,8 +441,10 @@
 				A987184925FA875E00A980E2 /* ScreenAssembly+Authorization.swift in Sources */,
 				A987187525FA98F300A980E2 /* AuthorizationScreenViewModel.swift in Sources */,
 				A91FB32725FAC5A100F541FB /* RegistrationScreenViewModel.swift in Sources */,
+				A940540925FCB10D00AB2F24 /* UserService.swift in Sources */,
 				A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */,
 				A987186D25FA961F00A980E2 /* AuthorizationScreenViewController.swift in Sources */,
+				A94054AD25FCCE7600AB2F24 /* LocalString.swift in Sources */,
 				A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
