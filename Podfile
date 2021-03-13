@@ -14,6 +14,6 @@ target 'IChame' do
     pod 'SwiftLint'
     pod 'RxSwift', '6.1.0'
     pod 'RxCocoa', '6.1.0'
-    pod 'Localize'
+    pod 'MBProgressHUD'
 
 end

@@ -56,6 +56,7 @@ extension UIViewController {
   var standardFailBlock: Network.StatusBlock {
     return { [weak self] error in
       guard let errorMsg = error?.localizedDescription else { return }
+      self?.stopLoader()
       self?.showAlert(text: errorMsg)
     }
   }
@@ -64,5 +65,16 @@ func showAlert(text: String) {
     let alert = UIAlertController(title: text, message: nil, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "გასაგებია", style: .cancel, handler: nil))
     self.present(alert, animated: true, completion: nil)
+  }
+}
+
+//MARK: Loader
+extension UIViewController {
+  func startLoader() {
+    self.view.startLoader()
+  }
+  
+  func stopLoader() {
+    self.view.stopLoader()
   }
 }

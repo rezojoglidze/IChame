@@ -11,7 +11,7 @@ import XCoordinator
 import RxSwift
 
 class RegistrationScreenViewController: UIViewController {
-
+  
   var viewModel: RegistrationScreenViewModelDelegate!
   
   @IBOutlet private weak var nameTextField: UITextField!
@@ -41,6 +41,7 @@ class RegistrationScreenViewController: UIViewController {
   
   private func setupObservables() {
     viewModel.userDidRegister.subscribe(onNext: { [weak self] in
+      self?.stopLoader()
       self?.resetTextFields()
     }).disposed(by: disposeBag)
   }
@@ -49,7 +50,6 @@ class RegistrationScreenViewController: UIViewController {
     [nameTextField,emailTextField,passwordTextField,repeatPasswordTextField].forEach { (textField) in
       textField?.text = ""
     }
-    
     showAlert(text: "თქვენ წარმატებით დარეგისტრირდით!")
   }
   
@@ -63,6 +63,7 @@ class RegistrationScreenViewController: UIViewController {
       showAlert(text: "პაროლები ერთმანეთს არ ემთხვევა")
       return
     }
+    self.startLoader()
     viewModel.registration(email: emailTextField.string, password: passwordTextField.string, fail: self.standardFailBlock)
   }
   
