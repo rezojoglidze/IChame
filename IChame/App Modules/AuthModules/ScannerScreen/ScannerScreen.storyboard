@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLTGEO-75Bold.otf">
+            <string>HelveticaNeueLTGEO-75Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Scanner Screen View Controller-->
         <scene sceneID="B1W-8I-sv2">
@@ -24,10 +29,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6K-4t-5Rs">
+                                <rect key="frame" x="15" y="783" width="384" height="54"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.66666666669999997" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="22n-A0-DZM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="17"/>
+                                <state key="normal" title="სკანირება">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoLocalize" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="scanInModalAction:" destination="vCJ-jB-Bfh" eventType="touchUpInside" id="RdO-QD-vD3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PSA-wW-hSj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T6K-4t-5Rs" firstAttribute="leading" secondItem="PSA-wW-hSj" secondAttribute="leading" constant="15" id="FZJ-Co-wZd"/>
+                            <constraint firstItem="PSA-wW-hSj" firstAttribute="trailing" secondItem="T6K-4t-5Rs" secondAttribute="trailing" constant="15" id="XPr-TZ-0AL"/>
+                            <constraint firstItem="PSA-wW-hSj" firstAttribute="bottom" secondItem="T6K-4t-5Rs" secondAttribute="bottom" constant="25" id="iye-Ks-MeN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scannerBtn" destination="T6K-4t-5Rs" id="UVR-T9-5BE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4HC-Tb-teE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

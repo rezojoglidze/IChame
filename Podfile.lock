@@ -331,6 +331,7 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - QRCodeReader.swift (10.1.0)
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
@@ -348,6 +349,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - MBProgressHUD
+  - QRCodeReader.swift (~> 10.1.0)
   - RxCocoa (= 6.1.0)
   - RxSwift (= 6.1.0)
   - SwiftLint
@@ -375,6 +377,7 @@ SPEC REPOS:
     - MBProgressHUD
     - nanopb
     - PromisesObjC
+    - QRCodeReader.swift
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -402,6 +405,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  QRCodeReader.swift: 373a389fe9a22d513c879a32a6f647c58f4ef572
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
@@ -409,6 +413,6 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: d0ca6df1cf309578a225286118cd463ed3872ec8
+PODFILE CHECKSUM: 91db413c23222ac4fcc8194bfbbd9651758d22b7
 
 COCOAPODS: 1.10.1

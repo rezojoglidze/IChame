@@ -15,5 +15,6 @@ target 'IChame' do
     pod 'RxSwift', '6.1.0'
     pod 'RxCocoa', '6.1.0'
     pod 'MBProgressHUD'
+    pod 'QRCodeReader.swift', '~> 10.1.0'
 
 end
