@@ -16,6 +16,7 @@ extension ScreensAssembly {
     setupSplashScreen()
     setupAuthorizationScreen()
     setupRegistrationScreen()
+    setupScannerScreen()
   }
   
   private func setupSplashScreen() {
@@ -65,6 +66,19 @@ extension ScreensAssembly {
       let viewController = RegistrationScreenViewController.loadFromStoryboard()
       viewController.viewModel = viewModel
       return viewController
+    }
+  }
+  
+  private func setupScannerScreen() {
+    self.container.register(ScannerScreenViewController.self) { (resolver, router: UnownedRouter<AuthRoute>) -> ScannerScreenViewController in
+      let viewModel = resolver.resolve(ScannerScreenViewModel.self, argument: router)
+      let viewController = ScannerScreenViewController.loadFromStoryboard()
+      viewController.viewModel = viewModel
+      return viewController
+    }
+    self.container.register(ScannerScreenViewModel.self) { (resolver, router: UnownedRouter<AuthRoute>) -> ScannerScreenViewModel in
+      let viewModel = ScannerScreenViewModel(router: router)
+      return viewModel
     }
   }
 }

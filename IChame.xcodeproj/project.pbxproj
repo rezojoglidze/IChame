@@ -28,6 +28,9 @@
 		A987187225FA968600A980E2 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987187125FA968600A980E2 /* AuthCoordinator.swift */; };
 		A987187525FA98F300A980E2 /* AuthorizationScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987187425FA98F300A980E2 /* AuthorizationScreenViewModel.swift */; };
 		A987188B25FA9F4200A980E2 /* AuthorizationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A987188A25FA9F4200A980E2 /* AuthorizationScreen.storyboard */; };
+		A994E67425FE511B004BFBE6 /* ScannerScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A994E67325FE511B004BFBE6 /* ScannerScreen.storyboard */; };
+		A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994E67625FE512C004BFBE6 /* ScannerScreenViewController.swift */; };
+		A994E67A25FE513A004BFBE6 /* ScannerScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994E67925FE513A004BFBE6 /* ScannerScreenViewModel.swift */; };
 		A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */; };
 		A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */; };
 		A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */; };
@@ -63,6 +66,9 @@
 		A987187125FA968600A980E2 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		A987187425FA98F300A980E2 /* AuthorizationScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreenViewModel.swift; sourceTree = "<group>"; };
 		A987188A25FA9F4200A980E2 /* AuthorizationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthorizationScreen.storyboard; sourceTree = "<group>"; };
+		A994E67325FE511B004BFBE6 /* ScannerScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScannerScreen.storyboard; sourceTree = "<group>"; };
+		A994E67625FE512C004BFBE6 /* ScannerScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerScreenViewController.swift; sourceTree = "<group>"; };
+		A994E67925FE513A004BFBE6 /* ScannerScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerScreenViewModel.swift; sourceTree = "<group>"; };
 		A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				A9C629F525F8C7F200B32D2A /* SplashScreen */,
 				A91FB31F25FAC55600F541FB /* Registration */,
 				A92AE69825F8013F00D1D00A /* Authorization */,
+				A994E67225FE50E4004BFBE6 /* ScannerScreen */,
 			);
 			path = AuthModules;
 			sourceTree = "<group>";
@@ -204,6 +211,16 @@
 				A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */,
 			);
 			path = ScreensAssembly;
+			sourceTree = "<group>";
+		};
+		A994E67225FE50E4004BFBE6 /* ScannerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A994E67325FE511B004BFBE6 /* ScannerScreen.storyboard */,
+				A994E67625FE512C004BFBE6 /* ScannerScreenViewController.swift */,
+				A994E67925FE513A004BFBE6 /* ScannerScreenViewModel.swift */,
+			);
+			path = ScannerScreen;
 			sourceTree = "<group>";
 		};
 		A9C629F525F8C7F200B32D2A /* SplashScreen */ = {
@@ -370,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A994E67425FE511B004BFBE6 /* ScannerScreen.storyboard in Resources */,
 				A9E729AC25F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf in Resources */,
 				A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */,
 				A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */,
@@ -436,6 +454,7 @@
 				A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */,
 				A940543D25FCC0AC00AB2F24 /* UITextField+Extensions.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
+				A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
 				A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */,
 				A9CB8AF925FD675900AA293C /* User.swift in Sources */,
@@ -448,6 +467,7 @@
 				A91FB32725FAC5A100F541FB /* RegistrationScreenViewModel.swift in Sources */,
 				A940540925FCB10D00AB2F24 /* UserService.swift in Sources */,
 				A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */,
+				A994E67A25FE513A004BFBE6 /* ScannerScreenViewModel.swift in Sources */,
 				A987186D25FA961F00A980E2 /* AuthorizationScreenViewController.swift in Sources */,
 				A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */,
 			);

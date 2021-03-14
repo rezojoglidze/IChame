@@ -39,6 +39,7 @@ class AuthorizationScreenViewController: UIViewController {
   func setupObservables() {
     viewModel.userDidLogin.subscribe(onNext: { [weak self] in
       self?.stopLoader()
+      self?.viewModel.triggerAuthorizationCompletion()
     }).disposed(by: disposeBag)
   }
   

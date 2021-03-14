@@ -19,6 +19,8 @@ protocol AuthorizationScreenViewModelProtocol {
   func acountHaveNotBtnTapped()
   
   func authorization(email: String, password: String, fail: @escaping Network.StatusBlock)
+  
+  func triggerAuthorizationCompletion()
 }
 
 class AuthorizationScreenViewModel {
@@ -36,6 +38,10 @@ class AuthorizationScreenViewModel {
 }
 
 extension AuthorizationScreenViewModel: AuthorizationScreenViewModelProtocol {
+  func triggerAuthorizationCompletion() {
+    router.trigger(.scannerScreen)
+  }
+  
   func authorization(email: String, password: String, fail: @escaping Network.StatusBlock) {
     userService?.authorization(email: email, password: password, success: { [weak self] (user) in
       User.current = user
