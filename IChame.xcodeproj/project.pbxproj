@@ -35,6 +35,8 @@
 		A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */; };
 		A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */; };
 		A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C62A0125F8C9FB00B32D2A /* MainCoordinator.swift */; };
+		A9C988E026015577005BECDF /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C988DF26015577005BECDF /* MenuService.swift */; };
+		A9C988E7260156B9005BECDF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C988E6260156B9005BECDF /* Menu.swift */; };
 		A9CB8AF925FD675900AA293C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB8AF825FD675900AA293C /* User.swift */; };
 		A9E729AC25F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */; };
 		A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */; };
@@ -73,6 +75,8 @@
 		A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		A9C62A0125F8C9FB00B32D2A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A9C988DF26015577005BECDF /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
+		A9C988E6260156B9005BECDF /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		A9CB8AF825FD675900AA293C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-65Medium.otf"; sourceTree = "<group>"; };
 		A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-75Bold.otf"; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 		A940540525FCB0C600AB2F24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A9C988E32601567F005BECDF /* Menu */,
 				A940540625FCB0E200AB2F24 /* Authentication */,
 			);
 			path = Services;
@@ -240,6 +245,15 @@
 				A987187125FA968600A980E2 /* AuthCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		A9C988E32601567F005BECDF /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A9C988E6260156B9005BECDF /* Menu.swift */,
+				A9C988DF26015577005BECDF /* MenuService.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		A9CB8AF725FD674B00AA293C /* User */ = {
@@ -453,6 +467,7 @@
 				A943CBD425FD355200714021 /* UIView+Extensions.swift in Sources */,
 				A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */,
 				A940543D25FCC0AC00AB2F24 /* UITextField+Extensions.swift in Sources */,
+				A9C988E026015577005BECDF /* MenuService.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
 				A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
@@ -465,6 +480,7 @@
 				A987184925FA875E00A980E2 /* ScreenAssembly+Authorization.swift in Sources */,
 				A987187525FA98F300A980E2 /* AuthorizationScreenViewModel.swift in Sources */,
 				A91FB32725FAC5A100F541FB /* RegistrationScreenViewModel.swift in Sources */,
+				A9C988E7260156B9005BECDF /* Menu.swift in Sources */,
 				A940540925FCB10D00AB2F24 /* UserService.swift in Sources */,
 				A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */,
 				A994E67A25FE513A004BFBE6 /* ScannerScreenViewModel.swift in Sources */,

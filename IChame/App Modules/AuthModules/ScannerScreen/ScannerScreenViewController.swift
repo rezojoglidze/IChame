@@ -10,12 +10,14 @@ import UIKit
 import XCoordinator
 import AVFoundation
 import QRCodeReader
+import RxSwift
 
 class ScannerScreenViewController: UIViewController {
   
   var viewModel: ScannerScreenViewModelProocol!
   
   @IBOutlet weak var scannerBtn: UIButton!
+  private var disposeBag = DisposeBag()
   
   lazy var readerVC: QRCodeReaderViewController = {
     let builder = QRCodeReaderViewControllerBuilder {
@@ -38,20 +40,59 @@ class ScannerScreenViewController: UIViewController {
     super.viewDidLoad()
     navigationController?.isNavigationBarHidden = false
     scannerBtn.setTitle("სკანირება".uppercased(), for: .normal)
+    setupObservables()
   }
   
-  @IBAction func scanInModalAction(_ sender: AnyObject) {
-    guard checkScanPermissions() else { return }
-    readerVC.modalPresentationStyle = .formSheet
-    readerVC.delegate               = self
-    readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-      if let result = result {
-        print("Completion with result: \(result.value) of type \(result.metadataType)")
+  private func setupObservables() {
+    viewModel.menuDidLoaded.subscribe(onNext: {
+      self.stopLoader()
+    }).disposed(by: disposeBag)
+  }
+  
+  @IBAction func scannerBtnTapped(_ sender: AnyObject) {
+    self.startLoader()
+    
+    if !Constants.isNeededQRScanner {
+      viewModel.getMenu(docId: Constants.menuId, fail: self.standardFailBlock)
+    } else {
+      guard checkScanPermissions() else { return }
+      readerVC.modalPresentationStyle = .formSheet
+      readerVC.delegate               = self
+      readerVC.completionBlock = { (result: QRCodeReaderResult?) in
+        if let result = result {
+          print("menuId: \(result.value)")
+        }
       }
+      present(readerVC, animated: true, completion: nil)
     }
-    present(readerVC, animated: true, completion: nil)
+  }
+}
+
+//MARK: QRCodeReaderViewControllerDelegate
+extension ScannerScreenViewController: QRCodeReaderViewControllerDelegate {
+  func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
+    reader.stopScanning()
+    dismiss(animated: true) { [weak self] in
+      //      let alert = UIAlertController(title: result.value, message: nil, preferredStyle: .alert)
+      //      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+      //      self?.present(alert, animated: true, completion: nil)
+      guard let self = self else { return }
+      self.viewModel.getMenu(docId: result.value, fail: self.standardFailBlock)
+    }
   }
   
+  func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
+    print("Switching capture to: \(newCaptureDevice.device.localizedName)")
+  }
+  
+  func readerDidCancel(_ reader: QRCodeReaderViewController) {
+    reader.stopScanning()
+    dismiss(animated: true, completion: nil)
+  }
+}
+
+//MARK: QRSCanner Persmission
+extension ScannerScreenViewController {
   private func checkScanPermissions() -> Bool {
     do {
       return try QRCodeReader.supportsMetadataObjectTypes()
@@ -75,26 +116,5 @@ class ScannerScreenViewController: UIViewController {
       present(alert, animated: true, completion: nil)
       return false
     }
-  }
-}
-
-//MARK: QRCodeReaderViewControllerDelegate
-extension ScannerScreenViewController: QRCodeReaderViewControllerDelegate {
-  func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
-    reader.stopScanning()
-    dismiss(animated: true) { [weak self] in
-      let alert = UIAlertController(title: result.value, message: nil, preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-      self?.present(alert, animated: true, completion: nil)
-    }
-  }
-  
-  func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
-    print("Switching capture to: \(newCaptureDevice.device.localizedName)")
-  }
-  
-  func readerDidCancel(_ reader: QRCodeReaderViewController) {
-    reader.stopScanning()
-    dismiss(animated: true, completion: nil)
   }
 }

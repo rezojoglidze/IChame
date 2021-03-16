@@ -70,6 +70,10 @@ extension ScreensAssembly {
   }
   
   private func setupScannerScreen() {
+    self.container.register(MenuService.self) { (_) -> MenuService in
+      let menuService = MenuService()
+      return menuService
+    }
     self.container.register(ScannerScreenViewController.self) { (resolver, router: UnownedRouter<AuthRoute>) -> ScannerScreenViewController in
       let viewModel = resolver.resolve(ScannerScreenViewModel.self, argument: router)
       let viewController = ScannerScreenViewController.loadFromStoryboard()
@@ -77,7 +81,8 @@ extension ScreensAssembly {
       return viewController
     }
     self.container.register(ScannerScreenViewModel.self) { (resolver, router: UnownedRouter<AuthRoute>) -> ScannerScreenViewModel in
-      let viewModel = ScannerScreenViewModel(router: router)
+      let menuService = resolver.resolve(MenuService.self)
+      let viewModel = ScannerScreenViewModel(router: router, menuService: menuService)
       return viewModel
     }
   }
