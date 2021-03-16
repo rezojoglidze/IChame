@@ -8,6 +8,7 @@
 
 import Foundation
 import XCoordinator
+import FirebaseAuth
 
 protocol SplashScreenViewModelProtocol {
   var router: UnownedRouter<MainRoute> { get }
@@ -25,6 +26,11 @@ class SplashScreenViewModel {
 
 extension SplashScreenViewModel: SplashScreenViewModelProtocol {
   func triggerSplashScreenCompletion() {
-    router.trigger(.authorizationScreen(initialRoute: .authScreen))
+    if let user = Auth.auth().currentUser {
+      User.current = user
+      router.trigger(.authorizationScreen(initialRoute: .scannerScreen))
+    } else {
+      router.trigger(.authorizationScreen(initialRoute: .authScreen))
+    }
   }
 }

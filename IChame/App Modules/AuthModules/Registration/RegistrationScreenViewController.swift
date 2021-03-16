@@ -19,6 +19,7 @@ class RegistrationScreenViewController: UIViewController {
   @IBOutlet private weak var passwordTextField: UITextField!
   @IBOutlet private weak var repeatPasswordTextField: UITextField!
   @IBOutlet private weak var registrationBtn: UIButton!
+  @IBOutlet private weak var scrollView: UIScrollView!
   
   private var disposeBag = DisposeBag()
   
@@ -37,6 +38,11 @@ class RegistrationScreenViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.isNavigationBarHidden = false
+    setupKeyboardObservers()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    removeKeyboardObservers()
   }
   
   private func setupObservables() {
@@ -51,6 +57,32 @@ class RegistrationScreenViewController: UIViewController {
       textField?.text = ""
     }
     showAlert(text: "თქვენ წარმატებით დარეგისტრირდით!")
+  }
+  
+  private func setupKeyboardObservers() {
+    let notificationCenter = NotificationCenter.default
+    notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+    notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+  }
+  
+  @objc private func adjustForKeyboard(notification: Notification) {
+    guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+    
+    let keyboardScreenEndFrame = keyboardValue.cgRectValue
+    let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+    
+    if notification.name == UIResponder.keyboardWillHideNotification {
+      scrollView.contentInset = .zero
+    } else {
+      scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+    }
+    
+    scrollView.scrollIndicatorInsets = scrollView.contentInset
+  }
+  
+  private func removeKeyboardObservers() {
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
   }
   
   private func checkValidation() {
