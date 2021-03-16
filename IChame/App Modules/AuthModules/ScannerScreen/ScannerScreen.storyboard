@@ -22,13 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvz-Wr-B5I">
-                                <rect key="frame" x="104" y="271" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6K-4t-5Rs">
                                 <rect key="frame" x="15" y="783" width="384" height="54"/>
                                 <color key="backgroundColor" red="0.2666666667" green="0.66666666669999997" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -49,12 +42,21 @@
                                     <action selector="scanInModalAction:" destination="vCJ-jB-Bfh" eventType="touchUpInside" id="RdO-QD-vD3"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr-code_icon" translatesAutoresizingMaskIntoConstraints="NO" id="JDA-Bn-LeF">
+                                <rect key="frame" x="143" y="384" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="aUJ-vl-x8V"/>
+                                    <constraint firstAttribute="width" constant="128" id="fk8-Zp-Nuw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PSA-wW-hSj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JDA-Bn-LeF" firstAttribute="centerX" secondItem="zZh-5B-Ive" secondAttribute="centerX" id="5hL-C7-M15"/>
                             <constraint firstItem="T6K-4t-5Rs" firstAttribute="leading" secondItem="PSA-wW-hSj" secondAttribute="leading" constant="15" id="FZJ-Co-wZd"/>
                             <constraint firstItem="PSA-wW-hSj" firstAttribute="trailing" secondItem="T6K-4t-5Rs" secondAttribute="trailing" constant="15" id="XPr-TZ-0AL"/>
+                            <constraint firstItem="JDA-Bn-LeF" firstAttribute="centerY" secondItem="zZh-5B-Ive" secondAttribute="centerY" id="ZtB-J2-cw4"/>
                             <constraint firstItem="PSA-wW-hSj" firstAttribute="bottom" secondItem="T6K-4t-5Rs" secondAttribute="bottom" constant="25" id="iye-Ks-MeN"/>
                         </constraints>
                     </view>
@@ -68,6 +70,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="qr-code_icon" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
