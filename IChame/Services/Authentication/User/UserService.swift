@@ -14,19 +14,13 @@ class Network {
 }
 
 class UserService {
-  func registration(email: String,
-                    password: String,
-                    success: @escaping (FirebaseAuth.User) -> Void,
-                    fail: @escaping Network.StatusBlock) {
-    
+  func registration(email: String, password: String, success: @escaping (FirebaseAuth.User) -> Void, fail: @escaping Network.StatusBlock) {
     Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
       guard let user = authResult?.user, error == nil else {
-        print("error", error ?? "dd")
         fail(error)
         return
       }
       success(user)
-      print("user -> ", user.email!," created")
     }
   }
   
@@ -40,7 +34,6 @@ class UserService {
         return
       }
       success(user)
-      print("user -> ", user.email!," loged")
     }
   }
 }

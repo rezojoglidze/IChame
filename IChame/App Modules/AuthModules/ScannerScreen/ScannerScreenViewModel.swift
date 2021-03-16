@@ -29,7 +29,6 @@ class ScannerScreenViewModel {
   let menuDidLoaded: Observable<Void>
   let innerMenuDidLoaded: PublishRelay<Void> = PublishRelay<Void>()
   
-  
   init(router: UnownedRouter<AuthRoute>, menuService: MenuService?) {
     self.router = router
     self.menuService = menuService
