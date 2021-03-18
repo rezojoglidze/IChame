@@ -16,7 +16,7 @@ class ScreensAssembly {
   
   init() {
     setupAuthorization()
-    setupHome()
+    setupMenu()
     setupBucket()
     setupMoreScreens()
   }
