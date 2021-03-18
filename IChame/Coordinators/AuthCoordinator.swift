@@ -13,6 +13,7 @@ enum AuthRoute: Route {
   case authScreen
   case registrationScreen
   case scannerScreen
+  case mainTabbarScreen
 }
 
 class AuthCoordinator: NavigationCoordinator<AuthRoute> {
@@ -34,6 +35,9 @@ class AuthCoordinator: NavigationCoordinator<AuthRoute> {
     case .scannerScreen:
       let viewController = ScannerScreenViewController.instantiate(unownedRouter: self.unownedRouter)
       return .push(viewController)
+    case .mainTabbarScreen:
+      let tab = MainTabbarCoordinator()
+      return .trigger(TabbarRoute.root, on: tab)
     }
   }
 }

@@ -44,7 +44,7 @@ extension ScannerScreenViewModel: ScannerScreenViewModelProocol {
       print(menu)
       self?.menu = menu
       self?.innerMenuDidLoaded.accept(())
-      self?.router.trigger(.mainTabBarScreen)
+      self?.router.trigger(.mainTabbarScreen)
     }, fail: fail)
   }
 }
