@@ -17,6 +17,7 @@ class MenuScreenViewModel {
   var router: StrongRouter<MenuRoute>
   
   init(router: StrongRouter<MenuRoute>) {
+    
     self.router = router
     
   }

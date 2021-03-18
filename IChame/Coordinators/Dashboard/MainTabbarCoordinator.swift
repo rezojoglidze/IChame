@@ -29,7 +29,7 @@ class MainTabbarCoordinator: TabBarCoordinator<TabbarRoute> {
     self.menuRouter = menu.strongRouter
     
     let tabs: [Presentable] = [menuRouter]
-    super.init(rootViewController: IChameTabbarController(), tabs: tabs, select: menuRouter)
+    super.init(rootViewController: UITabBarController(), tabs: tabs, select: menuRouter)
     MainTabbarCoordinator.shared = self
   }
   

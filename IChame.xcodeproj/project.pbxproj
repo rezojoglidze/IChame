@@ -19,6 +19,12 @@
 		A937603F25FAB33E00F5E645 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A937603E25FAB33E00F5E645 /* Constants.swift */; };
 		A940540925FCB10D00AB2F24 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940540825FCB10D00AB2F24 /* UserService.swift */; };
 		A940543D25FCC0AC00AB2F24 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940543C25FCC0AC00AB2F24 /* UITextField+Extensions.swift */; };
+		A941632D2603E47C00A7F7A9 /* ScreenAssembly+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A941632C2603E47C00A7F7A9 /* ScreenAssembly+Home.swift */; };
+		A94163332603E48400A7F7A9 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94163312603E48400A7F7A9 /* HomeCoordinator.swift */; };
+		A94163342603E48400A7F7A9 /* MainTabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94163322603E48400A7F7A9 /* MainTabbarCoordinator.swift */; };
+		A941633A2603E4AC00A7F7A9 /* MenuScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94163372603E4AC00A7F7A9 /* MenuScreenViewController.swift */; };
+		A941633B2603E4AC00A7F7A9 /* MenuScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94163382603E4AC00A7F7A9 /* MenuScreenViewModel.swift */; };
+		A941633C2603E4AC00A7F7A9 /* MenuScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94163392603E4AC00A7F7A9 /* MenuScreen.storyboard */; };
 		A943CBB325FD346B00714021 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943CBB225FD346B00714021 /* Loader.swift */; };
 		A943CBD425FD355200714021 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943CBD325FD355200714021 /* UIView+Extensions.swift */; };
 		A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184425FA869400A980E2 /* ScreensAssembly.swift */; };
@@ -59,6 +65,12 @@
 		A937603E25FAB33E00F5E645 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A940540825FCB10D00AB2F24 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A940543C25FCC0AC00AB2F24 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		A941632C2603E47C00A7F7A9 /* ScreenAssembly+Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Home.swift"; sourceTree = "<group>"; };
+		A94163312603E48400A7F7A9 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		A94163322603E48400A7F7A9 /* MainTabbarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarCoordinator.swift; sourceTree = "<group>"; };
+		A94163372603E4AC00A7F7A9 /* MenuScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScreenViewController.swift; sourceTree = "<group>"; };
+		A94163382603E4AC00A7F7A9 /* MenuScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScreenViewModel.swift; sourceTree = "<group>"; };
+		A94163392603E4AC00A7F7A9 /* MenuScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuScreen.storyboard; sourceTree = "<group>"; };
 		A943CBB225FD346B00714021 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		A943CBD325FD355200714021 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A987184425FA869400A980E2 /* ScreensAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensAssembly.swift; sourceTree = "<group>"; };
@@ -152,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				A91FB31D25FAC52700F541FB /* AuthModules */,
+				A94163362603E4AC00A7F7A9 /* Home */,
 			);
 			path = "App Modules";
 			sourceTree = "<group>";
@@ -209,11 +222,39 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		A941632F2603E48400A7F7A9 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				A94163302603E48400A7F7A9 /* Tabs */,
+				A94163322603E48400A7F7A9 /* MainTabbarCoordinator.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		A94163302603E48400A7F7A9 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				A94163312603E48400A7F7A9 /* HomeCoordinator.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		A94163362603E4AC00A7F7A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A94163372603E4AC00A7F7A9 /* MenuScreenViewController.swift */,
+				A94163382603E4AC00A7F7A9 /* MenuScreenViewModel.swift */,
+				A94163392603E4AC00A7F7A9 /* MenuScreen.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		A987184325FA867B00A980E2 /* ScreensAssembly */ = {
 			isa = PBXGroup;
 			children = (
 				A987184425FA869400A980E2 /* ScreensAssembly.swift */,
 				A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */,
+				A941632C2603E47C00A7F7A9 /* ScreenAssembly+Home.swift */,
 			);
 			path = ScreensAssembly;
 			sourceTree = "<group>";
@@ -243,6 +284,7 @@
 			children = (
 				A9C62A0125F8C9FB00B32D2A /* MainCoordinator.swift */,
 				A987187125FA968600A980E2 /* AuthCoordinator.swift */,
+				A941632F2603E48400A7F7A9 /* Dashboard */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -406,6 +448,7 @@
 				A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */,
 				A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */,
 				A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */,
+				A941633C2603E4AC00A7F7A9 /* MenuScreen.storyboard in Resources */,
 				A90D721525F7FBE200BA697A /* Assets.xcassets in Resources */,
 				A987188B25FA9F4200A980E2 /* AuthorizationScreen.storyboard in Resources */,
 				A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */,
@@ -466,6 +509,7 @@
 				A987187225FA968600A980E2 /* AuthCoordinator.swift in Sources */,
 				A943CBD425FD355200714021 /* UIView+Extensions.swift in Sources */,
 				A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */,
+				A941633B2603E4AC00A7F7A9 /* MenuScreenViewModel.swift in Sources */,
 				A940543D25FCC0AC00AB2F24 /* UITextField+Extensions.swift in Sources */,
 				A9C988E026015577005BECDF /* MenuService.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
@@ -473,7 +517,9 @@
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
 				A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */,
 				A9CB8AF925FD675900AA293C /* User.swift in Sources */,
+				A94163342603E48400A7F7A9 /* MainTabbarCoordinator.swift in Sources */,
 				A943CBB325FD346B00714021 /* Loader.swift in Sources */,
+				A941633A2603E4AC00A7F7A9 /* MenuScreenViewController.swift in Sources */,
 				A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */,
 				A91FB32425FAC59100F541FB /* RegistrationScreenViewController.swift in Sources */,
 				A937603F25FAB33E00F5E645 /* Constants.swift in Sources */,
@@ -483,6 +529,8 @@
 				A9C988E7260156B9005BECDF /* Menu.swift in Sources */,
 				A940540925FCB10D00AB2F24 /* UserService.swift in Sources */,
 				A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */,
+				A94163332603E48400A7F7A9 /* HomeCoordinator.swift in Sources */,
+				A941632D2603E47C00A7F7A9 /* ScreenAssembly+Home.swift in Sources */,
 				A994E67A25FE513A004BFBE6 /* ScannerScreenViewModel.swift in Sources */,
 				A987186D25FA961F00A980E2 /* AuthorizationScreenViewController.swift in Sources */,
 				A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */,
