@@ -39,7 +39,7 @@ class ScannerScreenViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationController?.isNavigationBarHidden = false
-    scannerBtn.setTitle("სკანირება".uppercased(), for: .normal)
+    scannerBtn.setTitle("QR სკანერი".uppercased(), for: .normal)
     setupObservables()
   }
   

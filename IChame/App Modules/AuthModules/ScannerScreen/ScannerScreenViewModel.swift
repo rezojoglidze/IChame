@@ -41,8 +41,10 @@ class ScannerScreenViewModel {
 extension ScannerScreenViewModel: ScannerScreenViewModelProocol {
   func getMenu(docId: String, fail: @escaping Network.StatusBlock) {
     self.menuService?.getMenu(docId: docId, success: { [weak self] (menu) in
+      print(menu)
       self?.menu = menu
       self?.innerMenuDidLoaded.accept(())
+      self?.router.trigger(.mainTabBarScreen)
     }, fail: fail)
   }
 }

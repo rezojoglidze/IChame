@@ -16,5 +16,6 @@ class ScreensAssembly {
   
   init() {
     setupAuthorization()
+    setupHome()
   }
 }

@@ -35,8 +35,7 @@ extension ScreensAssembly {
   
   private func setupAuthorizationScreen() {
     self.container.register(UserService.self) { (_) -> UserService in
-      let userService = UserService()
-      return userService
+      return UserService()
     }
     self.container.register(AuthorizationScreenViewModel.self) { (resolver, router: UnownedRouter<AuthRoute>) -> AuthorizationScreenViewModel in
       let userService = resolver.resolve(UserService.self)
@@ -53,8 +52,7 @@ extension ScreensAssembly {
   
   private func setupRegistrationScreen() {
     self.container.register(UserService.self) { (_) -> UserService in
-      let userService = UserService()
-      return userService
+      return UserService()
     }
     self.container.register(RegistrationScreenViewModel.self) { (resolver, router: UnownedRouter<AuthRoute>) -> RegistrationScreenViewModel in
       let userService = resolver.resolve(UserService.self)
@@ -71,8 +69,7 @@ extension ScreensAssembly {
   
   private func setupScannerScreen() {
     self.container.register(MenuService.self) { (_) -> MenuService in
-      let menuService = MenuService()
-      return menuService
+      return MenuService()
     }
     self.container.register(ScannerScreenViewController.self) { (resolver, router: UnownedRouter<AuthRoute>) -> ScannerScreenViewController in
       let viewModel = resolver.resolve(ScannerScreenViewModel.self, argument: router)
