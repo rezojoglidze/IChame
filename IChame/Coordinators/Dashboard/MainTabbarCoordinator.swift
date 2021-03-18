@@ -11,6 +11,8 @@ import XCoordinator
 
 enum TabbarRoute: Route {
   case home
+  case bucket
+  case moreScreen
   case root
 }
 
@@ -19,16 +21,28 @@ class MainTabbarCoordinator: TabBarCoordinator<TabbarRoute> {
   static var shared: MainTabbarCoordinator?
   
   private let menuRouter: StrongRouter<MenuRoute>
+  private let bucketRouter: StrongRouter<BucketRoute>
+  private let moreScreenRouter: StrongRouter<MoreSceenRoute>
   
   private let menu: MenuCoordinator
+  private let bucket: BucketCoordinator
+  private let moreScreen: MoreSceenCoordinator
   
   init() {
     menu = MenuCoordinator()
+    bucket = BucketCoordinator()
+    moreScreen = MoreSceenCoordinator()
+    
     Self.initCoordinator(coordinator: menu, title: "მთავარი", image: "", selectedImage: "")
+    Self.initCoordinator(coordinator: bucket, title: "კალათა", image: "", selectedImage: "")
+    Self.initCoordinator(coordinator: moreScreen, title: "მეტი", image: "", selectedImage: "")
     
     self.menuRouter = menu.strongRouter
+    self.bucketRouter = bucket.strongRouter
+    self.moreScreenRouter = moreScreen.strongRouter
     
-    let tabs: [Presentable] = [menuRouter]
+    let tabs: [Presentable] = [menuRouter, bucketRouter, moreScreenRouter]
+    
     super.init(rootViewController: UITabBarController(), tabs: tabs, select: menuRouter)
     MainTabbarCoordinator.shared = self
   }
@@ -37,6 +51,10 @@ class MainTabbarCoordinator: TabBarCoordinator<TabbarRoute> {
     switch route {
     case .home:
       return .select(menuRouter)
+    case .bucket:
+      return .select(bucketRouter)
+    case .moreScreen:
+      return .select(moreScreenRouter)
     case .root:
       if let window = UIApplication.shared.keyWindow {
         setRoot(for: window)
