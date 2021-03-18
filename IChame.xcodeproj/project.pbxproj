@@ -37,6 +37,7 @@
 		A941633C2603E4AC00A7F7A9 /* MenuScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94163392603E4AC00A7F7A9 /* MenuScreen.storyboard */; };
 		A943CBB325FD346B00714021 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943CBB225FD346B00714021 /* Loader.swift */; };
 		A943CBD425FD355200714021 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943CBD325FD355200714021 /* UIView+Extensions.swift */; };
+		A949235C2604003A0062DB96 /* IChameTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949235B2604003A0062DB96 /* IChameTabbarController.swift */; };
 		A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184425FA869400A980E2 /* ScreensAssembly.swift */; };
 		A987184925FA875E00A980E2 /* ScreenAssembly+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */; };
 		A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */; };
@@ -93,6 +94,7 @@
 		A94163392603E4AC00A7F7A9 /* MenuScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuScreen.storyboard; sourceTree = "<group>"; };
 		A943CBB225FD346B00714021 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		A943CBD325FD355200714021 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A949235B2604003A0062DB96 /* IChameTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChameTabbarController.swift; sourceTree = "<group>"; };
 		A987184425FA869400A980E2 /* ScreensAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensAssembly.swift; sourceTree = "<group>"; };
 		A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Authorization.swift"; sourceTree = "<group>"; };
 		A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 				A937603D25FAB32B00F5E645 /* Constants */,
 				A937603825FAB2EF00F5E645 /* Extensions */,
 				A9E729B225F7FE1D0056B225 /* App */,
+				A949235B2604003A0062DB96 /* IChameTabbarController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
 				A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
+				A949235C2604003A0062DB96 /* IChameTabbarController.swift in Sources */,
 				A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */,
 				A9294DDC2603F45400602CDF /* MoreScreenViewController.swift in Sources */,
 				A9CB8AF925FD675900AA293C /* User.swift in Sources */,
