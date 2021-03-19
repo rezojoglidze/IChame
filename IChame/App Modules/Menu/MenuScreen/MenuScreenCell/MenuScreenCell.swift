@@ -14,18 +14,8 @@ class MenuScreenCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var onePointHeightBlackLine: UIView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    func fill(imgUrl: String, title: String) {
+    func fill(img: UIImage?, title: String) {
         self.titleLbl.text = title
+        self.menuImg.image = img
     }
 }

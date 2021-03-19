@@ -47,7 +47,9 @@ extension MenuScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuScreenCell.self)) as! MenuScreenCell
-        cell.fill(imgUrl: "", title: "ცხელი საჭმელი")
+        if let item = viewModel.item(at: indexPath) {
+            cell.fill(img: item.img, title: item.title)
+        }
         return cell
     }
 }
