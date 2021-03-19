@@ -25,6 +25,8 @@
 		A9294DE92603F7D900602CDF /* ScreenAssembly+Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9294DE82603F7D900602CDF /* ScreenAssembly+Bucket.swift */; };
 		A9294DED2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9294DEC2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift */; };
 		A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */; };
+		A93490E62604C1E600CC3750 /* MenuScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93490E42604C1E600CC3750 /* MenuScreenCell.swift */; };
+		A93490E72604C1E600CC3750 /* MenuScreenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93490E52604C1E600CC3750 /* MenuScreenCell.xib */; };
 		A937603A25FAB30300F5E645 /* Animation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A937603925FAB30300F5E645 /* Animation+Extensions.swift */; };
 		A937603F25FAB33E00F5E645 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A937603E25FAB33E00F5E645 /* Constants.swift */; };
 		A940540925FCB10D00AB2F24 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940540825FCB10D00AB2F24 /* UserService.swift */; };
@@ -82,6 +84,8 @@
 		A9294DE82603F7D900602CDF /* ScreenAssembly+Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Bucket.swift"; sourceTree = "<group>"; };
 		A9294DEC2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+MoreScreen.swift"; sourceTree = "<group>"; };
 		A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A93490E42604C1E600CC3750 /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
+		A93490E52604C1E600CC3750 /* MenuScreenCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuScreenCell.xib; sourceTree = "<group>"; };
 		A937603925FAB30300F5E645 /* Animation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Extensions.swift"; sourceTree = "<group>"; };
 		A937603E25FAB33E00F5E645 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A940540825FCB10D00AB2F24 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 		A930A9572604BEB700C971D6 /* MenuScreenCell */ = {
 			isa = PBXGroup;
 			children = (
+				A93490E42604C1E600CC3750 /* MenuScreenCell.swift */,
+				A93490E52604C1E600CC3750 /* MenuScreenCell.xib */,
 			);
 			path = MenuScreenCell;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */,
 				A91FB32125FAC57E00F541FB /* RegistrationScreen.storyboard in Resources */,
 				A9294DD92603F44800602CDF /* MoreScreen.storyboard in Resources */,
+				A93490E72604C1E600CC3750 /* MenuScreenCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +588,7 @@
 				A941633B2603E4AC00A7F7A9 /* MenuScreenViewModel.swift in Sources */,
 				A940543D25FCC0AC00AB2F24 /* UITextField+Extensions.swift in Sources */,
 				A9C988E026015577005BECDF /* MenuService.swift in Sources */,
+				A93490E62604C1E600CC3750 /* MenuScreenCell.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
 				A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
