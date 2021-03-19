@@ -60,6 +60,8 @@
 		A9CEE4BD260531DE005298D0 /* MenuDetailsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CEE4BC260531DE005298D0 /* MenuDetailsScreen.storyboard */; };
 		A9CEE4C0260531FE005298D0 /* MenuDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEE4BF260531FE005298D0 /* MenuDetailsScreenViewController.swift */; };
 		A9CEE4C326053210005298D0 /* MenuDetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEE4C226053210005298D0 /* MenuDetailsScreenViewModel.swift */; };
+		A9CEE4CA26053C3B005298D0 /* MenuDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEE4C826053C3B005298D0 /* MenuDetailsTableViewCell.swift */; };
+		A9CEE4CB26053C3B005298D0 /* MenuDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CEE4C926053C3B005298D0 /* MenuDetailsTableViewCell.xib */; };
 		A9E729AC25F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */; };
 		A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */; };
 		A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */; };
@@ -122,6 +124,8 @@
 		A9CEE4BC260531DE005298D0 /* MenuDetailsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuDetailsScreen.storyboard; sourceTree = "<group>"; };
 		A9CEE4BF260531FE005298D0 /* MenuDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsScreenViewController.swift; sourceTree = "<group>"; };
 		A9CEE4C226053210005298D0 /* MenuDetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsScreenViewModel.swift; sourceTree = "<group>"; };
+		A9CEE4C826053C3B005298D0 /* MenuDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		A9CEE4C926053C3B005298D0 /* MenuDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-65Medium.otf"; sourceTree = "<group>"; };
 		A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-75Bold.otf"; sourceTree = "<group>"; };
 		A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-55Roman.otf"; sourceTree = "<group>"; };
@@ -388,11 +392,21 @@
 		A9CEE4B7260531A2005298D0 /* MenuDetailsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A9CEE4C726053C12005298D0 /* MenuDetailsCell */,
 				A9CEE4BC260531DE005298D0 /* MenuDetailsScreen.storyboard */,
 				A9CEE4BF260531FE005298D0 /* MenuDetailsScreenViewController.swift */,
 				A9CEE4C226053210005298D0 /* MenuDetailsScreenViewModel.swift */,
 			);
 			path = MenuDetailsScreen;
+			sourceTree = "<group>";
+		};
+		A9CEE4C726053C12005298D0 /* MenuDetailsCell */ = {
+			isa = PBXGroup;
+			children = (
+				A9CEE4C826053C3B005298D0 /* MenuDetailsTableViewCell.swift */,
+				A9CEE4C926053C3B005298D0 /* MenuDetailsTableViewCell.xib */,
+			);
+			path = MenuDetailsCell;
 			sourceTree = "<group>";
 		};
 		A9E729A725F7FDEA0056B225 /* Resources */ = {
@@ -541,6 +555,7 @@
 				A90D721525F7FBE200BA697A /* Assets.xcassets in Resources */,
 				A987188B25FA9F4200A980E2 /* AuthorizationScreen.storyboard in Resources */,
 				A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */,
+				A9CEE4CB26053C3B005298D0 /* MenuDetailsTableViewCell.xib in Resources */,
 				A9CEE4BD260531DE005298D0 /* MenuDetailsScreen.storyboard in Resources */,
 				A91FB32125FAC57E00F541FB /* RegistrationScreen.storyboard in Resources */,
 				A9294DD92603F44800602CDF /* MoreScreen.storyboard in Resources */,
@@ -620,6 +635,7 @@
 				A943CBB325FD346B00714021 /* Loader.swift in Sources */,
 				A941633A2603E4AC00A7F7A9 /* MenuScreenViewController.swift in Sources */,
 				A9294DDF2603F45E00602CDF /* MoreScreenViewModel.swift in Sources */,
+				A9CEE4CA26053C3B005298D0 /* MenuDetailsTableViewCell.swift in Sources */,
 				A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */,
 				A91FB32425FAC59100F541FB /* RegistrationScreenViewController.swift in Sources */,
 				A9294DD22603F41000602CDF /* BucketScreenViewController.swift in Sources */,

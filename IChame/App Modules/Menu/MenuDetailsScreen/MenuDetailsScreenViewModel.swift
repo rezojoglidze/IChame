@@ -11,6 +11,10 @@ import XCoordinator
 
 protocol MenuDetailsScreenViewModelProtocol {
     var router: StrongRouter<MenuRoute> { get }
+    
+    func numberOfRows() -> Int
+    
+    func item(at indexPath: IndexPath) -> MenuItem?
 }
 class MenuDetailsScreenViewModel {
     
@@ -21,5 +25,15 @@ class MenuDetailsScreenViewModel {
     init(router: StrongRouter<MenuRoute>, menuItems: [MenuItem]) {
         self.router = router
         self.menuItems = menuItems
+    }
+}
+
+extension MenuDetailsScreenViewModel: MenuDetailsScreenViewModelProtocol {
+    func numberOfRows() -> Int {
+        return menuItems.count
+    }
+    
+    func item(at indexPath: IndexPath) -> MenuItem? {
+        return menuItems[indexPath.row]
     }
 }
