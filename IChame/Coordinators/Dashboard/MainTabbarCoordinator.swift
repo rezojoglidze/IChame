@@ -28,8 +28,8 @@ class MainTabbarCoordinator: TabBarCoordinator<TabbarRoute> {
     private let bucket: BucketCoordinator
     private let moreScreen: MoreSceenCoordinator
     
-    init() {
-        menu = MenuCoordinator()
+    init(item: Menu?) {
+        menu = MenuCoordinator(menu: item)
         bucket = BucketCoordinator()
         moreScreen = MoreSceenCoordinator()
         

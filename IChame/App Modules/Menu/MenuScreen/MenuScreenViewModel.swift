@@ -16,10 +16,11 @@ protocol MenuScreenViewModelProtocol {
 class MenuScreenViewModel {
     var router: StrongRouter<MenuRoute>
     
-    init(router: StrongRouter<MenuRoute>) {
-        
+    private var menu: Menu?
+    
+    init(router: StrongRouter<MenuRoute>, menu: Menu?) {
         self.router = router
-        
+        self.menu = menu
     }
 }
 

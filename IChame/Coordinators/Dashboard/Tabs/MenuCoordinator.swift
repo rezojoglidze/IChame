@@ -15,16 +15,17 @@ enum MenuRoute: Route {
 
 class MenuCoordinator: NavigationCoordinator<MenuRoute> {
     static let shared = MenuCoordinator()
+    private let menu: Menu?
     
-    init() {
+    init(menu: Menu? = nil) {
+        self.menu = menu
         super.init(rootViewController: UINavigationController(), initialRoute: .menu)
     }
     
     override func prepareTransition(for route: RouteType) -> NavigationTransition {
         switch route {
         case .menu:
-            //        return .dismiss()
-            let home = MenuScreenViewController.instantiate(strongRouter: self.strongRouter)
+            let home = MenuScreenViewController.instantiate(strongRouter: self.strongRouter, menu: self.menu)
             return .push(home)
         }
     }

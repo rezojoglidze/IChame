@@ -24,7 +24,6 @@ class ScannerScreenViewModel {
     var router: UnownedRouter<AuthRoute>
     let menuService: MenuService?
     private var db: Firestore?
-    private var menu: Menu?
     
     let menuDidLoaded: Observable<Void>
     let innerMenuDidLoaded: PublishRelay<Void> = PublishRelay<Void>()
@@ -41,10 +40,8 @@ class ScannerScreenViewModel {
 extension ScannerScreenViewModel: ScannerScreenViewModelProocol {
     func getMenu(docId: String, fail: @escaping Network.StatusBlock) {
         self.menuService?.getMenu(docId: docId, success: { [weak self] (menu) in
-            print(menu)
-            self?.menu = menu
             self?.innerMenuDidLoaded.accept(())
-            self?.router.trigger(.mainTabbarScreen)
+            self?.router.trigger(.mainTabbarScreen(menu: menu))
         }, fail: fail)
     }
 }

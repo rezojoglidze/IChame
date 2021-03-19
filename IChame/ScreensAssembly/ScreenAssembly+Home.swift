@@ -16,13 +16,14 @@ extension ScreensAssembly {
     }
     
     func setupHomeScreen() {
-        self.container.register(MenuScreenViewModel.self) { (resolver, router: StrongRouter<MenuRoute>) -> MenuScreenViewModel in
-            let viewModel = MenuScreenViewModel(router: router)
+        
+        self.container.register(MenuScreenViewModel.self) { (resolver, router: StrongRouter<MenuRoute>, menu: Menu?) -> MenuScreenViewModel in
+            let viewModel = MenuScreenViewModel(router: router, menu: menu)
             return viewModel
         }
         
-        self.container.register(MenuScreenViewController.self) { (resolver, router: StrongRouter<MenuRoute>) -> MenuScreenViewController in
-            let viewModel = resolver.resolve(MenuScreenViewModel.self, argument: router)
+        self.container.register(MenuScreenViewController.self) { (resolver, router: StrongRouter<MenuRoute>, menu: Menu?) -> MenuScreenViewController in
+            let viewModel = resolver.resolve(MenuScreenViewModel.self, arguments: router, menu)
             let viewController = MenuScreenViewController.loadFromStoryboard()
             viewController.viewModel = viewModel
             return viewController

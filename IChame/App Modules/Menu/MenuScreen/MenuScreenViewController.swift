@@ -15,15 +15,21 @@ class MenuScreenViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    static func instantiate(strongRouter: StrongRouter<MenuRoute>) -> Self {
-        let viewController = ScreensAssembly.shared.container.resolve(Self.self, argument: strongRouter) ?? .init()
+    static func instantiate(strongRouter: StrongRouter<MenuRoute>, menu: Menu?) -> Self {
+        let viewController = ScreensAssembly.shared.container.resolve(Self.self, arguments: strongRouter, menu) ?? .init()
         return viewController
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.isNavigationBarHidden = true
+        setupTableView()
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.title = "მენიუ"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func setupTableView() {

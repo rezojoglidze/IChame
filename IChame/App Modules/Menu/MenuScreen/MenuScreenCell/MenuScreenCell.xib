@@ -23,14 +23,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr-code_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vfJ-CX-mae">
-                        <rect key="frame" x="20" y="15" width="64" height="54"/>
+                        <rect key="frame" x="20" y="15" width="54" height="54"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="64" id="M5k-hs-N6H"/>
+                            <constraint firstAttribute="width" constant="54" id="M5k-hs-N6H"/>
                             <constraint firstAttribute="height" constant="54" id="b2R-tb-g0N"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ცივი სასმელი" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJY-IO-M97">
-                        <rect key="frame" x="104" y="31.5" width="266" height="21"/>
+                        <rect key="frame" x="94" y="31.5" width="276" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-65Medium" family="Helvetica Neue LT GEO" pointSize="17"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -41,8 +41,7 @@
                     <constraint firstItem="vfJ-CX-mae" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="2Ng-VP-RsH"/>
                     <constraint firstAttribute="trailing" secondItem="RJY-IO-M97" secondAttribute="trailing" constant="20" id="XnW-oS-SH2"/>
                     <constraint firstItem="vfJ-CX-mae" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="YHs-0f-z3O"/>
-                    <constraint firstAttribute="bottom" secondItem="vfJ-CX-mae" secondAttribute="bottom" constant="15" id="dqS-uM-Ljd"/>
-                    <constraint firstItem="vfJ-CX-mae" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eZ4-sA-VIF"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vfJ-CX-mae" secondAttribute="bottom" constant="15" id="dqS-uM-Ljd"/>
                     <constraint firstItem="RJY-IO-M97" firstAttribute="leading" secondItem="vfJ-CX-mae" secondAttribute="trailing" constant="20" id="sr9-DE-vjk"/>
                 </constraints>
             </tableViewCellContentView>
