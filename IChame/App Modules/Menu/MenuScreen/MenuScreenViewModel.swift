@@ -12,7 +12,9 @@ import XCoordinator
 protocol MenuScreenViewModelProtocol {
     var router: StrongRouter<MenuRoute> { get }
     
-    func item(at indexPath: IndexPath) -> (title: String, img: UIImage?)?
+    func item(at indexPath: IndexPath) -> (type: MenuType, img: UIImage?)?
+    
+    func openMenuDetails(with indexPath: IndexPath)
 }
 
 class MenuScreenViewModel {
@@ -27,7 +29,15 @@ class MenuScreenViewModel {
 }
 
 extension MenuScreenViewModel: MenuScreenViewModelProtocol {
-    func item(at indexPath: IndexPath) -> (title: String, img: UIImage?)? {
+    func openMenuDetails(with indexPath: IndexPath) {
+        guard let item = menu?.menuScreenDataSource[indexPath.row],
+              let menu = self.menu else { return }
+        
+        let menuItems = item.type.getMenuItems(from: menu)
+        router.trigger(.menuDetails(menuItems: menuItems))
+    }
+    
+    func item(at indexPath: IndexPath) -> (type: MenuType, img: UIImage?)? {
         return menu?.menuScreenDataSource[indexPath.row]
     }
 }

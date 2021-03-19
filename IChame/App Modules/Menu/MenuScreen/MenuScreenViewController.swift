@@ -48,8 +48,14 @@ extension MenuScreenViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuScreenCell.self)) as! MenuScreenCell
         if let item = viewModel.item(at: indexPath) {
-            cell.fill(img: item.img, title: item.title)
+            cell.fill(img: item.img, title: item.type.title)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        cell.setSelected(false, animated: true)
+        viewModel.openMenuDetails(with: indexPath)
     }
 }

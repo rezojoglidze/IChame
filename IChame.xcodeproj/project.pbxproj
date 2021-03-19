@@ -31,7 +31,7 @@
 		A937603F25FAB33E00F5E645 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A937603E25FAB33E00F5E645 /* Constants.swift */; };
 		A940540925FCB10D00AB2F24 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940540825FCB10D00AB2F24 /* UserService.swift */; };
 		A940543D25FCC0AC00AB2F24 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A940543C25FCC0AC00AB2F24 /* UITextField+Extensions.swift */; };
-		A941632D2603E47C00A7F7A9 /* ScreenAssembly+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A941632C2603E47C00A7F7A9 /* ScreenAssembly+Home.swift */; };
+		A941632D2603E47C00A7F7A9 /* ScreenAssembly+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A941632C2603E47C00A7F7A9 /* ScreenAssembly+Menu.swift */; };
 		A94163332603E48400A7F7A9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94163312603E48400A7F7A9 /* MenuCoordinator.swift */; };
 		A94163342603E48400A7F7A9 /* MainTabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94163322603E48400A7F7A9 /* MainTabbarCoordinator.swift */; };
 		A941633A2603E4AC00A7F7A9 /* MenuScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94163372603E4AC00A7F7A9 /* MenuScreenViewController.swift */; };
@@ -57,6 +57,9 @@
 		A9C988E026015577005BECDF /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C988DF26015577005BECDF /* MenuService.swift */; };
 		A9C988E7260156B9005BECDF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C988E6260156B9005BECDF /* Menu.swift */; };
 		A9CB8AF925FD675900AA293C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB8AF825FD675900AA293C /* User.swift */; };
+		A9CEE4BD260531DE005298D0 /* MenuDetailsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CEE4BC260531DE005298D0 /* MenuDetailsScreen.storyboard */; };
+		A9CEE4C0260531FE005298D0 /* MenuDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEE4BF260531FE005298D0 /* MenuDetailsScreenViewController.swift */; };
+		A9CEE4C326053210005298D0 /* MenuDetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEE4C226053210005298D0 /* MenuDetailsScreenViewModel.swift */; };
 		A9E729AC25F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */; };
 		A9E729AD25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */; };
 		A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */; };
@@ -90,7 +93,7 @@
 		A937603E25FAB33E00F5E645 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A940540825FCB10D00AB2F24 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A940543C25FCC0AC00AB2F24 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		A941632C2603E47C00A7F7A9 /* ScreenAssembly+Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Home.swift"; sourceTree = "<group>"; };
+		A941632C2603E47C00A7F7A9 /* ScreenAssembly+Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Menu.swift"; sourceTree = "<group>"; };
 		A94163312603E48400A7F7A9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		A94163322603E48400A7F7A9 /* MainTabbarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarCoordinator.swift; sourceTree = "<group>"; };
 		A94163372603E4AC00A7F7A9 /* MenuScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScreenViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +119,9 @@
 		A9C988DF26015577005BECDF /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		A9C988E6260156B9005BECDF /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		A9CB8AF825FD675900AA293C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A9CEE4BC260531DE005298D0 /* MenuDetailsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuDetailsScreen.storyboard; sourceTree = "<group>"; };
+		A9CEE4BF260531FE005298D0 /* MenuDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsScreenViewController.swift; sourceTree = "<group>"; };
+		A9CEE4C226053210005298D0 /* MenuDetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsScreenViewModel.swift; sourceTree = "<group>"; };
 		A9E729A925F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-65Medium.otf"; sourceTree = "<group>"; };
 		A9E729AA25F7FDF30056B225 /* HelveticaNeueLTGEO-75Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-75Bold.otf"; sourceTree = "<group>"; };
 		A9E729AB25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-55Roman.otf"; sourceTree = "<group>"; };
@@ -314,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				A9294DC62603F34500602CDF /* MenuScreen */,
+				A9CEE4B7260531A2005298D0 /* MenuDetailsScreen */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -323,7 +330,7 @@
 			children = (
 				A987184425FA869400A980E2 /* ScreensAssembly.swift */,
 				A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */,
-				A941632C2603E47C00A7F7A9 /* ScreenAssembly+Home.swift */,
+				A941632C2603E47C00A7F7A9 /* ScreenAssembly+Menu.swift */,
 				A9294DE82603F7D900602CDF /* ScreenAssembly+Bucket.swift */,
 				A9294DEC2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift */,
 			);
@@ -376,6 +383,16 @@
 				A940540825FCB10D00AB2F24 /* UserService.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		A9CEE4B7260531A2005298D0 /* MenuDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A9CEE4BC260531DE005298D0 /* MenuDetailsScreen.storyboard */,
+				A9CEE4BF260531FE005298D0 /* MenuDetailsScreenViewController.swift */,
+				A9CEE4C226053210005298D0 /* MenuDetailsScreenViewModel.swift */,
+			);
+			path = MenuDetailsScreen;
 			sourceTree = "<group>";
 		};
 		A9E729A725F7FDEA0056B225 /* Resources */ = {
@@ -524,6 +541,7 @@
 				A90D721525F7FBE200BA697A /* Assets.xcassets in Resources */,
 				A987188B25FA9F4200A980E2 /* AuthorizationScreen.storyboard in Resources */,
 				A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */,
+				A9CEE4BD260531DE005298D0 /* MenuDetailsScreen.storyboard in Resources */,
 				A91FB32125FAC57E00F541FB /* RegistrationScreen.storyboard in Resources */,
 				A9294DD92603F44800602CDF /* MoreScreen.storyboard in Resources */,
 				A93490E72604C1E600CC3750 /* MenuScreenCell.xib in Resources */,
@@ -585,10 +603,12 @@
 				A9294DE92603F7D900602CDF /* ScreenAssembly+Bucket.swift in Sources */,
 				A943CBD425FD355200714021 /* UIView+Extensions.swift in Sources */,
 				A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */,
+				A9CEE4C326053210005298D0 /* MenuDetailsScreenViewModel.swift in Sources */,
 				A941633B2603E4AC00A7F7A9 /* MenuScreenViewModel.swift in Sources */,
 				A940543D25FCC0AC00AB2F24 /* UITextField+Extensions.swift in Sources */,
 				A9C988E026015577005BECDF /* MenuService.swift in Sources */,
 				A93490E62604C1E600CC3750 /* MenuScreenCell.swift in Sources */,
+				A9CEE4C0260531FE005298D0 /* MenuDetailsScreenViewController.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
 				A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
@@ -613,7 +633,7 @@
 				A940540925FCB10D00AB2F24 /* UserService.swift in Sources */,
 				A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */,
 				A94163332603E48400A7F7A9 /* MenuCoordinator.swift in Sources */,
-				A941632D2603E47C00A7F7A9 /* ScreenAssembly+Home.swift in Sources */,
+				A941632D2603E47C00A7F7A9 /* ScreenAssembly+Menu.swift in Sources */,
 				A9294DED2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift in Sources */,
 				A994E67A25FE513A004BFBE6 /* ScannerScreenViewModel.swift in Sources */,
 				A987186D25FA961F00A980E2 /* AuthorizationScreenViewController.swift in Sources */,
