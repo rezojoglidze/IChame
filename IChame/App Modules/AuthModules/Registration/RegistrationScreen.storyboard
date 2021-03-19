@@ -29,13 +29,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="რეგისტრაცია" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-Aj-skj">
-                                                <rect key="frame" x="15" y="50" width="187.5" height="34"/>
+                                                <rect key="frame" x="15" y="50" width="198.5" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="29"/>
                                                 <color key="textColor" red="0.34901960784313724" green="0.66666666666666663" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M4A-j8-XWy">
-                                                <rect key="frame" x="15" y="139" width="384" height="254"/>
+                                                <rect key="frame" x="15" y="141.5" width="384" height="254"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="სახელი" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KMr-QO-1qx">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="56"/>
@@ -84,22 +84,22 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="გთხოვთ, შეიყვანეთ დეტალები" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EM-1z-IJI">
-                                                <rect key="frame" x="15" y="89" width="384" height="20"/>
+                                                <rect key="frame" x="15" y="90.5" width="384" height="21"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="17"/>
                                                 <color key="textColor" red="0.72156862745098038" green="0.73725490196078436" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="SuG-KD-iHr">
-                                                <rect key="frame" x="124.5" y="808" width="165" height="29"/>
+                                                <rect key="frame" x="120.5" y="808" width="173.5" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="გაქვთ ექაუნთი?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWG-2V-GYk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="111" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="116.5" height="29"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="14"/>
                                                         <color key="textColor" red="0.67450980390000004" green="0.67843137249999996" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mb0-J7-9EN">
-                                                        <rect key="frame" x="113" y="0.0" width="52" height="29"/>
+                                                        <rect key="frame" x="118.5" y="0.0" width="55" height="29"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="14"/>
                                                         <state key="normal" title="შესვლა">
                                                             <color key="titleColor" red="0.36470588240000001" green="0.66274509800000003" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,6 +155,7 @@
                         <outlet property="passwordTextField" destination="yDd-0f-XU8" id="GEv-EJ-uPV"/>
                         <outlet property="registrationBtn" destination="D6O-gY-lbe" id="8te-8G-HBs"/>
                         <outlet property="repeatPasswordTextField" destination="EKD-wN-j8E" id="GV5-wW-73D"/>
+                        <outlet property="scrollView" destination="dS1-1S-zys" id="8ng-Fs-h2h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EV-wc-0v4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

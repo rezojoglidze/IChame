@@ -144,6 +144,7 @@
                         <outlet property="emailTextField" destination="Jjc-wM-cVc" id="2h5-Mz-g76"/>
                         <outlet property="loginBtn" destination="s5X-W3-EO8" id="Rxm-lg-WfA"/>
                         <outlet property="passwordTextField" destination="ZZN-Vo-2lM" id="Rw6-aA-BlB"/>
+                        <outlet property="scrollView" destination="0KY-ys-ZkB" id="eVB-P1-YMj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TcN-Mj-CHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
