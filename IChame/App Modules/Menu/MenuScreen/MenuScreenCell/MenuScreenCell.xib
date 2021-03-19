@@ -35,22 +35,33 @@
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7f-SU-yLB">
+                        <rect key="frame" x="74" y="119" width="316" height="1"/>
+                        <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="L4R-zB-pFw"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RJY-IO-M97" firstAttribute="centerY" secondItem="vfJ-CX-mae" secondAttribute="centerY" id="1oY-LQ-gEY"/>
                     <constraint firstItem="vfJ-CX-mae" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="2Ng-VP-RsH"/>
+                    <constraint firstAttribute="bottom" secondItem="Z7f-SU-yLB" secondAttribute="bottom" id="47g-rc-stR"/>
+                    <constraint firstItem="Z7f-SU-yLB" firstAttribute="leading" secondItem="vfJ-CX-mae" secondAttribute="trailing" id="GS9-gv-Ymb"/>
                     <constraint firstAttribute="trailing" secondItem="RJY-IO-M97" secondAttribute="trailing" constant="20" id="XnW-oS-SH2"/>
                     <constraint firstItem="vfJ-CX-mae" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="YHs-0f-z3O"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vfJ-CX-mae" secondAttribute="bottom" constant="15" id="dqS-uM-Ljd"/>
+                    <constraint firstAttribute="trailing" secondItem="Z7f-SU-yLB" secondAttribute="trailing" id="mY0-DN-cRX"/>
+                    <constraint firstItem="Z7f-SU-yLB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vfJ-CX-mae" secondAttribute="bottom" constant="15" id="r0L-RK-btS"/>
                     <constraint firstItem="RJY-IO-M97" firstAttribute="leading" secondItem="vfJ-CX-mae" secondAttribute="trailing" constant="20" id="sr9-DE-vjk"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="menuImg" destination="vfJ-CX-mae" id="E2p-GW-w8f"/>
+                <outlet property="onePointHeightBlackLine" destination="Z7f-SU-yLB" id="Edf-FL-dTi"/>
                 <outlet property="titleLbl" destination="RJY-IO-M97" id="qdS-y8-TaT"/>
             </connections>
-            <point key="canvasLocation" x="152" y="50"/>
+            <point key="canvasLocation" x="150.72463768115944" y="49.553571428571423"/>
         </tableViewCell>
     </objects>
     <resources>

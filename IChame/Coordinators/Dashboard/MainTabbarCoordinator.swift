@@ -33,7 +33,7 @@ class MainTabbarCoordinator: TabBarCoordinator<TabbarRoute> {
         bucket = BucketCoordinator()
         moreScreen = MoreSceenCoordinator()
         
-        Self.initCoordinator(coordinator: menu, title: "მთავარი", image: "tab-icon-main")
+        Self.initCoordinator(coordinator: menu, title: "მენიუ", image: "tab-icon-main")
         Self.initCoordinator(coordinator: bucket, title: "კალათა", image: "tab-icon-requests")
         Self.initCoordinator(coordinator: moreScreen, title: "მეტი", image: "more_icon")
         

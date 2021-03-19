@@ -12,6 +12,7 @@ class MenuScreenCell: UITableViewCell {
 
     @IBOutlet weak var menuImg: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var onePointHeightBlackLine: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
