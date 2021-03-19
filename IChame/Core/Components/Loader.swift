@@ -69,7 +69,6 @@ private class Loader {
         self.isLoading = false
         self.view?.isUserInteractionEnabled = true
     }
-    
 }
 
 class LoaderManager {
