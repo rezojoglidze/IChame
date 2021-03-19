@@ -275,13 +275,6 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		A940547325FCC9C900AB2F24 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Localization;
-			sourceTree = "<group>";
-		};
 		A941632F2603E48400A7F7A9 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,7 +365,6 @@
 		A9E729A725F7FDEA0056B225 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A940547325FCC9C900AB2F24 /* Localization */,
 				A9E729B025F7FDFE0056B225 /* Supporting Files */,
 				A90D721425F7FBE200BA697A /* Assets.xcassets */,
 				A9E729A825F7FDF30056B225 /* Fonts */,

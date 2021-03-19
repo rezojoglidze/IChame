@@ -9,12 +9,12 @@
 import Foundation
 
 class Constants {
-  
-  static let isNeededQRScanner = false
-  static let menuId = "qM46LjeUVons6c27owM8"
-  static let menuCollectionName = "menu"
-  
-  struct Animation {
-    static let defaultDuration: TimeInterval = 0.27
-  }
+    
+    static let isNeededQRScanner = false
+    static let menuId = "qM46LjeUVons6c27owM8"
+    static let menuCollectionName = "menu"
+    
+    struct Animation {
+        static let defaultDuration: TimeInterval = 0.27
+    }
 }

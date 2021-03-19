@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UITextField {
-  
-  var string: String { get { return self.text ?? "" } set { self.text = newValue }}
-  
+    
+    var string: String { get { return self.text ?? "" } set { self.text = newValue }}
+    
 }

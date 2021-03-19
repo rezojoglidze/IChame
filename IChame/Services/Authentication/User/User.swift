@@ -10,5 +10,5 @@ import Foundation
 import FirebaseAuth
 
 class User {
-  static var current: FirebaseAuth.User?
+    static var current: FirebaseAuth.User?
 }

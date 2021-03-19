@@ -10,22 +10,22 @@ import Foundation
 import XCoordinator
 
 enum MenuRoute: Route {
-  case menu
+    case menu
 }
 
 class MenuCoordinator: NavigationCoordinator<MenuRoute> {
-  static let shared = MenuCoordinator()
-  
-  init() {
-      super.init(rootViewController: UINavigationController(), initialRoute: .menu)
-  }
-  
-  override func prepareTransition(for route: RouteType) -> NavigationTransition {
-    switch route {
-    case .menu:
-      //        return .dismiss()
-      let home = MenuScreenViewController.instantiate(strongRouter: self.strongRouter)
-      return .push(home)
+    static let shared = MenuCoordinator()
+    
+    init() {
+        super.init(rootViewController: UINavigationController(), initialRoute: .menu)
     }
-  }
+    
+    override func prepareTransition(for route: RouteType) -> NavigationTransition {
+        switch route {
+        case .menu:
+            //        return .dismiss()
+            let home = MenuScreenViewController.instantiate(strongRouter: self.strongRouter)
+            return .push(home)
+        }
+    }
 }

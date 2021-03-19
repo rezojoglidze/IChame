@@ -10,17 +10,17 @@ import UIKit
 import XCoordinator
 
 class MenuScreenViewController: UIViewController {
-  
-  var viewModel: MenuScreenViewModelProtocol!
-  
-  static func instantiate(strongRouter: StrongRouter<MenuRoute>) -> Self {
-    let viewController = ScreensAssembly.shared.container.resolve(Self.self, argument: strongRouter) ?? .init()
-    return viewController
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
     
-    navigationController?.isNavigationBarHidden = true
-  }
+    var viewModel: MenuScreenViewModelProtocol!
+    
+    static func instantiate(strongRouter: StrongRouter<MenuRoute>) -> Self {
+        let viewController = ScreensAssembly.shared.container.resolve(Self.self, argument: strongRouter) ?? .init()
+        return viewController
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.isNavigationBarHidden = true
+    }
 }

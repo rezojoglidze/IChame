@@ -10,17 +10,17 @@ import Foundation
 import XCoordinator
 
 protocol BucketScreenViewModelProtocol {
-  var router: StrongRouter<BucketRoute> { get }
+    var router: StrongRouter<BucketRoute> { get }
 }
 
 class BucketScreenViewModel {
-  var router: StrongRouter<BucketRoute>
-  
-  init(router: StrongRouter<BucketRoute>) {
-    self.router = router
-  }
+    var router: StrongRouter<BucketRoute>
+    
+    init(router: StrongRouter<BucketRoute>) {
+        self.router = router
+    }
 }
 
 extension BucketScreenViewModel: BucketScreenViewModelProtocol {
-  
+    
 }

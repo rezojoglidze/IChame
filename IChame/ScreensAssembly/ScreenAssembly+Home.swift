@@ -11,21 +11,21 @@ import Swinject
 import XCoordinator
 
 extension ScreensAssembly {
-  func setupHome() {
-    setupHomeScreen()
-  }
-  
-  func setupHomeScreen() {
-    self.container.register(MenuScreenViewModel.self) { (resolver, router: StrongRouter<MenuRoute>) -> MenuScreenViewModel in
-      let viewModel = MenuScreenViewModel(router: router)
-      return viewModel
+    func setupHome() {
+        setupHomeScreen()
     }
     
-    self.container.register(MenuScreenViewController.self) { (resolver, router: StrongRouter<MenuRoute>) -> MenuScreenViewController in
-      let viewModel = resolver.resolve(MenuScreenViewModel.self, argument: router)
-      let viewController = MenuScreenViewController.loadFromStoryboard()
-      viewController.viewModel = viewModel
-      return viewController
+    func setupHomeScreen() {
+        self.container.register(MenuScreenViewModel.self) { (resolver, router: StrongRouter<MenuRoute>) -> MenuScreenViewModel in
+            let viewModel = MenuScreenViewModel(router: router)
+            return viewModel
+        }
+        
+        self.container.register(MenuScreenViewController.self) { (resolver, router: StrongRouter<MenuRoute>) -> MenuScreenViewController in
+            let viewModel = resolver.resolve(MenuScreenViewModel.self, argument: router)
+            let viewController = MenuScreenViewController.loadFromStoryboard()
+            viewController.viewModel = viewModel
+            return viewController
+        }
     }
-  }
 }

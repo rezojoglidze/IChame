@@ -10,34 +10,34 @@ import Foundation
 import XCoordinator
 
 enum AuthRoute: Route {
-  case authScreen
-  case registrationScreen
-  case scannerScreen
-  case mainTabbarScreen
+    case authScreen
+    case registrationScreen
+    case scannerScreen
+    case mainTabbarScreen
 }
 
 class AuthCoordinator: NavigationCoordinator<AuthRoute> {
-  static var shared: AuthCoordinator?
-
-  init(rootController: UINavigationController, initialRoute: RouteType) {
-      super.init(rootViewController: rootController, initialRoute: initialRoute)
-      AuthCoordinator.shared = self
-   }
-  
-  override func prepareTransition(for route: RouteType) -> TransitionType {
-    switch route {
-    case .authScreen:
-      let viewController = AuthorizationScreenViewController.instantiate(unownedRouter: self.unownedRouter)
-      return .push(viewController)
-    case .registrationScreen:
-      let viewController = RegistrationScreenViewController.instantiate(unownedRouter: self.unownedRouter)
-      return .push(viewController)
-    case .scannerScreen:
-      let viewController = ScannerScreenViewController.instantiate(unownedRouter: self.unownedRouter)
-      return .push(viewController)
-    case .mainTabbarScreen:
-      let tab = MainTabbarCoordinator()
-      return .trigger(TabbarRoute.root, on: tab)
+    static var shared: AuthCoordinator?
+    
+    init(rootController: UINavigationController, initialRoute: RouteType) {
+        super.init(rootViewController: rootController, initialRoute: initialRoute)
+        AuthCoordinator.shared = self
     }
-  }
+    
+    override func prepareTransition(for route: RouteType) -> TransitionType {
+        switch route {
+        case .authScreen:
+            let viewController = AuthorizationScreenViewController.instantiate(unownedRouter: self.unownedRouter)
+            return .push(viewController)
+        case .registrationScreen:
+            let viewController = RegistrationScreenViewController.instantiate(unownedRouter: self.unownedRouter)
+            return .push(viewController)
+        case .scannerScreen:
+            let viewController = ScannerScreenViewController.instantiate(unownedRouter: self.unownedRouter)
+            return .push(viewController)
+        case .mainTabbarScreen:
+            let tab = MainTabbarCoordinator()
+            return .trigger(TabbarRoute.root, on: tab)
+        }
+    }
 }

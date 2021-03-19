@@ -10,21 +10,21 @@ import Foundation
 import XCoordinator
 
 enum MoreSceenRoute: Route {
-  case moreSceen
+    case moreSceen
 }
 
 class MoreSceenCoordinator: NavigationCoordinator<MoreSceenRoute> {
-  static let shared = MoreSceenCoordinator()
-  
-  init() {
-    super.init(rootViewController: UINavigationController(), initialRoute: .moreSceen)
-  }
-  
-  override func prepareTransition(for route: RouteType) -> NavigationTransition {
-    switch route {
-    case .moreSceen:
-      let moreSceen = MoreScreenViewController.instantiate(strongRouter: self.strongRouter)
-      return .push(moreSceen)
+    static let shared = MoreSceenCoordinator()
+    
+    init() {
+        super.init(rootViewController: UINavigationController(), initialRoute: .moreSceen)
     }
-  }
+    
+    override func prepareTransition(for route: RouteType) -> NavigationTransition {
+        switch route {
+        case .moreSceen:
+            let moreSceen = MoreScreenViewController.instantiate(strongRouter: self.strongRouter)
+            return .push(moreSceen)
+        }
+    }
 }

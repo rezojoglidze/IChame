@@ -10,14 +10,14 @@ import Foundation
 import Swinject
 
 class ScreensAssembly {
-  
-  static let shared = ScreensAssembly()
-  let container = Container()
-  
-  init() {
-    setupAuthorization()
-    setupHome()
-    setupBucket()
-    setupMoreScreens()
-  }
+    
+    static let shared = ScreensAssembly()
+    let container = Container()
+    
+    init() {
+        setupAuthorization()
+        setupHome()
+        setupBucket()
+        setupMoreScreens()
+    }
 }

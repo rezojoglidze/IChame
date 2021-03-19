@@ -11,22 +11,22 @@ import Swinject
 import XCoordinator
 
 extension ScreensAssembly {
-  
-  func setupBucket() {
-    setupBucketScreen()
-  }
-  
-  func setupBucketScreen() {
-    self.container.register(MoreScreenViewModel.self) { (resolver, router: StrongRouter<MoreSceenRoute>) -> MoreScreenViewModel in
-      let viewModel = MoreScreenViewModel(router: router)
-      return viewModel
+    
+    func setupBucket() {
+        setupBucketScreen()
     }
     
-    self.container.register(MoreScreenViewController.self) { (resolver, router: StrongRouter<MoreSceenRoute>) -> MoreScreenViewController in
-      let viewController = MoreScreenViewController.loadFromStoryboard()
-      let viewModel = resolver.resolve(MoreScreenViewModel.self, argument: router)
-      viewController.viewModel = viewModel
-      return viewController
+    func setupBucketScreen() {
+        self.container.register(MoreScreenViewModel.self) { (resolver, router: StrongRouter<MoreSceenRoute>) -> MoreScreenViewModel in
+            let viewModel = MoreScreenViewModel(router: router)
+            return viewModel
+        }
+        
+        self.container.register(MoreScreenViewController.self) { (resolver, router: StrongRouter<MoreSceenRoute>) -> MoreScreenViewController in
+            let viewController = MoreScreenViewController.loadFromStoryboard()
+            let viewModel = resolver.resolve(MoreScreenViewModel.self, argument: router)
+            viewController.viewModel = viewModel
+            return viewController
+        }
     }
-  }
 }

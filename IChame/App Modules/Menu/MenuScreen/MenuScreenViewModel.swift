@@ -10,19 +10,19 @@ import Foundation
 import XCoordinator
 
 protocol MenuScreenViewModelProtocol {
-  var router: StrongRouter<MenuRoute> { get }
+    var router: StrongRouter<MenuRoute> { get }
 }
 
 class MenuScreenViewModel {
-  var router: StrongRouter<MenuRoute>
-  
-  init(router: StrongRouter<MenuRoute>) {
+    var router: StrongRouter<MenuRoute>
     
-    self.router = router
-    
-  }
+    init(router: StrongRouter<MenuRoute>) {
+        
+        self.router = router
+        
+    }
 }
 
 extension MenuScreenViewModel: MenuScreenViewModelProtocol {
-  
+    
 }

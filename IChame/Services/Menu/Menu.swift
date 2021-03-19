@@ -9,14 +9,14 @@
 import Foundation
 
 struct Menu: Codable {
-  var hotDishes: [Sample]
-  var drinks: [Sample]
-  var sauce: [Sample]
-  var menuId: String
+    var hotDishes: [Sample]
+    var drinks: [Sample]
+    var sauce: [Sample]
+    var menuId: String
 }
 
 struct Sample: Codable {
-  var description: String
-  var name: String
-  var price: Double
+    var description: String
+    var name: String
+    var price: Double
 }

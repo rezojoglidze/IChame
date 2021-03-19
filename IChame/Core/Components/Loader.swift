@@ -90,7 +90,7 @@ class LoaderManager {
         let loader = self.loaders[object]
         loader?.stopLoader(animated: animated)
         self.loaders[object] = nil
-    self.loaders.removeValue(forKey: object)
+        self.loaders.removeValue(forKey: object)
     }
     
     func isLoading(forView view: UIView) -> Bool {
@@ -98,5 +98,4 @@ class LoaderManager {
         let loader = self.loaders[object]
         return loader?.isLoading == true
     }
-    
 }

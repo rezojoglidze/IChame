@@ -10,17 +10,17 @@ import Foundation
 import XCoordinator
 
 protocol MoreScreenViewModelProtocol {
-  var router: StrongRouter<MoreSceenRoute> { get }
+    var router: StrongRouter<MoreSceenRoute> { get }
 }
 
 class MoreScreenViewModel {
-  var router: StrongRouter<MoreSceenRoute>
-  
-  init(router: StrongRouter<MoreSceenRoute>) {
-    self.router = router
-  }
+    var router: StrongRouter<MoreSceenRoute>
+    
+    init(router: StrongRouter<MoreSceenRoute>) {
+        self.router = router
+    }
 }
 
 extension MoreScreenViewModel: MoreScreenViewModelProtocol {
-  
+    
 }
