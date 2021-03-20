@@ -8,26 +8,33 @@
 
 import UIKit
 
+protocol MenuDetailsTableViewCellDelegate: class {
+    func didTapActionButton(cell: MenuDetailsTableViewCell, isAdd: Bool)
+}
+
 class MenuDetailsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var menuItemImageView: UIImageView!
-    @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var descriptionLbl: UILabel!
-    @IBOutlet weak var priceLbl: UILabel!
-    @IBOutlet weak var actionBtn: UIButton! {
+    @IBOutlet private weak var menuItemImageView: UIImageView!
+    @IBOutlet private weak var titleLbl: UILabel!
+    @IBOutlet private weak var descriptionLbl: UILabel!
+    @IBOutlet private weak var priceLbl: UILabel!
+    @IBOutlet private weak var actionBtn: UIButton! {
         didSet {
             actionBtn.setImage(UIImage(named: "add_icon"), for: .normal)
             actionBtn.setImage(UIImage(named: "remove_icon"), for: .selected)
         }
     }
-    
+    weak var delegate: MenuDetailsTableViewCellDelegate?
+    var indexPath: IndexPath?
+
     func fill(item: MenuItem) {
         self.titleLbl.text = item.name
         self.descriptionLbl.text = item.description
         self.priceLbl.text = "\(item.price) ₾"
     }
     
-    @IBAction func actionBtnTapped(_ sender: Any) {
+    @IBAction func actionBtnTapped(_ sender: UIButton!) {
         actionBtn.isSelected.toggle()
+        delegate?.didTapActionButton(cell: self, isAdd: actionBtn.isSelected)
     }
 }

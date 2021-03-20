@@ -13,7 +13,7 @@ class MenuDetailsScreenViewController: UIViewController {
     
     var viewModel: MenuDetailsScreenViewModel!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     static func instantiate(strongRouter: StrongRouter<MenuRoute>, menuItems: [MenuItem]) -> Self {
         let viewController = ScreensAssembly.shared.container.resolve(Self.self, arguments: strongRouter, menuItems) ?? .init()
@@ -39,6 +39,15 @@ class MenuDetailsScreenViewController: UIViewController {
     }
 }
 
+//MARK: MenuDetailsTableViewCellDelegate
+extension MenuDetailsScreenViewController: MenuDetailsTableViewCellDelegate {
+    func didTapActionButton(cell: MenuDetailsTableViewCell, isAdd: Bool) {
+        guard let indexPath = cell.indexPath else { return }
+        viewModel.actionButtonTapped(with: indexPath, isAdd: isAdd)
+    }
+}
+
+//MARK: tableView UITableViewDataSource & UITableViewDelegate
 extension MenuDetailsScreenViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows()
@@ -48,6 +57,8 @@ extension MenuDetailsScreenViewController: UITableViewDataSource, UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuDetailsTableViewCell.self)) as! MenuDetailsTableViewCell
         if let item = viewModel.item(at: indexPath) {
             cell.fill(item: item)
+            cell.delegate = self
+            cell.indexPath = indexPath
         }
         return cell
     }

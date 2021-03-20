@@ -10,9 +10,9 @@ import UIKit
 
 class MenuScreenCell: UITableViewCell {
 
-    @IBOutlet weak var menuImg: UIImageView!
-    @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var onePointHeightBlackLine: UIView!
+    @IBOutlet private weak var menuImg: UIImageView!
+    @IBOutlet private weak var titleLbl: UILabel!
+    @IBOutlet private weak var onePointHeightBlackLine: UIView!
     
     func fill(img: UIImage?, title: String) {
         self.titleLbl.text = title

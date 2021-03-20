@@ -18,44 +18,45 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="KGk-i7-Jjw" customClass="MenuDetailsTableViewCell" customModule="IChame" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="486" height="92"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="98" id="KGk-i7-Jjw" customClass="MenuDetailsTableViewCell" customModule="IChame" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="473" height="98"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="486" height="92"/>
+                <rect key="frame" x="0.0" y="0.0" width="473" height="98"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drinks_icon" translatesAutoresizingMaskIntoConstraints="NO" id="5A1-iI-2gG">
-                        <rect key="frame" x="20" y="14" width="64" height="64"/>
+                        <rect key="frame" x="20" y="17" width="64" height="64"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="64" id="4Bb-N9-n99"/>
                             <constraint firstAttribute="width" constant="64" id="Rbr-aS-keT"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHT-Xa-jkW">
-                        <rect key="frame" x="104" y="10" width="362" height="21"/>
+                        <rect key="frame" x="104" y="10" width="349" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="17"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JP-W1-uxQ">
-                        <rect key="frame" x="104" y="33" width="362" height="17"/>
+                        <rect key="frame" x="104" y="33" width="349" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwc-cO-eOT">
-                        <rect key="frame" x="104" y="52" width="310" height="18.5"/>
+                        <rect key="frame" x="104" y="52" width="289" height="18.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-65Medium" family="Helvetica Neue LT GEO" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGj-Hd-x76">
-                        <rect key="frame" x="434" y="52" width="32" height="32"/>
+                        <rect key="frame" x="413" y="52" width="60" height="36"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="32" id="1fO-Ez-lNz"/>
-                            <constraint firstAttribute="width" constant="32" id="ZON-KE-kZk"/>
+                            <constraint firstAttribute="height" constant="36" id="1fO-Ez-lNz"/>
+                            <constraint firstAttribute="width" constant="60" id="ZON-KE-kZk"/>
                         </constraints>
+                        <inset key="imageEdgeInsets" minX="17" minY="5" maxX="17" maxY="5"/>
                         <state key="normal" image="add_icon"/>
                         <connections>
                             <action selector="actionBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vr1-bk-Zt1"/>
@@ -74,8 +75,8 @@
                     <constraint firstItem="5A1-iI-2gG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WkJ-pE-3zo"/>
                     <constraint firstAttribute="trailing" secondItem="iHT-Xa-jkW" secondAttribute="trailing" constant="20" id="bg8-D1-2zF"/>
                     <constraint firstAttribute="trailing" secondItem="3JP-W1-uxQ" secondAttribute="trailing" constant="20" id="fMy-nm-boZ"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZGj-Hd-x76" secondAttribute="bottom" constant="5" id="fip-Rl-99q"/>
-                    <constraint firstAttribute="trailing" secondItem="ZGj-Hd-x76" secondAttribute="trailing" constant="20" id="gIU-Oj-AJ2"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZGj-Hd-x76" secondAttribute="bottom" constant="2" id="fip-Rl-99q"/>
+                    <constraint firstAttribute="trailing" secondItem="ZGj-Hd-x76" secondAttribute="trailing" id="gIU-Oj-AJ2"/>
                     <constraint firstItem="5A1-iI-2gG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="qm6-q7-fCE"/>
                 </constraints>
             </tableViewCellContentView>
@@ -87,7 +88,7 @@
                 <outlet property="priceLbl" destination="Nwc-cO-eOT" id="tOU-Dl-nJ1"/>
                 <outlet property="titleLbl" destination="iHT-Xa-jkW" id="jGI-hB-4EC"/>
             </connections>
-            <point key="canvasLocation" x="257.97101449275362" y="99.776785714285708"/>
+            <point key="canvasLocation" x="247.10144927536234" y="101.78571428571428"/>
         </tableViewCell>
     </objects>
     <resources>

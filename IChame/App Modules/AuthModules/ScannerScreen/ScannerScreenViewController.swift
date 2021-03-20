@@ -16,7 +16,7 @@ class ScannerScreenViewController: UIViewController {
     
     var viewModel: ScannerScreenViewModelProocol!
     
-    @IBOutlet weak var scannerBtn: UIButton!
+    @IBOutlet private weak var scannerBtn: UIButton!
     private var disposeBag = DisposeBag()
     
     lazy var readerVC: QRCodeReaderViewController = {
