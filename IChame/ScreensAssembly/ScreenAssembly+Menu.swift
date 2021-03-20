@@ -32,8 +32,12 @@ extension ScreensAssembly {
     }
     
     func setupMenuDetailsScreen() {
+        self.container.register(BucketService.self) { (_) -> BucketService in
+            return BucketService()
+        }
         self.container.register(MenuDetailsScreenViewModel.self) { (resolver, router: StrongRouter<MenuRoute>, menuItems: [MenuItem]) -> MenuDetailsScreenViewModel in
-            let viewModel = MenuDetailsScreenViewModel(router: router, menuItems: menuItems)
+            let bucketService = resolver.resolve(BucketService.self)
+            let viewModel = MenuDetailsScreenViewModel(router: router, menuItems: menuItems, bucketService: bucketService)
             return viewModel
         }
         self.container.register(MenuDetailsScreenViewController.self) { (resolver, router: StrongRouter<MenuRoute>, menuItems: [MenuItem]) -> MenuDetailsScreenViewController in

@@ -73,9 +73,6 @@ extension ScannerScreenViewController: QRCodeReaderViewControllerDelegate {
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning()
         dismiss(animated: true) { [weak self] in
-            //      let alert = UIAlertController(title: result.value, message: nil, preferredStyle: .alert)
-            //      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            //      self?.present(alert, animated: true, completion: nil)
             guard let self = self else { return }
             self.viewModel.getMenu(docId: result.value, fail: self.standardFailBlock)
         }

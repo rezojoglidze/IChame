@@ -40,6 +40,8 @@
 		A943CBB325FD346B00714021 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943CBB225FD346B00714021 /* Loader.swift */; };
 		A943CBD425FD355200714021 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943CBD325FD355200714021 /* UIView+Extensions.swift */; };
 		A949235C2604003A0062DB96 /* IChameTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949235B2604003A0062DB96 /* IChameTabbarController.swift */; };
+		A957D8CB26069FD20024AD4E /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A957D8CA26069FD20024AD4E /* Bucket.swift */; };
+		A957D8CE26069FFF0024AD4E /* BucketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A957D8CD26069FFF0024AD4E /* BucketService.swift */; };
 		A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184425FA869400A980E2 /* ScreensAssembly.swift */; };
 		A987184925FA875E00A980E2 /* ScreenAssembly+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */; };
 		A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */; };
@@ -104,6 +106,8 @@
 		A943CBB225FD346B00714021 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		A943CBD325FD355200714021 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A949235B2604003A0062DB96 /* IChameTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChameTabbarController.swift; sourceTree = "<group>"; };
+		A957D8CA26069FD20024AD4E /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
+		A957D8CD26069FFF0024AD4E /* BucketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketService.swift; sourceTree = "<group>"; };
 		A987184425FA869400A980E2 /* ScreensAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensAssembly.swift; sourceTree = "<group>"; };
 		A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Authorization.swift"; sourceTree = "<group>"; };
 		A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 		A940540525FCB0C600AB2F24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A957D8C926069FC20024AD4E /* Bucket */,
 				A9C988E32601567F005BECDF /* Menu */,
 				A940540625FCB0E200AB2F24 /* Authentication */,
 			);
@@ -327,6 +332,15 @@
 				A9CEE4B7260531A2005298D0 /* MenuDetailsScreen */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		A957D8C926069FC20024AD4E /* Bucket */ = {
+			isa = PBXGroup;
+			children = (
+				A957D8CA26069FD20024AD4E /* Bucket.swift */,
+				A957D8CD26069FFF0024AD4E /* BucketService.swift */,
+			);
+			path = Bucket;
 			sourceTree = "<group>";
 		};
 		A987184325FA867B00A980E2 /* ScreensAssembly */ = {
@@ -625,6 +639,7 @@
 				A93490E62604C1E600CC3750 /* MenuScreenCell.swift in Sources */,
 				A9CEE4C0260531FE005298D0 /* MenuDetailsScreenViewController.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
+				A957D8CE26069FFF0024AD4E /* BucketService.swift in Sources */,
 				A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
 				A949235C2604003A0062DB96 /* IChameTabbarController.swift in Sources */,
@@ -654,6 +669,7 @@
 				A994E67A25FE513A004BFBE6 /* ScannerScreenViewModel.swift in Sources */,
 				A987186D25FA961F00A980E2 /* AuthorizationScreenViewController.swift in Sources */,
 				A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */,
+				A957D8CB26069FD20024AD4E /* Bucket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

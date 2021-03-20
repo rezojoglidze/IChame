@@ -16,24 +16,31 @@ protocol MenuDetailsScreenViewModelProtocol {
     
     func item(at indexPath: IndexPath) -> MenuItem?
     
-    func actionButtonTapped(with indexPath: IndexPath, isAdd: Bool)
+    func actionButtonTapped(with indexPath: IndexPath, isAdd: Bool, fail: @escaping Network.StatusBlock)
 }
 class MenuDetailsScreenViewModel {
     
     var router: StrongRouter<MenuRoute>
+    var bucketService: BucketService?
     
     private var menuItems: [MenuItem]
-    private var bucketItems: [MenuItem] = []
-    
-    init(router: StrongRouter<MenuRoute>, menuItems: [MenuItem]) {
+
+    init(router: StrongRouter<MenuRoute>,
+         menuItems: [MenuItem],
+         bucketService: BucketService?) {
         self.router = router
+        self.bucketService = bucketService
         self.menuItems = menuItems
     }
 }
 
 extension MenuDetailsScreenViewModel: MenuDetailsScreenViewModelProtocol {
-    func actionButtonTapped(with indexPath: IndexPath, isAdd: Bool) {
-        bucketItems.append(menuItems[indexPath.row])
+    func actionButtonTapped(with indexPath: IndexPath, isAdd: Bool, fail: @escaping Network.StatusBlock) {
+        let menuId = Menu.currentMenuId
+        let menuItem = menuItems[indexPath.row]
+        bucketService?.addDish(menuId, with: menuItem, userId: User.current?.uid ?? "", index: indexPath.row, success: { (isAdd) in
+            print("isAdd isAdd isAdd -> ", isAdd)
+        }, fail: fail)
     }
     
     func numberOfRows() -> Int {

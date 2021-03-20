@@ -43,7 +43,7 @@ class MenuDetailsScreenViewController: UIViewController {
 extension MenuDetailsScreenViewController: MenuDetailsTableViewCellDelegate {
     func didTapActionButton(cell: MenuDetailsTableViewCell, isAdd: Bool) {
         guard let indexPath = cell.indexPath else { return }
-        viewModel.actionButtonTapped(with: indexPath, isAdd: isAdd)
+        viewModel.actionButtonTapped(with: indexPath, isAdd: isAdd, fail: self.standardFailBlock)
     }
 }
 

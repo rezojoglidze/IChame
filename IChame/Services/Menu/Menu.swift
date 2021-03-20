@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 struct Menu: Codable {
+    static var currentMenuId: String = ""
+    
     var hotDishes: [MenuItem]
     var coldDishes: [MenuItem]
     var drinks: [MenuItem]
@@ -51,6 +53,13 @@ enum MenuType: String, Codable {
             return "სასმელები"
         case .sauce:
             return "სოუსები"
+        }
+    }
+    
+    var engTitle: String {
+        switch self {
+        case .hotDishes, .coldDishes, .drinks, .sauce:
+            return self.rawValue
         }
     }
     
