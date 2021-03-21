@@ -9,9 +9,8 @@
 import Foundation
 
 struct Bucket: Codable {
-    var hotDishes: [MenuItem]
-    var coldDishes: [MenuItem]
-    var drinks: [MenuItem]
-    var sauce: [MenuItem]
-    var userId: String
+    var hotDishes : [String : MenuItem]?
+    var coldDishes : [String : MenuItem]?
+    var drinks : [String : MenuItem]?
+    var sauce : [String : MenuItem]?
 }

@@ -22,5 +22,7 @@ class BucketScreenViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.isNavigationBarHidden = true
+        
+        viewModel.loadBucket(fail: self.standardFailBlock)
     }
 }

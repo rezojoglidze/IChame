@@ -17,14 +17,18 @@ extension ScreensAssembly {
     }
     
     func setupBucketScreen() {
-        self.container.register(MoreScreenViewModel.self) { (resolver, router: StrongRouter<MoreSceenRoute>) -> MoreScreenViewModel in
-            let viewModel = MoreScreenViewModel(router: router)
+        self.container.register(BucketService.self) { (_) -> BucketService in
+            return BucketService()
+        }
+        self.container.register(BucketScreenViewModel.self) { (resolver, router: StrongRouter<BucketRoute>) -> BucketScreenViewModel in
+            let bucketService = resolver.resolve(BucketService.self)
+            let viewModel = BucketScreenViewModel(router: router, bucketService: bucketService)
             return viewModel
         }
         
-        self.container.register(MoreScreenViewController.self) { (resolver, router: StrongRouter<MoreSceenRoute>) -> MoreScreenViewController in
-            let viewController = MoreScreenViewController.loadFromStoryboard()
-            let viewModel = resolver.resolve(MoreScreenViewModel.self, argument: router)
+        self.container.register(BucketScreenViewController.self) { (resolver, router: StrongRouter<BucketRoute>) -> BucketScreenViewController in
+            let viewController = BucketScreenViewController.loadFromStoryboard()
+            let viewModel = resolver.resolve(BucketScreenViewModel.self, argument: router)
             viewController.viewModel = viewModel
             return viewController
         }

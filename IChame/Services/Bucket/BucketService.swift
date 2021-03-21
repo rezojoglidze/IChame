@@ -40,4 +40,25 @@ class BucketService {
             }
         }
     }
+    
+    func loadBucket(_ menuId: String, userId: String, success: @escaping (Bucket?) -> Void,fail: @escaping Network.StatusBlock) {
+        db.collection(Constants.bucketiOS).document("\(menuId)_\(userId)")
+            .addSnapshotListener { documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                    print("Error fetching document: \(error!)")
+                    fail(error)
+                    return
+                }
+                
+                let result = Result {
+                    try document.data(as: Bucket.self)
+                }
+                switch result {
+                case .success(let bucket):
+                    success(bucket)
+                case .failure(let error):
+                    fail(error)
+                }
+            }
+    }
 }
