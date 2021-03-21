@@ -28,7 +28,17 @@ class BucketService {
         }
     }
     
-    func removeDish(success: @escaping (Bool) -> Void, fail: @escaping Network.StatusBlock) {
-    
+    func removeDish(_ menuId: String, with menuItem: MenuItem, userId: String, index: Int,
+                    success: @escaping (Bool) -> Void,
+                    fail: @escaping Network.StatusBlock) {
+        db.collection(Constants.bucket).document(("\(menuId)_\(userId)")).updateData(
+            ["\(menuItem.type.engTitle).\(index)" : FieldValue.delete()]
+        ) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
     }
 }

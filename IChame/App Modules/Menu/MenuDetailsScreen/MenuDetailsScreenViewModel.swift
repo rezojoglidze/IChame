@@ -38,9 +38,16 @@ extension MenuDetailsScreenViewModel: MenuDetailsScreenViewModelProtocol {
     func actionButtonTapped(with indexPath: IndexPath, isAdd: Bool, fail: @escaping Network.StatusBlock) {
         let menuId = Menu.currentMenuId
         let menuItem = menuItems[indexPath.row]
-        bucketService?.addDish(menuId, with: menuItem, userId: User.current?.uid ?? "", index: indexPath.row, success: { (isAdd) in
-            print("isAdd isAdd isAdd -> ", isAdd)
-        }, fail: fail)
+        let userId = User.current?.uid ?? ""
+        if isAdd {
+            bucketService?.addDish(menuId, with: menuItem, userId: userId, index: indexPath.row, success: { (isAdded) in
+                print("isAdd isAdd isAdd -> ", isAdd)
+            }, fail: fail)
+        } else {
+            bucketService?.removeDish(menuId, with: menuItem, userId: userId, index: indexPath.row, success: { (isRemoved) in
+                print("waishalaa", isRemoved)
+            }, fail: fail)
+        }
     }
     
     func numberOfRows() -> Int {
