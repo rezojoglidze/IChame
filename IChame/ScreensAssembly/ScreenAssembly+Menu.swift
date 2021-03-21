@@ -40,10 +40,11 @@ extension ScreensAssembly {
             let viewModel = MenuDetailsScreenViewModel(router: router, menuItems: menuItems, bucketService: bucketService)
             return viewModel
         }
-        self.container.register(MenuDetailsScreenViewController.self) { (resolver, router: StrongRouter<MenuRoute>, menuItems: [MenuItem]) -> MenuDetailsScreenViewController in
+        self.container.register(MenuDetailsScreenViewController.self) { (resolver, router: StrongRouter<MenuRoute>, menuItems: [MenuItem], title: String) -> MenuDetailsScreenViewController in
             let viewModel = resolver.resolve(MenuDetailsScreenViewModel.self, arguments: router, menuItems)
             let viewController = MenuDetailsScreenViewController.loadFromStoryboard()
             viewController.viewModel = viewModel
+            viewController.navigationTitle = title
             return viewController
         }
     }

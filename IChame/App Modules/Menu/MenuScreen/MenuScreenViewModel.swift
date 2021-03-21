@@ -34,7 +34,7 @@ extension MenuScreenViewModel: MenuScreenViewModelProtocol {
               let menu = self.menu else { return }
         
         let menuItems = item.type.getMenuItems(from: menu)
-        router.trigger(.menuDetails(menuItems: menuItems))
+        router.trigger(.menuDetails(menuItems: menuItems, title: item.type.title))
     }
     
     func item(at indexPath: IndexPath) -> (type: MenuType, img: UIImage?)? {

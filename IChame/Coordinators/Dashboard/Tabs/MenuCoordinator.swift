@@ -11,7 +11,7 @@ import XCoordinator
 
 enum MenuRoute: Route {
     case menu
-    case menuDetails(menuItems: [MenuItem])
+    case menuDetails(menuItems: [MenuItem], title: String)
 }
 
 class MenuCoordinator: NavigationCoordinator<MenuRoute> {
@@ -28,8 +28,8 @@ class MenuCoordinator: NavigationCoordinator<MenuRoute> {
         case .menu:
             let menu = MenuScreenViewController.instantiate(strongRouter: self.strongRouter, menu: self.menu)
             return .push(menu)
-        case .menuDetails(let menuItems):
-            let menuDetails = MenuDetailsScreenViewController.instantiate(strongRouter: self.strongRouter, menuItems: menuItems)
+        case .menuDetails(let menuItems, let title):
+            let menuDetails = MenuDetailsScreenViewController.instantiate(strongRouter: self.strongRouter, menuItems: menuItems, title: title)
             return .push(menuDetails)
         }
     }

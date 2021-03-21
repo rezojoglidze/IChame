@@ -12,11 +12,12 @@ import XCoordinator
 class MenuDetailsScreenViewController: UIViewController {
     
     var viewModel: MenuDetailsScreenViewModel!
+    var navigationTitle: String!
     
     @IBOutlet private weak var tableView: UITableView!
     
-    static func instantiate(strongRouter: StrongRouter<MenuRoute>, menuItems: [MenuItem]) -> Self {
-        let viewController = ScreensAssembly.shared.container.resolve(Self.self, arguments: strongRouter, menuItems) ?? .init()
+    static func instantiate(strongRouter: StrongRouter<MenuRoute>, menuItems: [MenuItem], title: String) -> Self {
+        let viewController = ScreensAssembly.shared.container.resolve(Self.self, arguments: strongRouter, menuItems, title) ?? .init()
         return viewController
     }
     
@@ -27,7 +28,7 @@ class MenuDetailsScreenViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        navigationItem.title = "დეტალები"
+        navigationItem.title = navigationTitle
         navigationItem.largeTitleDisplayMode = .never
     }
     
