@@ -15,7 +15,7 @@ class MenuService {
     lazy private var db = Firestore.firestore()
     
     func getMenu(docId: String, success: @escaping (Menu?) -> Void, fail: @escaping Network.StatusBlock) {
-        let docRef = db.collection(Constants.menu).document(docId)
+        let docRef = db.collection(Constants.menuiOS).document(docId)
         loadData(id: docId)
         
         docRef.getDocument {(document, error) in
@@ -34,19 +34,21 @@ class MenuService {
     func loadData(id: String) {
         
         let menu = Menu(hotDishes: [
-            MenuItem(description: "mwvadii nice", name: "mwvadii", price: 32, type: MenuType(rawValue: "hotDishes")!)
+            MenuItem(description: "გემრიელი, ღორის მწვადი", name: "მწვადი", price: 7, type: MenuType(rawValue: "hotDishes")!),
+            MenuItem(description: "ქალაქური ხინკალი", name: "ხინკალი", price: 0.80, type: MenuType(rawValue: "hotDishes")!),
+            MenuItem(description: "შემწვარი სოკოო", name: "სოკო", price: 14, type: MenuType(rawValue: "hotDishes")!),
         ], coldDishes: [
-            MenuItem(description: "kababai decc", name: "kababai", price: 22, type: MenuType(rawValue: "coldDishes")!),
-            MenuItem(description: "xinakla desc", name: "xinakla", price: 112, type: MenuType(rawValue: "coldDishes")!),
+            MenuItem(description: "ინდაურის საცივი", name: "საცივი", price: 12, type: MenuType(rawValue: "coldDishes")!),
+            MenuItem(description: "ბოსტნეირული გემრიელი სალათა", name: "სალათა", price: 11, type: MenuType(rawValue: "coldDishes")!),
         ], drinks: [
-            MenuItem(description: "colaa descc", name: "colaa", price: 12, type: MenuType(rawValue: "drinks")!)
+            MenuItem(description: "ქართული წარმოების კოკა-კოლა", name: "კოკა-კოლა", price: 2.5, type: MenuType(rawValue: "drinks")!),
+            MenuItem(description: "ქართული წარმოების განტა", name: "ფანტა", price: 2.8, type: MenuType(rawValue: "drinks")!)
         ], sauce: [
-            MenuItem(description: "sauceee descc", name: "sauceee", price: 42, type: MenuType(rawValue: "sauce")!)
+            MenuItem(description: "პომიდვრის კარგი სოისი არისს", name: "პომიდვრის სოუსი", price: 3.4, type: MenuType(rawValue: "sauce")!)
         ], menuId: "dsada")
         
-        
         do {
-            try db.collection("menu_iOS").document(id).setData(from: menu)
+            try db.collection(Constants.menuiOS).document(id).setData(from: menu)
         } catch let error {
             print("Error writing city to Firestore: \(error)")
         }
