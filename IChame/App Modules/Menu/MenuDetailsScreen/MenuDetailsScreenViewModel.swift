@@ -8,10 +8,14 @@
 
 import Foundation
 import XCoordinator
+import RxSwift
+import RxCocoa
 
 protocol MenuDetailsScreenViewModelProtocol {
     var router: StrongRouter<MenuRoute> { get }
-    
+    var isAddedDish: Observable<Void> { get }
+    var isRemovedDish: Observable<Void> { get }
+
     func numberOfRows() -> Int
     
     func item(at indexPath: IndexPath) -> MenuItem?
@@ -25,12 +29,19 @@ class MenuDetailsScreenViewModel {
     
     private var menuItems: [MenuItem]
 
+    var isAddedDish: Observable<Void>
+    var isRemovedDish: Observable<Void>
+    let innerIsAddedDish: PublishRelay<Void> = PublishRelay<Void>()
+    let innerIsRemovedDish: PublishRelay<Void> = PublishRelay<Void>()
+
     init(router: StrongRouter<MenuRoute>,
          menuItems: [MenuItem],
          bucketService: BucketService?) {
         self.router = router
         self.bucketService = bucketService
         self.menuItems = menuItems
+        self.isAddedDish = self.innerIsAddedDish.asObservable()
+        self.isRemovedDish = self.innerIsRemovedDish.asObservable()
     }
 }
 
@@ -40,12 +51,12 @@ extension MenuDetailsScreenViewModel: MenuDetailsScreenViewModelProtocol {
         let menuItem = menuItems[indexPath.row]
         let userId = User.current?.uid ?? ""
         if isAdd {
-            bucketService?.addDish(menuId, with: menuItem, userId: userId, index: indexPath.row, success: { (isAdded) in
-                print("isAdd isAdd isAdd -> ", isAdd)
+            bucketService?.addDish(menuId, with: menuItem, userId: userId, index: indexPath.row, success: {[weak self] (isAdded) in
+                self?.innerIsAddedDish.accept(())
             }, fail: fail)
         } else {
-            bucketService?.removeDish(menuId, with: menuItem, userId: userId, index: indexPath.row, success: { (isRemoved) in
-                print("waishalaa", isRemoved)
+            bucketService?.removeDish(menuId, with: menuItem, userId: userId, index: indexPath.row, success: {[weak self] (isRemoved) in
+                self?.innerIsRemovedDish.accept(())
             }, fail: fail)
         }
     }

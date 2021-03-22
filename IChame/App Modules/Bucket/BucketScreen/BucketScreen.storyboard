@@ -16,9 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="Zzb-rF-5CI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L8j-HM-V6W">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VYA-xv-gip"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="L8j-HM-V6W" firstAttribute="leading" secondItem="VYA-xv-gip" secondAttribute="leading" id="asq-1L-geo"/>
+                            <constraint firstItem="L8j-HM-V6W" firstAttribute="top" secondItem="VYA-xv-gip" secondAttribute="top" id="fq4-Wm-lce"/>
+                            <constraint firstItem="VYA-xv-gip" firstAttribute="trailing" secondItem="L8j-HM-V6W" secondAttribute="trailing" id="qbR-c2-TP8"/>
+                            <constraint firstItem="VYA-xv-gip" firstAttribute="bottom" secondItem="L8j-HM-V6W" secondAttribute="bottom" id="zkr-6Q-g7F"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="L8j-HM-V6W" id="grH-UY-jqZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Js-LQ-ihC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,8 +41,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

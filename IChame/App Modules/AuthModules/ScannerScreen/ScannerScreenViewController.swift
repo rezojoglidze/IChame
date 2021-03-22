@@ -44,8 +44,8 @@ class ScannerScreenViewController: UIViewController {
     }
     
     private func setupObservables() {
-        viewModel.menuDidLoaded.subscribe(onNext: {
-            self.stopLoader()
+        viewModel.menuDidLoaded.subscribe(onNext: { [weak self] in
+            self?.stopLoader()
         }).disposed(by: disposeBag)
     }
     

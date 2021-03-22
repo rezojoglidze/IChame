@@ -13,11 +13,12 @@ protocol MenuDetailsTableViewCellDelegate: class {
 }
 
 class MenuDetailsTableViewCell: UITableViewCell {
-
+    
     @IBOutlet private weak var menuItemImageView: UIImageView!
     @IBOutlet private weak var titleLbl: UILabel!
     @IBOutlet private weak var descriptionLbl: UILabel!
     @IBOutlet private weak var priceLbl: UILabel!
+    @IBOutlet private weak var removeBtn: UIButton!
     @IBOutlet private weak var actionBtn: UIButton! {
         didSet {
             actionBtn.setImage(UIImage(named: "add_icon"), for: .normal)
@@ -26,11 +27,20 @@ class MenuDetailsTableViewCell: UITableViewCell {
     }
     weak var delegate: MenuDetailsTableViewCellDelegate?
     var indexPath: IndexPath?
-
-    func fill(item: MenuItem) {
+    
+    func fill(item: MenuItem, isHiddenActionBtn: Bool = false) {
         self.titleLbl.text = item.name
         self.descriptionLbl.text = item.description
         self.priceLbl.text = "\(item.price) ₾"
+        self.menuItemImageView.image = item.type.image
+        if isHiddenActionBtn {
+            removeBtn.isHidden = false
+            actionBtn.isHidden = true
+        }
+    }
+    
+    @IBAction func removeBtnTapped(_ sender: Any) {
+        
     }
     
     @IBAction func actionBtnTapped(_ sender: UIButton!) {

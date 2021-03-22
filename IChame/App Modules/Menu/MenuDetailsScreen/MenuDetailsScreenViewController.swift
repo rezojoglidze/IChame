@@ -8,6 +8,7 @@
 
 import UIKit
 import XCoordinator
+import RxSwift
 
 class MenuDetailsScreenViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class MenuDetailsScreenViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
+    private var disposeBag = DisposeBag()
+
     static func instantiate(strongRouter: StrongRouter<MenuRoute>, menuItems: [MenuItem], title: String) -> Self {
         let viewController = ScreensAssembly.shared.container.resolve(Self.self, arguments: strongRouter, menuItems, title) ?? .init()
         return viewController
@@ -25,6 +28,16 @@ class MenuDetailsScreenViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
+        setupObservables()
+    }
+    
+    private func setupObservables() {
+        viewModel.isAddedDish.subscribe(onNext: { [weak self] in
+            self?.stopLoader()
+        }).disposed(by: disposeBag)
+        viewModel.isRemovedDish.subscribe(onNext: { [weak self] in
+            self?.stopLoader()
+        }).disposed(by: disposeBag)
     }
     
     private func setupNavigationBar() {
