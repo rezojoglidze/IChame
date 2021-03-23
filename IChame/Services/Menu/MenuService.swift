@@ -34,18 +34,23 @@ class MenuService {
     func loadData(id: String) {
         
         let menu = Menu(hotDishes: [
-            MenuItem(description: "გემრიელი, ღორის მწვადი", name: "მწვადი", price: 7, type: MenuType(rawValue: "hotDishes")!),
-            MenuItem(description: "ქალაქური ხინკალი", name: "ხინკალი", price: 0.80, type: MenuType(rawValue: "hotDishes")!),
-            MenuItem(description: "შემწვარი სოკოო", name: "სოკო", price: 14, type: MenuType(rawValue: "hotDishes")!),
+            MenuItem(description: "გემრიელი, წვნიანი ღორის მწვადი", name: "მწვადი", price: 7, type: MenuType(rawValue: "hotDishes")!),
+            MenuItem(description: "ქალაქური ხინკალი, 1 ცალი 250 გრამი", name: "ხინკალი", price: 0.80, type: MenuType(rawValue: "hotDishes")!),
+            MenuItem(description: "შემწვარი სოკოო, კეცზე!", name: "სოკო", price: 14.5, type: MenuType(rawValue: "hotDishes")!),
+            MenuItem(description: "კავკასიური ხაშლამა, გაკეთებულია ხბოს ხორცისგან", name: "ხაშლამა", price: 7.5, type: MenuType(rawValue: "hotDishes")!)
         ], coldDishes: [
             MenuItem(description: "ინდაურის საცივი", name: "საცივი", price: 12, type: MenuType(rawValue: "coldDishes")!),
-            MenuItem(description: "ბოსტნეირული გემრიელი სალათა", name: "სალათა", price: 11, type: MenuType(rawValue: "coldDishes")!),
+            MenuItem(description: "ბოსტნეირულის, ჯანსაღი, სუფთა გემრიელი სალათა", name: "სალათა", price: 11, type: MenuType(rawValue: "coldDishes")!),
         ], drinks: [
             MenuItem(description: "ქართული წარმოების კოკა-კოლა", name: "კოკა-კოლა", price: 2.5, type: MenuType(rawValue: "drinks")!),
-            MenuItem(description: "ქართული წარმოების განტა", name: "ფანტა", price: 2.8, type: MenuType(rawValue: "drinks")!)
+            MenuItem(description: "ქართული წარმოების განტა", name: "ფანტა", price: 2.8, type: MenuType(rawValue: "drinks")!),
+            MenuItem(description: "სპრაიტი ლიტრიანი", name: "სპრაიტი", price: 1.75, type: MenuType(rawValue: "drinks")!),
+            MenuItem(description: "ლიტრიანი ბოთლით ცივი ჩაი", name: "ცივი ჩაი", price: 3.8, type: MenuType(rawValue: "drinks")!)
         ], sauce: [
-            MenuItem(description: "პომიდვრის კარგი სოისი არისს", name: "პომიდვრის სოუსი", price: 3.4, type: MenuType(rawValue: "sauce")!)
-        ], menuId: "dsada")
+            MenuItem(description: "პომიდვრის კარგი სოუსი არისს", name: "პომიდვრის სოუსი", price: 0.8, type: MenuType(rawValue: "sauce")!),
+            MenuItem(description: "სოფლის ტყემალი", name: "წყემალი", price: 1.7, type: MenuType(rawValue: "sauce")!),
+            MenuItem(description: "მეგრული აჯიკა", name: "აჯიკა", price: 1.2, type: MenuType(rawValue: "sauce")!)
+        ], menuId: "menuId-\(id)")
         
         do {
             try db.collection(Constants.menuiOS).document(id).setData(from: menu)
