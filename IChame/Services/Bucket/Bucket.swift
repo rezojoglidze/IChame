@@ -17,16 +17,6 @@ struct Bucket: Codable {
 }
 
 extension Bucket {
-    
-    var bucketDataSource: [(type: MenuType, img: UIImage?)] {
-        var dataSource: [(type: MenuType, img: UIImage?)] = []
-        [hotDishes,coldDishes,drinks,sauce].forEach { (item) in
-            if let item = item?.first {
-                dataSource.append((type: item.value.type, img: item.value.type.image))
-            }
-        }
-        return dataSource
-    }
 
     func item(at index: Int, type: MenuType) -> MenuItem? {
         switch type {
