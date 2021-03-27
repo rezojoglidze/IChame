@@ -32,11 +32,8 @@ class MenuDetailsScreenViewController: UIViewController {
     }
     
     private func setupObservables() {
-        viewModel.isAddedDish.subscribe(onNext: { [weak self] in
-            self?.stopLoader()
-        }).disposed(by: disposeBag)
-        viewModel.isRemovedDish.subscribe(onNext: { [weak self] in
-            self?.stopLoader()
+        viewModel.showLoader.subscribe(onNext: { [weak self] show in
+            show ? self?.startLoader() : self?.stopLoader()
         }).disposed(by: disposeBag)
     }
     
@@ -57,7 +54,8 @@ class MenuDetailsScreenViewController: UIViewController {
 extension MenuDetailsScreenViewController: MenuDetailsTableViewCellDelegate {
     func didTapActionButton(cell: MenuDetailsTableViewCell, isAdd: Bool) {
         guard let indexPath = cell.indexPath else { return }
-        viewModel.actionButtonTapped(with: indexPath, isAdd: isAdd, fail: self.standardFailBlock)
+
+        viewModel.addButtonTapped(with: indexPath, fail: self.standardFailBlock)
     }
 }
 

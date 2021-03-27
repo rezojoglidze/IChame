@@ -13,11 +13,11 @@ import FirebaseFirestoreSwift
 class BucketService {
     lazy private var db = Firestore.firestore()
     
-    func addDish(_ menuId: String, with menuItem: MenuItem, userId: String, index: Int,
+    func addDish(_ menuId: String, with menuItem: MenuItem, userId: String,
                  success: @escaping (Bool) -> Void,
                  fail: @escaping Network.StatusBlock) {
         
-        let item = ["\(menuItem.type.engTitle)" : ["\(index)" : menuItem]]
+        let item = ["\(menuItem.type.engTitle)" : ["\(menuItem.id)" : menuItem]]
         
         do {
             try db.collection(Constants.bucketiOS).document(("\(menuId)_\(userId)")).setData(from: item, merge: true)
@@ -27,11 +27,11 @@ class BucketService {
         }
     }
     
-    func removeDish(_ menuId: String, with menuItem: MenuItem, userId: String, index: Int,
+    func removeDish(_ menuId: String, with menuItem: MenuItem, userId: String,
                     success: @escaping (Bool) -> Void,
                     fail: @escaping Network.StatusBlock) {
         db.collection(Constants.bucketiOS).document(("\(menuId)_\(userId)")).updateData(
-            ["\(menuItem.type.engTitle).\(index)" : FieldValue.delete()]
+            ["\(menuItem.type.engTitle).\(menuItem.id)" : FieldValue.delete()]
         ) { err in
             if let err = err {
                 fail(err)

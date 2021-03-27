@@ -31,9 +31,11 @@ struct Menu: Codable {
 
 
 struct MenuItem: Codable {
+    var id: String
     var description: String
     var name: String
     var price: Double
+    var count: Int
     var type: MenuType
 }
 
@@ -41,7 +43,7 @@ enum MenuType: String, Codable {
     case hotDishes
     case coldDishes
     case drinks
-    case sauce
+    case sauces
     
     var title: String {
         switch self {
@@ -51,23 +53,17 @@ enum MenuType: String, Codable {
             return "ცივი კერძები"
         case .drinks:
             return "სასმელები"
-        case .sauce:
+        case .sauces:
             return "სოუსები"
         }
     }
     
     var engTitle: String {
-        switch self {
-        case .hotDishes, .coldDishes, .drinks, .sauce:
-            return self.rawValue
-        }
+        return self.rawValue
     }
     
     var image: UIImage? {
-        switch self {
-        case .hotDishes, .coldDishes, .drinks, .sauce:
-            return UIImage(named: "\(self.rawValue)_icon")
-        }
+        return UIImage(named: "\(self.rawValue)_icon")
     }
     
     func getMenuItems(from menu: Menu) -> [MenuItem] {
@@ -78,7 +74,7 @@ enum MenuType: String, Codable {
             return menu.hotDishes
         case .drinks:
             return menu.drinks
-        case .sauce:
+        case .sauces:
             return menu.sauce
         }
     }

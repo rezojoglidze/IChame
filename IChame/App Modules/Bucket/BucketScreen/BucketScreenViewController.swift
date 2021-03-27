@@ -25,8 +25,8 @@ class BucketScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        viewModel.loadBucket(fail: self.standardFailBlock)
         self.startLoader()
+        viewModel.loadBucket(fail: self.standardFailBlock)
         setupTableView()
         setupObservables()
     }
@@ -46,37 +46,40 @@ class BucketScreenViewController: UIViewController {
     }
 }
 
+//MARK: MenuDetailsTableViewCellDelegate
+extension BucketScreenViewController: MenuDetailsTableViewCellDelegate {
+    func didTapActionButton(cell: MenuDetailsTableViewCell, isAdd: Bool) {
+        guard let indexPath = cell.indexPath,
+              let type = cell.type else { return }
+        viewModel.removeDishFromBucket(with: indexPath, type: type, fail: self.standardFailBlock)
+    }
+}
+
+//MARK: UITableViewDataSource && UITableViewDelegate
 extension BucketScreenViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows(section: section)
+        return viewModel.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section <= 4 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuDetailsTableViewCell.self)) as? MenuDetailsTableViewCell {
-                if let item = viewModel.item(at: indexPath) {
-                    cell.fill(item: item, isHiddenActionBtn: true)
-                }
-                return cell
-            }
+        let type = viewModel.getSectionType(section: indexPath.section)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuDetailsTableViewCell") as! MenuDetailsTableViewCell
+        if let item = viewModel.item(at: indexPath, with: type) {
+            cell.fill(item: item, isHiddenAddBtn: true)
+            cell.indexPath = indexPath
+            cell.type = type
+            cell.delegate = self
         }
-        return UITableViewCell()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var title = "ცხელი კერძები"
-        if section == 1 {
-          title = "ცივი კერძები"
-        } else if section == 2 {
-          title = "სასმელები"
-        } else if section == 3 {
-          title = "სოუსები"
-        }
-        return title
+        let type = viewModel.getSectionType(section: section)
+        return type.title
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

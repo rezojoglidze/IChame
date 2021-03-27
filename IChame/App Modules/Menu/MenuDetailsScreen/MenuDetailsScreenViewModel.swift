@@ -13,15 +13,15 @@ import RxCocoa
 
 protocol MenuDetailsScreenViewModelProtocol {
     var router: StrongRouter<MenuRoute> { get }
-    var isAddedDish: Observable<Void> { get }
-    var isRemovedDish: Observable<Void> { get }
+    var showLoader: Observable<Bool> { get }
 
     func numberOfRows() -> Int
     
     func item(at indexPath: IndexPath) -> MenuItem?
     
-    func actionButtonTapped(with indexPath: IndexPath, isAdd: Bool, fail: @escaping Network.StatusBlock)
+    func addButtonTapped(with indexPath: IndexPath, fail: @escaping Network.StatusBlock)
 }
+
 class MenuDetailsScreenViewModel {
     
     var router: StrongRouter<MenuRoute>
@@ -29,10 +29,8 @@ class MenuDetailsScreenViewModel {
     
     private var menuItems: [MenuItem]
 
-    var isAddedDish: Observable<Void>
-    var isRemovedDish: Observable<Void>
-    let innerIsAddedDish: PublishRelay<Void> = PublishRelay<Void>()
-    let innerIsRemovedDish: PublishRelay<Void> = PublishRelay<Void>()
+    var showLoader: Observable<Bool>
+    let showLoaderRelay: PublishRelay<Bool> = PublishRelay<Bool>()
 
     init(router: StrongRouter<MenuRoute>,
          menuItems: [MenuItem],
@@ -40,25 +38,16 @@ class MenuDetailsScreenViewModel {
         self.router = router
         self.bucketService = bucketService
         self.menuItems = menuItems
-        self.isAddedDish = self.innerIsAddedDish.asObservable()
-        self.isRemovedDish = self.innerIsRemovedDish.asObservable()
+        self.showLoader = self.showLoaderRelay.asObservable()
     }
 }
 
 extension MenuDetailsScreenViewModel: MenuDetailsScreenViewModelProtocol {
-    func actionButtonTapped(with indexPath: IndexPath, isAdd: Bool, fail: @escaping Network.StatusBlock) {
-        let menuId = Menu.currentMenuId
-        let menuItem = menuItems[indexPath.row]
-        let userId = User.current?.uid ?? ""
-        if isAdd {
-            bucketService?.addDish(menuId, with: menuItem, userId: userId, index: indexPath.row, success: {[weak self] (isAdded) in
-                self?.innerIsAddedDish.accept(())
-            }, fail: fail)
-        } else {
-            bucketService?.removeDish(menuId, with: menuItem, userId: userId, index: indexPath.row, success: {[weak self] (isRemoved) in
-                self?.innerIsRemovedDish.accept(())
-            }, fail: fail)
-        }
+    func addButtonTapped(with indexPath: IndexPath, fail: @escaping Network.StatusBlock) {
+
+        bucketService?.addDish(Menu.currentMenuId, with: menuItems[indexPath.row], userId: User.current?.uid ?? "", success: {[weak self] (isAdded) in
+//            self?.showLoaderRelay.accept(false)
+        }, fail: fail)
     }
     
     func numberOfRows() -> Int {

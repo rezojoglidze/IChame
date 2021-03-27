@@ -44,7 +44,7 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwc-cO-eOT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwc-cO-eOT">
                         <rect key="frame" x="104" y="52" width="289" height="18.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-65Medium" family="Helvetica Neue LT GEO" pointSize="15"/>
                         <nil key="textColor"/>
@@ -72,7 +72,7 @@
                         <state key="normal" image="remove_icon"/>
                         <connections>
                             <action selector="actionBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UUv-17-XsK"/>
-                            <action selector="removeBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BB1-bP-2F8"/>
+                            <action selector="removeBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dL9-85-8sx"/>
                         </connections>
                     </button>
                 </subviews>
@@ -98,7 +98,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="actionBtn" destination="ZGj-Hd-x76" id="vAz-2t-Lyi"/>
+                <outlet property="addBtn" destination="ZGj-Hd-x76" id="vAz-2t-Lyi"/>
                 <outlet property="descriptionLbl" destination="3JP-W1-uxQ" id="n9Z-qV-iz0"/>
                 <outlet property="menuItemImageView" destination="5A1-iI-2gG" id="UPw-6Y-0Um"/>
                 <outlet property="priceLbl" destination="Nwc-cO-eOT" id="tOU-Dl-nJ1"/>

@@ -19,9 +19,13 @@ protocol BucketScreenViewModelProtocol {
     
     func numberOfSections() -> Int
     
-    func numberOfRows(section: Int) -> Int
+    func numberOfRowsInSection(section: Int) -> Int
 
-    func item(at indexPath: IndexPath) -> MenuItem?
+    func item(at indexPath: IndexPath, with type: MenuType) -> MenuItem?
+    
+    func getSectionType(section: Int) -> MenuType
+    
+    func removeDishFromBucket(with indexPath: IndexPath, type: MenuType, fail: @escaping Network.StatusBlock)
 }
 
 class BucketScreenViewModel {
@@ -31,6 +35,7 @@ class BucketScreenViewModel {
     var bucketDidLoaded: Observable<Void>
     var innerBucketDidLoaded: PublishRelay<Void> = PublishRelay<Void>()
     private var bucket: Bucket?
+    private var sections: [MenuType] = []
     
     init(router: StrongRouter<BucketRoute>,
          bucketService: BucketService?) {
@@ -41,35 +46,31 @@ class BucketScreenViewModel {
 }
 
 extension BucketScreenViewModel: BucketScreenViewModelProtocol {
-    func numberOfRows(section: Int) -> Int {
-        if section == 0 {
-            return bucket?.numberOfRowsInSection(type: .hotDishes) ?? .zero
-        } else if section == 1 {
-            return bucket?.numberOfRowsInSection(type: .coldDishes) ?? .zero
-        } else if section == 2 {
-            return bucket?.numberOfRowsInSection(type: .drinks) ?? .zero
-        } else {
-            return bucket?.numberOfRowsInSection(type: .sauce) ?? .zero
-        }
+    func removeDishFromBucket(with indexPath: IndexPath, type: MenuType, fail: @escaping Network.StatusBlock) {
+        guard let menuItem = item(at: indexPath, with: type) else { return }
+        
+        bucketService?.removeDish(Menu.currentMenuId, with: menuItem, userId: User.current?.uid ?? "", success: {[weak self] (isRemoved) in
+            
+        }, fail: fail)
+    }
+    
+    func numberOfRowsInSection(section: Int) -> Int {
+        return bucket?.numberOfRowsInSection(type: sections[section]) ?? .zero
     }
     
     func numberOfSections() -> Int {
         return bucket?.numberOfSections ?? .zero
     }
     
-    func item(at indexPath: IndexPath) -> MenuItem? {
-        var type: MenuType = .coldDishes
-        if indexPath.section == 0 {
-            type = .hotDishes
-        } else if indexPath.section == 1 {
-            type = .coldDishes
-        } else if indexPath.section == 2 {
-            type = .drinks
-        } else {
-            type = .sauce
-        }
-        
+    func item(at indexPath: IndexPath, with type: MenuType) -> MenuItem? {
         return bucket?.item(at: indexPath.row, type: type)
+    }
+
+    func getSectionType(section: Int) -> MenuType {
+        if section < sections.count {
+            return sections[section]
+        }
+        return .hotDishes
     }
     
     func loadBucket(fail: @escaping Network.StatusBlock) {
@@ -77,6 +78,7 @@ extension BucketScreenViewModel: BucketScreenViewModelProtocol {
         let userId = User.current?.uid ?? ""
         bucketService?.loadBucket(menuId, userId: userId, success: {[weak self] (bucket) in
             self?.bucket = bucket
+            self?.sections = bucket?.sections ?? []
             self?.innerBucketDidLoaded.accept(())
         }, fail: fail)
     }

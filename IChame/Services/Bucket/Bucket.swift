@@ -13,27 +13,19 @@ struct Bucket: Codable {
     var hotDishes : [String : MenuItem]?
     var coldDishes : [String : MenuItem]?
     var drinks : [String : MenuItem]?
-    var sauce : [String : MenuItem]?
+    var sauces : [String : MenuItem]?
 }
 
 extension Bucket {
-
+    
     func item(at index: Int, type: MenuType) -> MenuItem? {
-        switch type {
-        case .coldDishes:
-            return coldDishes?["\(index)"]
-        case .hotDishes:
-            return hotDishes?["\(index)"]
-        case .drinks:
-            return drinks?["\(index)"]
-        case .sauce:
-            return sauce?["\(index)"]
-        }
+        let category = getBucketCategory(by: type)
+        return getBucketCategoryArray(at: index, category: category)
     }
     
     var numberOfSections: Int {
         var numberOfSections = 0
-        [hotDishes,coldDishes,drinks,sauce].forEach { (item) in
+        [hotDishes,coldDishes,drinks,sauces].forEach { (item) in
             if let _ = item?.first {
                 numberOfSections += 1
             }
@@ -42,16 +34,40 @@ extension Bucket {
     }
     
     func numberOfRowsInSection(type: MenuType) -> Int? {
+        let category = getBucketCategory(by: type)
+        return category?.count
+    }
+    
+    var sections: [MenuType] {
+        var sections: [MenuType] = []
+        [hotDishes,coldDishes,drinks,sauces].forEach { (item) in
+            if let _ = item?.first {
+                sections.append(item?.first?.value.type ?? .hotDishes)
+            }
+        }
+        return sections
+    }
+    
+    private func getBucketCategoryArray(at index: Int, category: [String : MenuItem]?) -> MenuItem? {
+        var categoryValues: [MenuItem] = []
+        if let values = category?.values {
+            for item in values {
+                categoryValues.append(item)
+            }
+        }
+        return categoryValues[index]
+    }
+    
+    private func getBucketCategory(by type: MenuType) -> [String : MenuItem]? {
         switch type {
         case .coldDishes:
-            return coldDishes?.count
+            return coldDishes
         case .hotDishes:
-            return hotDishes?.count
+            return hotDishes
         case .drinks:
-            return drinks?.count
-        case .sauce:
-            return sauce?.count
+            return drinks
+        case .sauces:
+            return sauces
         }
     }
-
 }

@@ -19,32 +19,31 @@ class MenuDetailsTableViewCell: UITableViewCell {
     @IBOutlet private weak var descriptionLbl: UILabel!
     @IBOutlet private weak var priceLbl: UILabel!
     @IBOutlet private weak var removeBtn: UIButton!
-    @IBOutlet private weak var actionBtn: UIButton! {
-        didSet {
-            actionBtn.setImage(UIImage(named: "add_icon"), for: .normal)
-            actionBtn.setImage(UIImage(named: "remove_icon"), for: .selected)
-        }
-    }
+    @IBOutlet private weak var addBtn: UIButton!
     weak var delegate: MenuDetailsTableViewCellDelegate?
     var indexPath: IndexPath?
+    var type: MenuType?
     
-    func fill(item: MenuItem, isHiddenActionBtn: Bool = false) {
+    func fill(item: MenuItem, isHiddenAddBtn: Bool = false) {
         self.titleLbl.text = item.name
         self.descriptionLbl.text = item.description
-        self.priceLbl.text = "\(item.price) ₾"
         self.menuItemImageView.image = item.type.image
-        if isHiddenActionBtn {
-            removeBtn.isHidden = false
-            actionBtn.isHidden = true
-        }
-    }
-    
-    @IBAction func removeBtnTapped(_ sender: Any) {
         
+        if isHiddenAddBtn {
+            removeBtn.isHidden = false
+            addBtn.isHidden = true
+            let totalAmount = item.price * Double(item.count).rounded(toPlaces: 2)
+            self.priceLbl.text = "რაოდენობა: \(item.count). სულ \(totalAmount)₾"
+        } else {
+            self.priceLbl.text = "\(item.price) ₾"
+        }
     }
     
     @IBAction func actionBtnTapped(_ sender: UIButton!) {
-        actionBtn.isSelected.toggle()
-        delegate?.didTapActionButton(cell: self, isAdd: actionBtn.isSelected)
+        delegate?.didTapActionButton(cell: self, isAdd: true)
+    }
+    
+    @IBAction func removeBtnTapped(_ sender: Any) {
+        delegate?.didTapActionButton(cell: self, isAdd: false)
     }
 }
