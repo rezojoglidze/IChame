@@ -25,6 +25,8 @@ protocol BucketScreenViewModelProtocol {
     
     func getSectionType(section: Int) -> MenuType
     
+    func getTotalAmount() -> Double
+    
     func removeDishFromBucket(with indexPath: IndexPath, type: MenuType, fail: @escaping Network.StatusBlock)
 }
 
@@ -71,6 +73,10 @@ extension BucketScreenViewModel: BucketScreenViewModelProtocol {
             return sections[section]
         }
         return .hotDishes
+    }
+    
+    func getTotalAmount() -> Double {
+        return bucket?.getTotalAmount ?? .zero
     }
     
     func loadBucket(fail: @escaping Network.StatusBlock) {
