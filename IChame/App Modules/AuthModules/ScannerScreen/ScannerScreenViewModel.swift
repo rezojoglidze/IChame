@@ -8,7 +8,7 @@
 
 import Foundation
 import XCoordinator
-import Firebase
+import FirebaseFirestore
 import RxSwift
 import RxCocoa
 

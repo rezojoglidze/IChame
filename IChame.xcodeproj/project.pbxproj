@@ -44,6 +44,12 @@
 		A957D8CE26069FFF0024AD4E /* BucketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A957D8CD26069FFF0024AD4E /* BucketService.swift */; };
 		A95D1677260F421A007E69F2 /* Double + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1676260F421A007E69F2 /* Double + Extensions.swift */; };
 		A95D1695260F48B7007E69F2 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1694260F48B7007E69F2 /* UITableView+Extensions.swift */; };
+		A95D169A260F84BA007E69F2 /* MoreScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1698260F84BA007E69F2 /* MoreScreenTableViewCell.swift */; };
+		A95D169B260F84BA007E69F2 /* MoreScreenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95D1699260F84BA007E69F2 /* MoreScreenTableViewCell.xib */; };
+		A95D16D1260F880A007E69F2 /* MoreScreenHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D16CF260F880A007E69F2 /* MoreScreenHeaderView.swift */; };
+		A95D16D2260F880A007E69F2 /* MoreScreenHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95D16D0260F880A007E69F2 /* MoreScreenHeaderView.xib */; };
+		A95D16D7260F8DD3007E69F2 /* More.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D16D6260F8DD3007E69F2 /* More.swift */; };
+		A95D16DA260F8F85007E69F2 /* MoreScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D16D9260F8F85007E69F2 /* MoreScreenService.swift */; };
 		A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184425FA869400A980E2 /* ScreensAssembly.swift */; };
 		A987184925FA875E00A980E2 /* ScreenAssembly+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */; };
 		A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */; };
@@ -112,6 +118,12 @@
 		A957D8CD26069FFF0024AD4E /* BucketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketService.swift; sourceTree = "<group>"; };
 		A95D1676260F421A007E69F2 /* Double + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Extensions.swift"; sourceTree = "<group>"; };
 		A95D1694260F48B7007E69F2 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		A95D1698260F84BA007E69F2 /* MoreScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreScreenTableViewCell.swift; sourceTree = "<group>"; };
+		A95D1699260F84BA007E69F2 /* MoreScreenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreScreenTableViewCell.xib; sourceTree = "<group>"; };
+		A95D16CF260F880A007E69F2 /* MoreScreenHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreScreenHeaderView.swift; sourceTree = "<group>"; };
+		A95D16D0260F880A007E69F2 /* MoreScreenHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreScreenHeaderView.xib; sourceTree = "<group>"; };
+		A95D16D6260F8DD3007E69F2 /* More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = More.swift; sourceTree = "<group>"; };
+		A95D16D9260F8F85007E69F2 /* MoreScreenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreScreenService.swift; sourceTree = "<group>"; };
 		A987184425FA869400A980E2 /* ScreensAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensAssembly.swift; sourceTree = "<group>"; };
 		A987184825FA875E00A980E2 /* ScreenAssembly+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Authorization.swift"; sourceTree = "<group>"; };
 		A987184C25FA89E700A980E2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -226,6 +238,8 @@
 		A9294DCA2603F3BE00602CDF /* MoreScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A95D16CD260F87D5007E69F2 /* MoreScreenHeaderView */,
+				A95D1697260F8475007E69F2 /* MoreScreenTableViewCell */,
 				A9294DD82603F44800602CDF /* MoreScreen.storyboard */,
 				A9294DDB2603F45400602CDF /* MoreScreenViewController.swift */,
 				A9294DDE2603F45E00602CDF /* MoreScreenViewModel.swift */,
@@ -297,6 +311,7 @@
 		A940540525FCB0C600AB2F24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A95D16D5260F8DC7007E69F2 /* MoreScreen */,
 				A957D8C926069FC20024AD4E /* Bucket */,
 				A9C988E32601567F005BECDF /* Menu */,
 				A940540625FCB0E200AB2F24 /* Authentication */,
@@ -347,6 +362,33 @@
 				A957D8CD26069FFF0024AD4E /* BucketService.swift */,
 			);
 			path = Bucket;
+			sourceTree = "<group>";
+		};
+		A95D1697260F8475007E69F2 /* MoreScreenTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A95D1698260F84BA007E69F2 /* MoreScreenTableViewCell.swift */,
+				A95D1699260F84BA007E69F2 /* MoreScreenTableViewCell.xib */,
+			);
+			path = MoreScreenTableViewCell;
+			sourceTree = "<group>";
+		};
+		A95D16CD260F87D5007E69F2 /* MoreScreenHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				A95D16CF260F880A007E69F2 /* MoreScreenHeaderView.swift */,
+				A95D16D0260F880A007E69F2 /* MoreScreenHeaderView.xib */,
+			);
+			path = MoreScreenHeaderView;
+			sourceTree = "<group>";
+		};
+		A95D16D5260F8DC7007E69F2 /* MoreScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A95D16D6260F8DD3007E69F2 /* More.swift */,
+				A95D16D9260F8F85007E69F2 /* MoreScreenService.swift */,
+			);
+			path = MoreScreen;
 			sourceTree = "<group>";
 		};
 		A987184325FA867B00A980E2 /* ScreensAssembly */ = {
@@ -567,6 +609,7 @@
 			files = (
 				A994E67425FE511B004BFBE6 /* ScannerScreen.storyboard in Resources */,
 				A9294DD52603F41900602CDF /* BucketScreen.storyboard in Resources */,
+				A95D169B260F84BA007E69F2 /* MoreScreenTableViewCell.xib in Resources */,
 				A9E729AC25F7FDF30056B225 /* HelveticaNeueLTGEO-65Medium.otf in Resources */,
 				A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */,
 				A9E729AE25F7FDF30056B225 /* HelveticaNeueLTGEO-55Roman.otf in Resources */,
@@ -579,6 +622,7 @@
 				A9CEE4BD260531DE005298D0 /* MenuDetailsScreen.storyboard in Resources */,
 				A91FB32125FAC57E00F541FB /* RegistrationScreen.storyboard in Resources */,
 				A9294DD92603F44800602CDF /* MoreScreen.storyboard in Resources */,
+				A95D16D2260F880A007E69F2 /* MoreScreenHeaderView.xib in Resources */,
 				A93490E72604C1E600CC3750 /* MenuScreenCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,9 +688,11 @@
 				A9C988E026015577005BECDF /* MenuService.swift in Sources */,
 				A93490E62604C1E600CC3750 /* MenuScreenCell.swift in Sources */,
 				A9CEE4C0260531FE005298D0 /* MenuDetailsScreenViewController.swift in Sources */,
+				A95D16D1260F880A007E69F2 /* MoreScreenHeaderView.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
 				A957D8CE26069FFF0024AD4E /* BucketService.swift in Sources */,
 				A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */,
+				A95D16DA260F8F85007E69F2 /* MoreScreenService.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
 				A949235C2604003A0062DB96 /* IChameTabbarController.swift in Sources */,
 				A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */,
@@ -669,6 +715,7 @@
 				A9294DE32603F4C800602CDF /* BucketCoordinator.swift in Sources */,
 				A95D1695260F48B7007E69F2 /* UITableView+Extensions.swift in Sources */,
 				A940540925FCB10D00AB2F24 /* UserService.swift in Sources */,
+				A95D169A260F84BA007E69F2 /* MoreScreenTableViewCell.swift in Sources */,
 				A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */,
 				A94163332603E48400A7F7A9 /* MenuCoordinator.swift in Sources */,
 				A941632D2603E47C00A7F7A9 /* ScreenAssembly+Menu.swift in Sources */,
@@ -676,6 +723,7 @@
 				A9294DED2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift in Sources */,
 				A994E67A25FE513A004BFBE6 /* ScannerScreenViewModel.swift in Sources */,
 				A987186D25FA961F00A980E2 /* AuthorizationScreenViewController.swift in Sources */,
+				A95D16D7260F8DD3007E69F2 /* More.swift in Sources */,
 				A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */,
 				A957D8CB26069FD20024AD4E /* Bucket.swift in Sources */,
 			);

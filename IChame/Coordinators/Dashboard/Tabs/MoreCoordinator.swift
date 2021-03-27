@@ -11,6 +11,7 @@ import XCoordinator
 
 enum MoreSceenRoute: Route {
     case moreSceen
+    case logout
 }
 
 class MoreSceenCoordinator: NavigationCoordinator<MoreSceenRoute> {
@@ -25,6 +26,8 @@ class MoreSceenCoordinator: NavigationCoordinator<MoreSceenRoute> {
         case .moreSceen:
             let moreSceen = MoreScreenViewController.instantiate(strongRouter: self.strongRouter)
             return .push(moreSceen)
+        case .logout:
+            return .presentFullScreen(AuthCoordinator(rootController: UINavigationController(), initialRoute: .authScreen))
         }
     }
 }
