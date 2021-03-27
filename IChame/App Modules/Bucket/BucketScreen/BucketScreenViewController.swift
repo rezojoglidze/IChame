@@ -14,7 +14,7 @@ class BucketScreenViewController: UIViewController {
     
     var viewModel: BucketScreenViewModelProtocol!
     private var disposeBag = DisposeBag()
-
+    
     @IBOutlet private weak var tableView: UITableView!
     
     static func instantiate(strongRouter: StrongRouter<BucketRoute>) -> Self {
