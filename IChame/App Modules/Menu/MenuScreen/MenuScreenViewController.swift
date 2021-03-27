@@ -13,14 +13,49 @@ class MenuScreenViewController: UIViewController {
     
     var viewModel: MenuScreenViewModelProtocol!
     
-    static func instantiate(strongRouter: StrongRouter<MenuRoute>) -> Self {
-        let viewController = ScreensAssembly.shared.container.resolve(Self.self, argument: strongRouter) ?? .init()
+    @IBOutlet private weak var tableView: UITableView!
+    
+    static func instantiate(strongRouter: StrongRouter<MenuRoute>, menu: Menu?) -> Self {
+        let viewController = ScreensAssembly.shared.container.resolve(Self.self, arguments: strongRouter, menu) ?? .init()
         return viewController
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.isNavigationBarHidden = true
+        setupTableView()
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.title = "მენიუ"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    private func setupTableView() {
+        tableView.register(UINib(nibName: String(describing: MenuScreenCell.self), bundle: nil), forCellReuseIdentifier: String(describing: MenuScreenCell.self))
+        tableView.tableFooterView = UIView()
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+}
+
+extension MenuScreenViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuScreenCell.self)) as! MenuScreenCell
+        if let item = viewModel.item(at: indexPath) {
+            cell.fill(img: item.img, title: item.type.title)
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        cell.setSelected(false, animated: true)
+        viewModel.openMenuDetails(with: indexPath)
     }
 }

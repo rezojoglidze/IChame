@@ -12,7 +12,10 @@ class Constants {
     
     static let isNeededQRScanner = false
     static let menuId = "qM46LjeUVons6c27owM8"
-    static let menuCollectionName = "menu"
+    static let menu = "menu"
+    static let menuiOS = "menu_iOS"
+    static let bucket = "bucket"
+    static let bucketiOS = "bucket_iOS"
     
     struct Animation {
         static let defaultDuration: TimeInterval = 0.27

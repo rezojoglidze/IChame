@@ -16,7 +16,7 @@ class ScannerScreenViewController: UIViewController {
     
     var viewModel: ScannerScreenViewModelProocol!
     
-    @IBOutlet weak var scannerBtn: UIButton!
+    @IBOutlet private weak var scannerBtn: UIButton!
     private var disposeBag = DisposeBag()
     
     lazy var readerVC: QRCodeReaderViewController = {
@@ -44,8 +44,8 @@ class ScannerScreenViewController: UIViewController {
     }
     
     private func setupObservables() {
-        viewModel.menuDidLoaded.subscribe(onNext: {
-            self.stopLoader()
+        viewModel.menuDidLoaded.subscribe(onNext: { [weak self] in
+            self?.stopLoader()
         }).disposed(by: disposeBag)
     }
     
@@ -73,9 +73,6 @@ extension ScannerScreenViewController: QRCodeReaderViewControllerDelegate {
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning()
         dismiss(animated: true) { [weak self] in
-            //      let alert = UIAlertController(title: result.value, message: nil, preferredStyle: .alert)
-            //      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            //      self?.present(alert, animated: true, completion: nil)
             guard let self = self else { return }
             self.viewModel.getMenu(docId: result.value, fail: self.standardFailBlock)
         }

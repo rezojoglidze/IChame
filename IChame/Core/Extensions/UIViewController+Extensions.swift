@@ -11,10 +11,6 @@ import UIKit
 
 extension UIViewController {
     
-    static var stringFromClass : String { return NSStringFromClass(self) }
-    
-    static var className : String { return self.stringFromClass.components(separatedBy: ".").last! }
-    
     ///Return newly initialized view controller with given id from given storyboard for given bundle
     fileprivate static func _load<T>(with id: String, from storyboard: String, for bundle: Bundle? = nil) -> T? {
         return UIStoryboard(name: storyboard, bundle: bundle).instantiateViewController(withIdentifier: id) as? T

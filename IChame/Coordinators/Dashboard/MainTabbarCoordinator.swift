@@ -28,12 +28,12 @@ class MainTabbarCoordinator: TabBarCoordinator<TabbarRoute> {
     private let bucket: BucketCoordinator
     private let moreScreen: MoreSceenCoordinator
     
-    init() {
-        menu = MenuCoordinator()
+    init(item: Menu?) {
+        menu = MenuCoordinator(menu: item)
         bucket = BucketCoordinator()
         moreScreen = MoreSceenCoordinator()
         
-        Self.initCoordinator(coordinator: menu, title: "მთავარი", image: "tab-icon-main")
+        Self.initCoordinator(coordinator: menu, title: "მენიუ", image: "tab-icon-main")
         Self.initCoordinator(coordinator: bucket, title: "კალათა", image: "tab-icon-requests")
         Self.initCoordinator(coordinator: moreScreen, title: "მეტი", image: "more_icon")
         
