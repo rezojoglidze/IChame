@@ -8,6 +8,18 @@
 
 import Foundation
 
-struct Order {
-    
+struct Order: Decodable {
+    var hotDishes : [String : MenuItem]?
+    var coldDishes : [String : MenuItem]?
+    var drinks : [String : MenuItem]?
+    var sauces : [String : MenuItem]?
+    var restaurantId: String
+    var userId: String?
+    var status: OrderStatus?
+}
+
+enum OrderStatus: String, Codable {
+    case inProgress
+    case accepted
+    case rejected
 }
