@@ -32,8 +32,8 @@ class MenuDetailsTableViewCell: UITableViewCell {
         if isHiddenAddBtn {
             removeBtn.isHidden = false
             addBtn.isHidden = true
-            let totalAmount = item.price * Double(item.count).rounded(toPlaces: 2)
-            self.priceLbl.text = "რაოდენობა: \(item.count). სულ \(totalAmount)₾"
+            let totalAmount = item.price //* Double(item.count).rounded(toPlaces: 2)
+            self.priceLbl.text = "რაოდენობა:\(item.count), ფასი: \(totalAmount)₾"
         } else {
             self.priceLbl.text = "\(item.price) ₾"
         }

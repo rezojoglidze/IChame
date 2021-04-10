@@ -14,8 +14,11 @@ class BucketScreenViewController: UIViewController {
     
     var viewModel: BucketScreenViewModelProtocol!
     private var disposeBag = DisposeBag()
-
+    
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    @IBOutlet weak var orderBtn: UIButton!
+    @IBOutlet weak var totalAmountView: UIView!
     
     static func instantiate(strongRouter: StrongRouter<BucketRoute>) -> Self {
         let viewController = ScreensAssembly.shared.container.resolve(Self.self, argument: strongRouter) ?? .init()
@@ -27,20 +30,27 @@ class BucketScreenViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         self.startLoader()
         viewModel.loadBucket(fail: self.standardFailBlock)
+        setupView()
         setupTableView()
         setupObservables()
+    }
+    
+    private func setupView() {
+        orderBtn.setTitle("შეკვეთა".uppercased(), for: .normal)
+        totalAmountLabel.text = "ჯამი: \(viewModel.getTotalAmount().rounded(toPlaces: 2))₾"
+        totalAmountView.isHidden = !(viewModel.numberOfSections() > 0)
     }
     
     private func setupObservables() {
         viewModel.bucketDidLoaded.subscribe(onNext: { [weak self] in
             self?.stopLoader()
             self?.tableView.reloadData()
+            self?.setupView()
         }).disposed(by: disposeBag)
     }
     
     private func setupTableView() {
         tableView.register(UINib(nibName: String(describing: MenuDetailsTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: MenuDetailsTableViewCell.self))
-        tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
     }

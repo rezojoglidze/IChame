@@ -16,7 +16,7 @@ struct Menu: Codable {
     var coldDishes: [MenuItem]
     var drinks: [MenuItem]
     var sauce: [MenuItem]
-    var menuId: String
+    var restaurantId: String
     
     var menuScreenDataSource: [(type: MenuType, img: UIImage?)] {
         var dataSource: [(type: MenuType, img: UIImage?)] = []

@@ -48,6 +48,18 @@ extension Bucket {
         return sections
     }
     
+    var getTotalAmount: Double {
+        var totalAmount: Double = 0
+        [hotDishes,coldDishes,drinks,sauces].forEach { (category) in
+            if let values = category?.values {
+                for item in values {
+                    totalAmount += item.price
+                }
+            }
+        }
+        return totalAmount
+    }
+    
     private func getBucketCategoryArray(at index: Int, category: [String : MenuItem]?) -> MenuItem? {
         var categoryValues: [MenuItem] = []
         if let values = category?.values {
