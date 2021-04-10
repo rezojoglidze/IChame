@@ -18,8 +18,9 @@ class BucketService {
                  fail: @escaping Network.StatusBlock) {
         
         let item = ["\(menuItem.type.engTitle)" : ["\(menuItem.id)" : menuItem]]
-        
+        let restaurantId = ["restaurantId": "\(menuId)"]
         do {
+            try db.collection(Constants.bucketiOS).document(("\(menuId)_\(userId)")).setData(from: restaurantId, merge: true)
             try db.collection(Constants.bucketiOS).document(("\(menuId)_\(userId)")).setData(from: item, merge: true)
             success(true)
         } catch let error {

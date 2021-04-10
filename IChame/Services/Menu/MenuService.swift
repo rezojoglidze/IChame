@@ -16,7 +16,7 @@ class MenuService {
     
     func getMenu(docId: String, success: @escaping (Menu?) -> Void, fail: @escaping Network.StatusBlock) {
         let docRef = db.collection(Constants.menuiOS).document(docId)
-//        loadData(id: docId)
+        loadData(id: docId)
         
         docRef.getDocument {(document, error) in
             let result = Result {
@@ -50,7 +50,7 @@ class MenuService {
             MenuItem(id: "e28e248c", description: "პომიდვრის კარგი სოუსი არისს", name: "პომიდვრის სოუსი", price: 0.8, count: 0, type: MenuType(rawValue: "sauces")!),
             MenuItem(id: "3c935f1b", description: "სოფლის ტყემალი", name: "წყემალი", price: 1.7, count: 0, type: MenuType(rawValue: "sauces")!),
             MenuItem(id: "d2a5bd8b", description: "მეგრული აჯიკა", name: "აჯიკა", price: 1.2, count: 0, type: MenuType(rawValue: "sauces")!)
-        ], menuId: "menuId-\(id)")
+        ], restaurantId: "\(id)")
         
         do {
             try db.collection(Constants.menuiOS).document(id).setData(from: menu)
