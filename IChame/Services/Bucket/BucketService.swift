@@ -42,6 +42,12 @@ class BucketService {
         }
     }
     
+    func saveOrder(bucket: Bucket,
+                   success: @escaping (Bool) -> Void,
+                   fail: @escaping Network.StatusBlock) {
+
+    }
+    
     func loadBucket(_ menuId: String, userId: String, success: @escaping (Bucket?) -> Void,fail: @escaping Network.StatusBlock) {
         db.collection(Constants.bucketiOS).document("\(menuId)_\(userId)")
             .addSnapshotListener { documentSnapshot, error in

@@ -12,6 +12,7 @@ import XCoordinator
 enum TabbarRoute: Route {
     case home
     case bucket
+    case order
     case moreScreen
     case root
 }
@@ -22,26 +23,31 @@ class MainTabbarCoordinator: TabBarCoordinator<TabbarRoute> {
     
     private let menuRouter: StrongRouter<MenuRoute>
     private let bucketRouter: StrongRouter<BucketRoute>
+    private let orderRouter: StrongRouter<OrderRoute>
     private let moreScreenRouter: StrongRouter<MoreSceenRoute>
     
     private let menu: MenuCoordinator
     private let bucket: BucketCoordinator
+    private let order: OrderCoordinator
     private let moreScreen: MoreSceenCoordinator
     
     init(item: Menu?) {
         menu = MenuCoordinator(menu: item)
         bucket = BucketCoordinator()
+        order = OrderCoordinator()
         moreScreen = MoreSceenCoordinator()
         
         Self.initCoordinator(coordinator: menu, title: "მენიუ", image: "tab-icon-main")
         Self.initCoordinator(coordinator: bucket, title: "კალათა", image: "tab-icon-requests")
+        Self.initCoordinator(coordinator: order, title: "შეკვეთა", image: "tab-icon-orders")
         Self.initCoordinator(coordinator: moreScreen, title: "მეტი", image: "more_icon")
         
         self.menuRouter = menu.strongRouter
         self.bucketRouter = bucket.strongRouter
+        self.orderRouter = order.strongRouter
         self.moreScreenRouter = moreScreen.strongRouter
         
-        let tabs: [Presentable] = [menuRouter, bucketRouter, moreScreenRouter]
+        let tabs: [Presentable] = [menuRouter, bucketRouter, orderRouter, moreScreenRouter]
         
         super.init(rootViewController: IChameTabbarController(), tabs: tabs, select: menuRouter)
         MainTabbarCoordinator.shared = self
@@ -53,6 +59,8 @@ class MainTabbarCoordinator: TabBarCoordinator<TabbarRoute> {
             return .select(menuRouter)
         case .bucket:
             return .select(bucketRouter)
+        case .order:
+            return .select(orderRouter)
         case .moreScreen:
             return .select(moreScreenRouter)
         case .root:

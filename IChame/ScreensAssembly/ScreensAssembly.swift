@@ -19,5 +19,6 @@ class ScreensAssembly {
         setupMenu()
         setupBucket()
         setupMoreScreens()
+        setupOrder()
     }
 }

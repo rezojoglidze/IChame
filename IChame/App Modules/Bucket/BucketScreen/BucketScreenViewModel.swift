@@ -14,7 +14,8 @@ import RxCocoa
 protocol BucketScreenViewModelProtocol {
     var router: StrongRouter<BucketRoute> { get }
     var bucketDidLoaded: Observable<Void> { get }
-
+    var showLoader: Observable<Bool> { get }
+    
     func loadBucket(fail: @escaping Network.StatusBlock)
     
     func numberOfSections() -> Int
@@ -28,6 +29,8 @@ protocol BucketScreenViewModelProtocol {
     func getTotalAmount() -> Double
     
     func removeDishFromBucket(with indexPath: IndexPath, type: MenuType, fail: @escaping Network.StatusBlock)
+    
+    func saveOrder(fail: @escaping Network.StatusBlock)
 }
 
 class BucketScreenViewModel {
@@ -35,7 +38,9 @@ class BucketScreenViewModel {
     var bucketService: BucketService?
     
     var bucketDidLoaded: Observable<Void>
+    var showLoader: Observable<Bool>
     var innerBucketDidLoaded: PublishRelay<Void> = PublishRelay<Void>()
+    var innerShowLoaderRelay: PublishRelay<Bool> = PublishRelay<Bool>()
     private var bucket: Bucket?
     private var sections: [MenuType] = []
     
@@ -43,6 +48,7 @@ class BucketScreenViewModel {
          bucketService: BucketService?) {
         self.router = router
         self.bucketDidLoaded = self.innerBucketDidLoaded.asObservable()
+        self.showLoader = self.innerShowLoaderRelay.asObservable()
         self.bucketService = bucketService
     }
 }
@@ -54,6 +60,11 @@ extension BucketScreenViewModel: BucketScreenViewModelProtocol {
         bucketService?.removeDish(Menu.currentMenuId, with: menuItem, userId: User.current?.uid ?? "", success: {[weak self] (isRemoved) in
             
         }, fail: fail)
+    }
+    
+    func saveOrder(fail: @escaping Network.StatusBlock) {
+        innerShowLoaderRelay.accept(true)
+        
     }
     
     func numberOfRowsInSection(section: Int) -> Int {

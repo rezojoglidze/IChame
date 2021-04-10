@@ -47,12 +47,19 @@ class BucketScreenViewController: UIViewController {
             self?.tableView.reloadData()
             self?.setupView()
         }).disposed(by: disposeBag)
+        
+        viewModel.showLoader.subscribe(onNext: { [weak self] show in
+            show ? self?.startLoader() : self?.stopLoader()
+        }).disposed(by: disposeBag)
     }
     
     private func setupTableView() {
         tableView.register(UINib(nibName: String(describing: MenuDetailsTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: MenuDetailsTableViewCell.self))
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    @IBAction func orderBtnTapped(_ sender: Any) {
+        viewModel.saveOrder(fail: self.standardFailBlock)
     }
 }
 

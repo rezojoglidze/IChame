@@ -54,6 +54,9 @@
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="autoLocalized" value="NO"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="orderBtnTapped:" destination="xwe-tG-nbz" eventType="touchUpInside" id="wqV-An-Xmv"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

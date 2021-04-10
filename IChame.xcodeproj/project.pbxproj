@@ -60,6 +60,13 @@
 		A994E67425FE511B004BFBE6 /* ScannerScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A994E67325FE511B004BFBE6 /* ScannerScreen.storyboard */; };
 		A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994E67625FE512C004BFBE6 /* ScannerScreenViewController.swift */; };
 		A994E67A25FE513A004BFBE6 /* ScannerScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994E67925FE513A004BFBE6 /* ScannerScreenViewModel.swift */; };
+		A9A9418F26219B6900AC6C4D /* OrderScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9418E26219B6900AC6C4D /* OrderScreenViewModel.swift */; };
+		A9A9419226219B7A00AC6C4D /* OrderScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9419126219B7A00AC6C4D /* OrderScreenViewController.swift */; };
+		A9A9419526219B8900AC6C4D /* OrderScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9A9419426219B8900AC6C4D /* OrderScreen.storyboard */; };
+		A9A9419C26219C7F00AC6C4D /* OrderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9419B26219C7F00AC6C4D /* OrderCoordinator.swift */; };
+		A9A9419F26219E8700AC6C4D /* ScreensAssembly+Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9419E26219E8700AC6C4D /* ScreensAssembly+Order.swift */; };
+		A9A941A326219EB200AC6C4D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A941A226219EB200AC6C4D /* Order.swift */; };
+		A9A941A726219EBB00AC6C4D /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A941A626219EBB00AC6C4D /* OrderService.swift */; };
 		A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */; };
 		A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */; };
 		A9C629FD25F8C85700B32D2A /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */; };
@@ -134,6 +141,13 @@
 		A994E67325FE511B004BFBE6 /* ScannerScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScannerScreen.storyboard; sourceTree = "<group>"; };
 		A994E67625FE512C004BFBE6 /* ScannerScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerScreenViewController.swift; sourceTree = "<group>"; };
 		A994E67925FE513A004BFBE6 /* ScannerScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerScreenViewModel.swift; sourceTree = "<group>"; };
+		A9A9418E26219B6900AC6C4D /* OrderScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderScreenViewModel.swift; sourceTree = "<group>"; };
+		A9A9419126219B7A00AC6C4D /* OrderScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderScreenViewController.swift; sourceTree = "<group>"; };
+		A9A9419426219B8900AC6C4D /* OrderScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderScreen.storyboard; sourceTree = "<group>"; };
+		A9A9419B26219C7F00AC6C4D /* OrderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCoordinator.swift; sourceTree = "<group>"; };
+		A9A9419E26219E8700AC6C4D /* ScreensAssembly+Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreensAssembly+Order.swift"; sourceTree = "<group>"; };
+		A9A941A226219EB200AC6C4D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		A9A941A626219EBB00AC6C4D /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 		A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		A9C629FC25F8C85700B32D2A /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
@@ -263,6 +277,7 @@
 				A91FB31D25FAC52700F541FB /* AuthModules */,
 				A94163362603E4AC00A7F7A9 /* Menu */,
 				A9294DC92603F3A400602CDF /* Bucket */,
+				A9A9418D26219B3900AC6C4D /* Order */,
 				A9294DCA2603F3BE00602CDF /* MoreScreen */,
 			);
 			path = "App Modules";
@@ -311,6 +326,7 @@
 		A940540525FCB0C600AB2F24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A9A941A126219EA600AC6C4D /* OrderScreen */,
 				A95D16D5260F8DC7007E69F2 /* MoreScreen */,
 				A957D8C926069FC20024AD4E /* Bucket */,
 				A9C988E32601567F005BECDF /* Menu */,
@@ -342,6 +358,7 @@
 				A94163312603E48400A7F7A9 /* MenuCoordinator.swift */,
 				A9294DE22603F4C800602CDF /* BucketCoordinator.swift */,
 				A9294DE52603F4E200602CDF /* MoreCoordinator.swift */,
+				A9A9419B26219C7F00AC6C4D /* OrderCoordinator.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -399,6 +416,7 @@
 				A941632C2603E47C00A7F7A9 /* ScreenAssembly+Menu.swift */,
 				A9294DE82603F7D900602CDF /* ScreenAssembly+Bucket.swift */,
 				A9294DEC2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift */,
+				A9A9419E26219E8700AC6C4D /* ScreensAssembly+Order.swift */,
 			);
 			path = ScreensAssembly;
 			sourceTree = "<group>";
@@ -411,6 +429,25 @@
 				A994E67925FE513A004BFBE6 /* ScannerScreenViewModel.swift */,
 			);
 			path = ScannerScreen;
+			sourceTree = "<group>";
+		};
+		A9A9418D26219B3900AC6C4D /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				A9A9419426219B8900AC6C4D /* OrderScreen.storyboard */,
+				A9A9419126219B7A00AC6C4D /* OrderScreenViewController.swift */,
+				A9A9418E26219B6900AC6C4D /* OrderScreenViewModel.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		A9A941A126219EA600AC6C4D /* OrderScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A9A941A226219EB200AC6C4D /* Order.swift */,
+				A9A941A626219EBB00AC6C4D /* OrderService.swift */,
+			);
+			path = OrderScreen;
 			sourceTree = "<group>";
 		};
 		A9C629F525F8C7F200B32D2A /* SplashScreen */ = {
@@ -620,6 +657,7 @@
 				A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */,
 				A9CEE4CB26053C3B005298D0 /* MenuDetailsTableViewCell.xib in Resources */,
 				A9CEE4BD260531DE005298D0 /* MenuDetailsScreen.storyboard in Resources */,
+				A9A9419526219B8900AC6C4D /* OrderScreen.storyboard in Resources */,
 				A91FB32125FAC57E00F541FB /* RegistrationScreen.storyboard in Resources */,
 				A9294DD92603F44800602CDF /* MoreScreen.storyboard in Resources */,
 				A95D16D2260F880A007E69F2 /* MoreScreenHeaderView.xib in Resources */,
@@ -690,6 +728,7 @@
 				A9CEE4C0260531FE005298D0 /* MenuDetailsScreenViewController.swift in Sources */,
 				A95D16D1260F880A007E69F2 /* MoreScreenHeaderView.swift in Sources */,
 				A90D720C25F7FBE100BA697A /* AppDelegate.swift in Sources */,
+				A9A9419F26219E8700AC6C4D /* ScreensAssembly+Order.swift in Sources */,
 				A957D8CE26069FFF0024AD4E /* BucketService.swift in Sources */,
 				A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */,
 				A95D16DA260F8F85007E69F2 /* MoreScreenService.swift in Sources */,
@@ -709,18 +748,23 @@
 				A937603F25FAB33E00F5E645 /* Constants.swift in Sources */,
 				A9294DCE2603F40400602CDF /* BucketScreenViewModel.swift in Sources */,
 				A987184925FA875E00A980E2 /* ScreenAssembly+Authorization.swift in Sources */,
+				A9A9418F26219B6900AC6C4D /* OrderScreenViewModel.swift in Sources */,
 				A987187525FA98F300A980E2 /* AuthorizationScreenViewModel.swift in Sources */,
+				A9A9419226219B7A00AC6C4D /* OrderScreenViewController.swift in Sources */,
+				A9A941A326219EB200AC6C4D /* Order.swift in Sources */,
 				A91FB32725FAC5A100F541FB /* RegistrationScreenViewModel.swift in Sources */,
 				A9C988E7260156B9005BECDF /* Menu.swift in Sources */,
 				A9294DE32603F4C800602CDF /* BucketCoordinator.swift in Sources */,
 				A95D1695260F48B7007E69F2 /* UITableView+Extensions.swift in Sources */,
 				A940540925FCB10D00AB2F24 /* UserService.swift in Sources */,
 				A95D169A260F84BA007E69F2 /* MoreScreenTableViewCell.swift in Sources */,
+				A9A9419C26219C7F00AC6C4D /* OrderCoordinator.swift in Sources */,
 				A987184525FA869400A980E2 /* ScreensAssembly.swift in Sources */,
 				A94163332603E48400A7F7A9 /* MenuCoordinator.swift in Sources */,
 				A941632D2603E47C00A7F7A9 /* ScreenAssembly+Menu.swift in Sources */,
 				A95D1677260F421A007E69F2 /* Double + Extensions.swift in Sources */,
 				A9294DED2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift in Sources */,
+				A9A941A726219EBB00AC6C4D /* OrderService.swift in Sources */,
 				A994E67A25FE513A004BFBE6 /* ScannerScreenViewModel.swift in Sources */,
 				A987186D25FA961F00A980E2 /* AuthorizationScreenViewController.swift in Sources */,
 				A95D16D7260F8DD3007E69F2 /* More.swift in Sources */,
