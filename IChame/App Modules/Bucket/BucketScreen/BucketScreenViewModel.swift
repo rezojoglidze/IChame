@@ -63,8 +63,23 @@ extension BucketScreenViewModel: BucketScreenViewModelProtocol {
     }
     
     func saveOrder(fail: @escaping Network.StatusBlock) {
+        guard var bucket = bucket else { return }
         innerShowLoaderRelay.accept(true)
-        
+        bucket.userId = User.current?.uid ?? ""
+        bucket.status = .inProgress
+        bucketService?.saveOrder(bucket: bucket, success: {[weak self] (isSaved) in
+            self?.innerShowLoaderRelay.accept(false)
+            self?.deleteBucket(fail: fail)
+        }, fail: fail)
+    }
+    
+    private func deleteBucket(fail: @escaping Network.StatusBlock) {
+        self.innerShowLoaderRelay.accept(true)
+        let menuId = Menu.currentMenuId
+        let userId = User.current?.uid ?? ""
+        bucketService?.deleteBucket(menuId, userId: userId, success: { (isDeleted) in
+            self.innerShowLoaderRelay.accept(false)
+        }, fail: fail)
     }
     
     func numberOfRowsInSection(section: Int) -> Int {

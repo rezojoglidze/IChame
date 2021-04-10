@@ -14,6 +14,9 @@ struct Bucket: Codable {
     var coldDishes : [String : MenuItem]?
     var drinks : [String : MenuItem]?
     var sauces : [String : MenuItem]?
+    var restaurantId: String
+    var userId: String?
+    var status: OrderStatus?
 }
 
 extension Bucket {

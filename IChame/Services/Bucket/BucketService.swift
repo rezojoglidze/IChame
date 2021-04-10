@@ -45,7 +45,23 @@ class BucketService {
     func saveOrder(bucket: Bucket,
                    success: @escaping (Bool) -> Void,
                    fail: @escaping Network.StatusBlock) {
-
+        do {
+            try db.collection(Constants.orderiOS).document(("\(UUID().uuidString)")).setData(from: bucket, merge: true)
+            success(true)
+        } catch let error {
+            fail(error)
+        }
+    }
+    
+    func deleteBucket(_ menuId: String, userId: String, success: @escaping (Bool) -> Void,fail: @escaping Network.StatusBlock) {
+        db.collection(Constants.bucketiOS).document("\(menuId)_\(userId)").delete(){ err in
+            if let err = err {
+                print("Error removing document: \(err)")
+                fail(err)
+            } else {
+                success(true)
+            }
+        }
     }
     
     func loadBucket(_ menuId: String, userId: String, success: @escaping (Bucket?) -> Void,fail: @escaping Network.StatusBlock) {
