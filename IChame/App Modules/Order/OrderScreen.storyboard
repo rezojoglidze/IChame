@@ -16,13 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="5ro-tX-yTK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3fU-u1-W91">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hjb-P2-vOT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3fU-u1-W91" firstAttribute="leading" secondItem="hjb-P2-vOT" secondAttribute="leading" id="M8x-KI-fDa"/>
+                            <constraint firstItem="3fU-u1-W91" firstAttribute="top" secondItem="hjb-P2-vOT" secondAttribute="top" id="X0g-3A-vpF"/>
+                            <constraint firstItem="hjb-P2-vOT" firstAttribute="trailing" secondItem="3fU-u1-W91" secondAttribute="trailing" id="n9y-4w-KLm"/>
+                            <constraint firstAttribute="bottom" secondItem="3fU-u1-W91" secondAttribute="bottom" id="pX6-xN-Q2D"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="3fU-u1-W91" id="DwY-4u-mNV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmT-OJ-Dvi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="-285"/>
+            <point key="canvasLocation" x="318.84057971014494" y="-285.26785714285711"/>
         </scene>
     </scenes>
     <resources>

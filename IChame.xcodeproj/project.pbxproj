@@ -24,6 +24,9 @@
 		A9294DE62603F4E200602CDF /* MoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9294DE52603F4E200602CDF /* MoreCoordinator.swift */; };
 		A9294DE92603F7D900602CDF /* ScreenAssembly+Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9294DE82603F7D900602CDF /* ScreenAssembly+Bucket.swift */; };
 		A9294DED2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9294DEC2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift */; };
+		A9296F4C26220E5E0055B8F8 /* OrderScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9296F4A26220E5E0055B8F8 /* OrderScreenTableViewCell.swift */; };
+		A9296F4D26220E5E0055B8F8 /* OrderScreenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9296F4B26220E5E0055B8F8 /* OrderScreenTableViewCell.xib */; };
+		A9296F702622141C0055B8F8 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9296F6F2622141C0055B8F8 /* Order.swift */; };
 		A92AE6AD25F8033600D1D00A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */; };
 		A93490E62604C1E600CC3750 /* MenuScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93490E42604C1E600CC3750 /* MenuScreenCell.swift */; };
 		A93490E72604C1E600CC3750 /* MenuScreenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93490E52604C1E600CC3750 /* MenuScreenCell.xib */; };
@@ -65,7 +68,6 @@
 		A9A9419526219B8900AC6C4D /* OrderScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9A9419426219B8900AC6C4D /* OrderScreen.storyboard */; };
 		A9A9419C26219C7F00AC6C4D /* OrderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9419B26219C7F00AC6C4D /* OrderCoordinator.swift */; };
 		A9A9419F26219E8700AC6C4D /* ScreensAssembly+Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9419E26219E8700AC6C4D /* ScreensAssembly+Order.swift */; };
-		A9A941A326219EB200AC6C4D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A941A226219EB200AC6C4D /* Order.swift */; };
 		A9A941A726219EBB00AC6C4D /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A941A626219EBB00AC6C4D /* OrderService.swift */; };
 		A9C629F725F8C83900B32D2A /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */; };
 		A9C629FA25F8C84900B32D2A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */; };
@@ -105,6 +107,9 @@
 		A9294DE52603F4E200602CDF /* MoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCoordinator.swift; sourceTree = "<group>"; };
 		A9294DE82603F7D900602CDF /* ScreenAssembly+Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Bucket.swift"; sourceTree = "<group>"; };
 		A9294DEC2603F7ED00602CDF /* ScreenAssembly+MoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+MoreScreen.swift"; sourceTree = "<group>"; };
+		A9296F4A26220E5E0055B8F8 /* OrderScreenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderScreenTableViewCell.swift; sourceTree = "<group>"; };
+		A9296F4B26220E5E0055B8F8 /* OrderScreenTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderScreenTableViewCell.xib; sourceTree = "<group>"; };
+		A9296F6F2622141C0055B8F8 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		A92AE6AC25F8033600D1D00A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A93490E42604C1E600CC3750 /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
 		A93490E52604C1E600CC3750 /* MenuScreenCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuScreenCell.xib; sourceTree = "<group>"; };
@@ -146,7 +151,6 @@
 		A9A9419426219B8900AC6C4D /* OrderScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderScreen.storyboard; sourceTree = "<group>"; };
 		A9A9419B26219C7F00AC6C4D /* OrderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCoordinator.swift; sourceTree = "<group>"; };
 		A9A9419E26219E8700AC6C4D /* ScreensAssembly+Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreensAssembly+Order.swift"; sourceTree = "<group>"; };
-		A9A941A226219EB200AC6C4D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		A9A941A626219EBB00AC6C4D /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 		A9C629F625F8C83900B32D2A /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		A9C629F925F8C84900B32D2A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +275,15 @@
 			path = BucketScreen;
 			sourceTree = "<group>";
 		};
+		A9296F4926220E5E0055B8F8 /* OrderScreenCell */ = {
+			isa = PBXGroup;
+			children = (
+				A9296F4A26220E5E0055B8F8 /* OrderScreenTableViewCell.swift */,
+				A9296F4B26220E5E0055B8F8 /* OrderScreenTableViewCell.xib */,
+			);
+			path = OrderScreenCell;
+			sourceTree = "<group>";
+		};
 		A92AE69125F7FEAD00D1D00A /* App Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,7 +339,7 @@
 		A940540525FCB0C600AB2F24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A9A941A126219EA600AC6C4D /* OrderScreen */,
+				A9A941A126219EA600AC6C4D /* Order */,
 				A95D16D5260F8DC7007E69F2 /* MoreScreen */,
 				A957D8C926069FC20024AD4E /* Bucket */,
 				A9C988E32601567F005BECDF /* Menu */,
@@ -434,6 +447,7 @@
 		A9A9418D26219B3900AC6C4D /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				A9296F4926220E5E0055B8F8 /* OrderScreenCell */,
 				A9A9419426219B8900AC6C4D /* OrderScreen.storyboard */,
 				A9A9419126219B7A00AC6C4D /* OrderScreenViewController.swift */,
 				A9A9418E26219B6900AC6C4D /* OrderScreenViewModel.swift */,
@@ -441,13 +455,13 @@
 			path = Order;
 			sourceTree = "<group>";
 		};
-		A9A941A126219EA600AC6C4D /* OrderScreen */ = {
+		A9A941A126219EA600AC6C4D /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				A9A941A226219EB200AC6C4D /* Order.swift */,
 				A9A941A626219EBB00AC6C4D /* OrderService.swift */,
+				A9296F6F2622141C0055B8F8 /* Order.swift */,
 			);
-			path = OrderScreen;
+			path = Order;
 			sourceTree = "<group>";
 		};
 		A9C629F525F8C7F200B32D2A /* SplashScreen */ = {
@@ -661,6 +675,7 @@
 				A91FB32125FAC57E00F541FB /* RegistrationScreen.storyboard in Resources */,
 				A9294DD92603F44800602CDF /* MoreScreen.storyboard in Resources */,
 				A95D16D2260F880A007E69F2 /* MoreScreenHeaderView.xib in Resources */,
+				A9296F4D26220E5E0055B8F8 /* OrderScreenTableViewCell.xib in Resources */,
 				A93490E72604C1E600CC3750 /* MenuScreenCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,6 +732,7 @@
 				A937603A25FAB30300F5E645 /* Animation+Extensions.swift in Sources */,
 				A987187225FA968600A980E2 /* AuthCoordinator.swift in Sources */,
 				A9294DE62603F4E200602CDF /* MoreCoordinator.swift in Sources */,
+				A9296F702622141C0055B8F8 /* Order.swift in Sources */,
 				A9294DE92603F7D900602CDF /* ScreenAssembly+Bucket.swift in Sources */,
 				A943CBD425FD355200714021 /* UIView+Extensions.swift in Sources */,
 				A9C62A0225F8C9FB00B32D2A /* MainCoordinator.swift in Sources */,
@@ -733,6 +749,7 @@
 				A994E67725FE512C004BFBE6 /* ScannerScreenViewController.swift in Sources */,
 				A95D16DA260F8F85007E69F2 /* MoreScreenService.swift in Sources */,
 				A90D720E25F7FBE100BA697A /* SceneDelegate.swift in Sources */,
+				A9296F4C26220E5E0055B8F8 /* OrderScreenTableViewCell.swift in Sources */,
 				A949235C2604003A0062DB96 /* IChameTabbarController.swift in Sources */,
 				A987184D25FA89E700A980E2 /* UIViewController+Extensions.swift in Sources */,
 				A9294DDC2603F45400602CDF /* MoreScreenViewController.swift in Sources */,
@@ -751,7 +768,6 @@
 				A9A9418F26219B6900AC6C4D /* OrderScreenViewModel.swift in Sources */,
 				A987187525FA98F300A980E2 /* AuthorizationScreenViewModel.swift in Sources */,
 				A9A9419226219B7A00AC6C4D /* OrderScreenViewController.swift in Sources */,
-				A9A941A326219EB200AC6C4D /* Order.swift in Sources */,
 				A91FB32725FAC5A100F541FB /* RegistrationScreenViewModel.swift in Sources */,
 				A9C988E7260156B9005BECDF /* Menu.swift in Sources */,
 				A9294DE32603F4C800602CDF /* BucketCoordinator.swift in Sources */,

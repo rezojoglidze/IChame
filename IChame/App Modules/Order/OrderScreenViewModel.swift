@@ -17,7 +17,11 @@ protocol OrderScreenViewModelProtocol: class {
     var showLoader: Observable<Bool> { get }
 
     func loadOrder(fail: @escaping Network.StatusBlock)
+    func item(at indexPath: IndexPath) -> Order?
     
+    func openMenuDetails(with indexPath: IndexPath)
+        
+    func numberOfRowsInSection() -> Int
 }
 
 class OrderScreenViewModel {
@@ -41,11 +45,22 @@ class OrderScreenViewModel {
 
 extension OrderScreenViewModel: OrderScreenViewModelProtocol {
     func loadOrder(fail: @escaping Network.StatusBlock) {
-        innerShowLoader.accept(true)
         orderService?.loadOrders(userId: User.current?.uid ?? "", success: {[weak self] (orders) in
             self?.orders = orders
             self?.innerOrderDidLoaded.accept(())
             self?.innerShowLoader.accept(false)
         }, fail: fail)
+    }
+    
+    func numberOfRowsInSection() -> Int {
+        return orders.count
+    }
+    
+    func openMenuDetails(with indexPath: IndexPath) {
+        //            router.trigger(.orderDetails(order: orders[indexPath.row]))
+    }
+    
+    func item(at indexPath: IndexPath) -> Order? {
+        return orders[indexPath.row]
     }
 }
